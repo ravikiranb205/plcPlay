@@ -1,7 +1,7 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
 import { loadState, getHistory, pushHistory } from './store.js';
 
-const LAST_KEY = 'plc_last_workout';
+const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
 let deferredInstallPrompt = null;
@@ -25,12 +25,6 @@ async function init() {
   setupNav();
   setupInstallPrompt();
   registerSW();
-
-  // Restore last viewed workout after page load
-  const lastId = localStorage.getItem(LAST_KEY);
-  if (lastId && workouts.find(w => w.id === lastId)) {
-    // Stay on home for now; user can tap back in if desired
-  }
 }
 
 // ── VIEW ROUTING ─────────────────────────────────────────────────────────

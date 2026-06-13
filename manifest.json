@@ -1,7 +1,7 @@
 {
-  "name": "PLC Workout",
-  "short_name": "PLC Workout",
-  "description": "Your personal gym workout tracker — offline, no login.",
+  "name": "FitWin",
+  "short_name": "FitWin",
+  "description": "FitWin — your personal gym workout tracker. Offline, no login.",
   "start_url": "./index.html",
   "display": "standalone",
   "background_color": "#0f0f0f",

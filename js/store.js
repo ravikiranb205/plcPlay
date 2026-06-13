@@ -1,5 +1,5 @@
-const STATE_KEY   = id => `plc_state_${id}`;
-const HISTORY_KEY = 'plc_history';
+const STATE_KEY   = id => `fitwin_state_${id}`;
+const HISTORY_KEY = 'fitwin_history';
 
 export function saveState(workoutId, state) {
   localStorage.setItem(STATE_KEY(workoutId), JSON.stringify(state));

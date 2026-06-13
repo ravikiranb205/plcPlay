@@ -1,4 +1,4 @@
-const CACHE = 'plc-workout-v1';
+const CACHE = 'fitwin-v1';
 
 const ASSETS = [
   './',
@@ -30,7 +30,6 @@ self.addEventListener('activate', e => {
 });
 
 self.addEventListener('fetch', e => {
-  // Cache-first for local assets, network-first for everything else
   const url = new URL(e.request.url);
   const isLocal = url.origin === self.location.origin || url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
 

@@ -1,0 +1,333 @@
+import { startTimer, stopTimer } from './timer.js';
+import { saveState, loadState, pushHistory } from './store.js';
+
+let currentWorkout = null;
+let workoutState   = {};
+let onBackCallback = null;
+
+export function setBackCallback(fn) { onBackCallback = fn; }
+
+export function renderWorkout(workout) {
+  currentWorkout = workout;
+  workoutState   = loadState(workout.id) || {};
+
+  const view = document.getElementById('viewWorkout');
+  view.innerHTML = buildWorkoutHTML(workout);
+
+  document.getElementById('timerCloseBtn').addEventListener('click', stopTimer);
+
+  restoreState();
+  updateProgress();
+  checkCompletion(false);
+
+  const firstUndone = workout.exercises.find(e => !workoutState[e.id]?.done);
+  const targetId = firstUndone ? firstUndone.id : workout.exercises[0]?.id;
+  const firstBody = targetId != null ? document.getElementById(`body${targetId}`) : null;
+  if (firstBody) firstBody.classList.add('open');
+}
+
+export function wireWorkoutEvents() {
+  const view = document.getElementById('viewWorkout');
+
+  view.addEventListener('click', e => {
+    if (e.target.closest('#backBtn')) {
+      onBackCallback?.();
+      return;
+    }
+
+    const toggle = e.target.closest('[data-card-toggle]');
+    if (toggle
+      && !e.target.closest('[data-done]')
+      && !e.target.closest('[data-unavail]')
+      && !e.target.closest('.rest-timer-btn')
+    ) {
+      const id = toggle.dataset.cardToggle;
+      document.getElementById(`body${id}`)?.classList.toggle('open');
+      return;
+    }
+
+    const doneBtn = e.target.closest('[data-done]');
+    if (doneBtn) { e.stopPropagation(); toggleDone(parseInt(doneBtn.dataset.done)); return; }
+
+    const unavailBtn = e.target.closest('[data-unavail]');
+    if (unavailBtn) { e.stopPropagation(); toggleUnavail(parseInt(unavailBtn.dataset.unavail)); return; }
+
+    const timerBtn = e.target.closest('[data-timer-ex]');
+    if (timerBtn) {
+      const id = parseInt(timerBtn.dataset.timerEx);
+      fireTimer(id);
+      return;
+    }
+
+    if (e.target.closest('#resetBtn')) {
+      if (confirm('Reset this workout? All progress will be cleared.')) resetWorkout();
+    }
+  });
+
+  view.addEventListener('change', e => {
+    const cb = e.target.closest('.set-check');
+    if (!cb) return;
+    const exId   = parseInt(cb.dataset.ex);
+    const setIdx = parseInt(cb.dataset.set);
+    const rest   = parseInt(cb.dataset.rest) || 60;
+
+    if (!workoutState[exId]) workoutState[exId] = { done: false, unavail: false, sets: [] };
+    workoutState[exId].sets[setIdx] = cb.checked;
+
+    saveState(currentWorkout.id, workoutState);
+    updateProgress();
+    checkCompletion(true);
+
+    if (cb.checked) fireTimer(exId, rest);
+  });
+}
+
+function fireTimer(exId, overrideRest) {
+  const ex = currentWorkout.exercises.find(e => e.id === exId);
+  if (!ex) return;
+  const rest = overrideRest ?? ex.restSecs;
+  const remaining = currentWorkout.exercises.filter(e => e.id > exId && !workoutState[e.id]?.done);
+  startTimer(rest, ex, remaining);
+}
+
+// ── CARD STATE ──────────────────────────────────────────────────────────
+function toggleDone(id) {
+  const card = document.getElementById(`card${id}`);
+  if (!card) return;
+  card.classList.toggle('done');
+  const isDone = card.classList.contains('done');
+  if (isDone) document.getElementById(`body${id}`)?.classList.remove('open');
+
+  if (!workoutState[id]) workoutState[id] = { done: false, unavail: false, sets: [] };
+  workoutState[id].done = isDone;
+  saveState(currentWorkout.id, workoutState);
+  updateProgress();
+  checkCompletion(true);
+}
+
+function toggleUnavail(id) {
+  const card = document.getElementById(`card${id}`);
+  const alt  = document.getElementById(`alt${id}`);
+  if (!card) return;
+  card.classList.toggle('unavailable');
+  const isUnavail = card.classList.contains('unavailable');
+  if (isUnavail) {
+    alt?.classList.add('show');
+    document.getElementById(`body${id}`)?.classList.add('open');
+  } else {
+    alt?.classList.remove('show');
+  }
+  if (!workoutState[id]) workoutState[id] = { done: false, unavail: false, sets: [] };
+  workoutState[id].unavail = isUnavail;
+  saveState(currentWorkout.id, workoutState);
+}
+
+// ── RESTORE ─────────────────────────────────────────────────────────────
+function restoreState() {
+  if (!currentWorkout) return;
+  currentWorkout.exercises.forEach(ex => {
+    const st = workoutState[ex.id];
+    if (!st) return;
+    const card = document.getElementById(`card${ex.id}`);
+    if (!card) return;
+    if (st.done) {
+      card.classList.add('done');
+      document.getElementById(`body${ex.id}`)?.classList.remove('open');
+    }
+    if (st.unavail) {
+      card.classList.add('unavailable');
+      document.getElementById(`alt${ex.id}`)?.classList.add('show');
+    }
+    if (st.sets?.length) {
+      const checks = card.querySelectorAll('.set-check');
+      checks.forEach((cb, i) => { if (st.sets[i]) cb.checked = true; });
+    }
+  });
+  if (workoutState._completed) {
+    document.getElementById('completeBanner')?.classList.add('show');
+  }
+}
+
+// ── PROGRESS ────────────────────────────────────────────────────────────
+function updateProgress() {
+  const allChecks = document.querySelectorAll('#viewWorkout .set-check');
+  const checked   = document.querySelectorAll('#viewWorkout .set-check:checked').length;
+  const pct = allChecks.length ? (checked / allChecks.length) * 100 : 0;
+  const bar = document.getElementById('progressBar');
+  if (bar) bar.style.width = pct + '%';
+}
+
+// ── COMPLETION ───────────────────────────────────────────────────────────
+function checkCompletion(allowSave) {
+  if (!currentWorkout) return;
+  const checks = [...document.querySelectorAll('#viewWorkout .set-check')];
+  const allChecked = checks.length > 0 && checks.every(c => c.checked);
+  const allDone = currentWorkout.exercises.every(ex => workoutState[ex.id]?.done);
+  const complete = allChecked || allDone;
+
+  const banner = document.getElementById('completeBanner');
+  if (banner) banner.classList.toggle('show', complete);
+
+  if (complete && allowSave && !workoutState._completed) {
+    workoutState._completed = true;
+    saveState(currentWorkout.id, workoutState);
+    const setsDone = checks.filter(c => c.checked).length;
+    pushHistory({
+      workoutId:    currentWorkout.id,
+      workoutTitle: currentWorkout.title,
+      date:         new Date().toISOString(),
+      setsDone
+    });
+  }
+}
+
+// ── RESET ────────────────────────────────────────────────────────────────
+function resetWorkout() {
+  workoutState = {};
+  saveState(currentWorkout.id, workoutState);
+  document.querySelectorAll('#viewWorkout .set-check').forEach(cb => cb.checked = false);
+  document.querySelectorAll('#viewWorkout .card').forEach(c => c.classList.remove('done', 'unavailable'));
+  document.querySelectorAll('#viewWorkout .alt-panel').forEach(a => a.classList.remove('show'));
+  document.querySelectorAll('#viewWorkout .card-body').forEach(b => b.classList.remove('open'));
+  document.getElementById('completeBanner')?.classList.remove('show');
+  updateProgress();
+  const firstId = currentWorkout.exercises[0]?.id;
+  if (firstId != null) document.getElementById(`body${firstId}`)?.classList.add('open');
+}
+
+// ── HTML BUILDERS ────────────────────────────────────────────────────────
+function buildWorkoutHTML(w) {
+  return `
+<div class="timer-overlay" id="timerOverlay">
+  <div class="timer-ex-name" id="timerExName">Rest</div>
+  <div class="timer-circle">
+    <svg class="timer-svg" viewBox="0 0 188 188">
+      <circle class="timer-track" cx="94" cy="94" r="90"/>
+      <circle class="timer-progress" id="timerArc" cx="94" cy="94" r="90"
+        stroke-dasharray="565.5" stroke-dashoffset="0"/>
+    </svg>
+    <div class="timer-count" id="timerCount">60</div>
+    <div class="timer-label">seconds</div>
+  </div>
+  <div class="timer-done-msg" id="timerDoneMsg">✓ Rest Complete — Go!</div>
+  <div class="next-up hidden" id="nextUp">
+    <div class="next-photo" id="nextPhoto"></div>
+    <div>
+      <div class="next-label">Next Up</div>
+      <div class="next-name" id="nextName">—</div>
+      <div class="next-meta" id="nextMeta">—</div>
+    </div>
+  </div>
+  <button class="timer-close" id="timerCloseBtn">Skip Rest</button>
+</div>
+
+<div class="workout-header">
+  <button class="back-btn" id="backBtn">← Workouts</button>
+  <div class="wh-top">
+    <div>
+      <div class="gym-label">${w.gym}</div>
+      <div class="day-title">${w.title}</div>
+      <div class="day-sub">${w.subtitle}</div>
+    </div>
+    <div class="badges">
+      ${w.badges.map(b => `<span class="badge${b.type === 'info' ? ' info' : ''}">${b.text}</span>`).join('')}
+    </div>
+  </div>
+  <div class="progress-wrap"><div class="progress-bar" id="progressBar"></div></div>
+</div>
+
+<div class="notice">${w.notice}</div>
+
+<div class="summary">
+  <div class="stat-box"><div class="stat-val">${w.stats.exercises}</div><div class="stat-label">Exercises</div></div>
+  <div class="stat-box"><div class="stat-val">${w.stats.minutes}</div><div class="stat-label">Minutes</div></div>
+  <div class="stat-box"><div class="stat-val">${w.stats.totalSets}</div><div class="stat-label">Total Sets</div></div>
+</div>
+
+<div class="section-label">Warm-Up · 5 min</div>
+<div class="warmup-card">
+  ${w.warmup.map(item => `<div class="warmup-item">${item}</div>`).join('')}
+</div>
+
+<div class="section-label">Workout · ${w.exercises.length} Exercises</div>
+${w.exercises.map(ex => buildExerciseCard(ex)).join('')}
+
+<div class="section-label">Cool Down</div>
+<div class="cooldown-card">
+  ${w.cooldown.map(item => `<div class="cooldown-item">${item}</div>`).join('')}
+</div>
+
+${w.closing ? `<div class="closing-card">${w.closing}</div>` : ''}
+
+<div class="complete-banner" id="completeBanner">
+  <h2>🏆 Workout Done!</h2>
+  <p>Saved to your history. Rest up — you earned it.</p>
+</div>
+
+<div class="workout-actions">
+  <button class="reset-btn" id="resetBtn">↺ Reset Workout</button>
+</div>
+
+<div style="height:20px"></div>
+`;
+}
+
+function buildExerciseCard(ex) {
+  const numStr = String(ex.id).padStart(2, '0');
+  const workSets = ex.sets.filter(s => !s.isWarm);
+
+  return `
+<div class="card" id="card${ex.id}">
+  <div class="card-header" data-card-toggle="${ex.id}">
+    <div class="ex-num">${numStr}</div>
+    <div class="ex-info">
+      <div class="ex-name">${ex.name}</div>
+      <div class="ex-meta">
+        <span>${workSets.length} sets</span><span>${ex.restSecs}s rest</span>
+        ${ex.muscles.map(m => `<span class="muscle-tag">${m}</span>`).join('')}
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" data-unavail="${ex.id}">🚫 N/A</button>
+      <button class="done-btn" data-done="${ex.id}">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body${ex.id}">
+    <div class="ex-visual">${ex.emoji}</div>
+    <div class="alt-panel" id="alt${ex.id}">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">${ex.alt.name}</div>
+        <div class="alt-sets">${ex.alt.sets}</div>
+        <div class="alt-tip">${ex.alt.tip}</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          ${ex.sets.map((s, i) => `
+          <tr>
+            <td>${s.isWarm ? `<span class="set-tag">Warm</span>` : s.label}</td>
+            <td>${s.reps}</td>
+            <td>${s.weight}</td>
+            <td><input type="checkbox" class="set-check"
+              data-ex="${ex.id}" data-set="${i}" data-rest="${s.rest}"></td>
+          </tr>`).join('')}
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        ${ex.primaryMuscles.map(m => `<span class="muscle-pill primary">${m}</span>`).join('')}
+        ${ex.secondaryMuscles.map(m => `<span class="muscle-pill secondary">${m}</span>`).join('')}
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip">${ex.tip}</div>
+      <div class="rest-row">
+        <span>Rest ${ex.restSecs}s between sets</span>
+        <button class="rest-timer-btn" data-timer-ex="${ex.id}">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>`;
+}

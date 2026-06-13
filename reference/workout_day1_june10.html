@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workout — Day 1 Comeback</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;900&family=Inter:wght@400;500;600&display=swap');
+
+  :root {
+    --bg: #0f0f0f;
+    --surface: #1a1a1a;
+    --card: #222222;
+    --accent: #e8c040;
+    --accent2: #ff5722;
+    --text: #f0f0f0;
+    --muted: #888;
+    --border: #2e2e2e;
+    --green: #4caf82;
+    --red: #e05050;
+    --orange: #f08030;
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Inter', sans-serif;
+    min-height: 100vh;
+    padding: 0 0 60px;
+  }
+
+  .header {
+    background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+    border-bottom: 2px solid var(--accent);
+    padding: 20px 20px 16px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .header-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .gym-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--accent);
+    margin-bottom: 4px;
+  }
+  .day-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1;
+    color: var(--text);
+  }
+  .day-sub { font-size: 12px; color: var(--muted); margin-top: 4px; }
+  .badges { display: flex; flex-direction: column; align-items: flex-end; gap: 4px; }
+  .badge {
+    font-size: 10px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
+    background: var(--accent2); color: white;
+  }
+  .badge.info { background: #2a4a6a; color: #7eb8e8; }
+
+  .progress-wrap {
+    margin-top: 12px; background: var(--border);
+    height: 4px; border-radius: 2px; overflow: hidden;
+  }
+  .progress-bar {
+    height: 4px; background: var(--accent); width: 0%;
+    transition: width 0.5s ease; border-radius: 2px;
+  }
+
+  .notice {
+    margin: 16px 16px 0; padding: 12px 14px;
+    background: #1e2a1e; border-left: 3px solid var(--green);
+    border-radius: 4px; font-size: 12px; color: #a0d0a0; line-height: 1.5;
+  }
+  .notice strong { color: var(--green); }
+
+  .section-label {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 13px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--muted);
+    padding: 20px 16px 8px; border-bottom: 1px solid var(--border); margin: 0 16px;
+  }
+
+  .card {
+    margin: 12px 16px 0;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: border-color 0.2s;
+  }
+  .card.done { border-color: var(--green); opacity: 0.75; }
+  .card.done .card-header { background: #1a2a1a; }
+  .card.unavailable { border-color: var(--orange); }
+  .card.unavailable .card-header { background: #1e1a10; }
+
+  .card-header {
+    display: flex; align-items: center; gap: 12px;
+    padding: 12px 14px; cursor: pointer; user-select: none; background: var(--card);
+  }
+  .ex-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px; font-weight: 900; color: var(--accent);
+    line-height: 1; min-width: 28px;
+  }
+  .ex-info { flex: 1; }
+  .ex-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 20px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.5px; color: var(--text); line-height: 1.1;
+  }
+  .ex-meta { font-size: 11px; color: var(--muted); margin-top: 3px; }
+  .ex-meta span { display: inline-block; margin-right: 10px; }
+  .muscle-tag {
+    display: inline-block; font-size: 10px; padding: 2px 6px;
+    border-radius: 2px; background: #2a2a3a; color: #8888cc;
+    margin-right: 4px; font-weight: 500; letter-spacing: 0.5px; text-transform: uppercase;
+  }
+
+  .card-actions { display: flex; gap: 6px; align-items: center; flex-shrink: 0; }
+
+  .done-btn {
+    width: 32px; height: 32px; border: 2px solid var(--border);
+    border-radius: 50%; background: none; cursor: pointer;
+    display: flex; align-items: center; justify-content: center;
+    font-size: 14px; color: var(--muted); transition: all 0.2s;
+  }
+  .done-btn:hover, .card.done .done-btn {
+    border-color: var(--green); background: #1a3a1a; color: var(--green);
+  }
+
+  /* UNAVAILABLE TOGGLE */
+  .unavail-btn {
+    font-size: 10px; font-weight: 600; letter-spacing: 0.5px;
+    text-transform: uppercase; padding: 5px 8px; border-radius: 4px;
+    border: 1px solid var(--border); background: none;
+    color: var(--muted); cursor: pointer; transition: all 0.2s;
+    white-space: nowrap;
+  }
+  .unavail-btn:hover { border-color: var(--orange); color: var(--orange); }
+  .card.unavailable .unavail-btn {
+    border-color: var(--orange); background: #2a1a08; color: var(--orange);
+  }
+
+  .card-body { display: none; border-top: 1px solid var(--border); }
+  .card-body.open { display: block; }
+
+  .ex-visual {
+    width: 100%; height: 180px; background: var(--surface);
+    display: flex; align-items: center; justify-content: center;
+    font-size: 64px; border-bottom: 1px solid var(--border);
+  }
+
+  .card-detail { padding: 14px; }
+
+  /* ALTERNATIVE PANEL */
+  .alt-panel {
+    display: none;
+    margin: 0 14px 14px;
+    background: #1e1408;
+    border: 1px solid #4a3010;
+    border-radius: 6px;
+    overflow: hidden;
+  }
+  .alt-panel.show { display: block; }
+  .alt-header {
+    background: #2a1e08;
+    padding: 8px 12px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--orange);
+    border-bottom: 1px solid #4a3010;
+  }
+  .alt-body { padding: 12px; }
+  .alt-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; font-weight: 700; text-transform: uppercase;
+    color: var(--text); letter-spacing: 0.5px; margin-bottom: 4px;
+  }
+  .alt-sets { font-size: 12px; color: var(--muted); margin-bottom: 8px; }
+  .alt-tip {
+    font-size: 12px; color: #c09050; line-height: 1.5;
+    background: #14100a; padding: 8px 10px; border-radius: 4px;
+    border-left: 2px solid var(--orange);
+  }
+
+  .sets-table {
+    width: 100%; border-collapse: collapse; font-size: 13px; margin-bottom: 12px;
+  }
+  .sets-table th {
+    text-align: left; font-size: 10px; font-weight: 600;
+    letter-spacing: 1.5px; text-transform: uppercase; color: var(--muted);
+    padding: 0 0 6px; border-bottom: 1px solid var(--border);
+  }
+  .sets-table td {
+    padding: 8px 0; border-bottom: 1px solid #1e1e1e;
+    color: var(--text); vertical-align: middle;
+  }
+  .sets-table td:last-child { text-align: right; }
+  .set-check { width: 20px; height: 20px; accent-color: var(--accent); cursor: pointer; }
+  .set-tag {
+    display: inline-block; font-size: 10px; padding: 1px 5px;
+    border-radius: 2px; background: #2a2420; color: var(--accent);
+    font-weight: 600; text-transform: uppercase;
+  }
+
+  .tip {
+    background: #1e1e2a; border-left: 3px solid #5555aa;
+    padding: 10px 12px; font-size: 12px; color: #aaaacc;
+    border-radius: 0 4px 4px 0; line-height: 1.6; margin-top: 0;
+  }
+  .tip strong { color: #8888ee; }
+
+  .muscle-section {
+    margin-top: 10px; font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px;
+  }
+  .muscle-list { display: flex; flex-wrap: wrap; gap: 4px; margin-top: 6px; }
+  .muscle-pill {
+    font-size: 11px; padding: 4px 10px; border-radius: 20px;
+    font-weight: 500; letter-spacing: 0.5px; text-transform: capitalize;
+  }
+  .primary { background: #3a2a10; color: #e8a030; border: 1px solid #5a4a20; }
+  .secondary { background: #1e2a3a; color: #6090c0; border: 1px solid #2a4060; }
+
+  .rest-row {
+    display: flex; align-items: center; justify-content: space-between;
+    margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+    font-size: 12px; color: var(--muted);
+  }
+  .rest-timer-btn {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text); font-size: 11px; font-weight: 600;
+    letter-spacing: 1px; text-transform: uppercase;
+    padding: 6px 14px; border-radius: 4px; cursor: pointer;
+  }
+  .rest-timer-btn:hover { border-color: var(--accent); color: var(--accent); }
+
+  .warmup-card {
+    margin: 12px 16px 0; background: #1a1410;
+    border: 1px solid #3a2a10; border-radius: 8px;
+    padding: 14px; display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .warmup-item {
+    font-size: 13px; color: #c0a060;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .warmup-item::before {
+    content: ''; width: 6px; height: 6px;
+    background: var(--accent); border-radius: 50%; flex-shrink: 0;
+  }
+
+  .cooldown-card {
+    margin: 12px 16px 0; background: #101a1a;
+    border: 1px solid #103030; border-radius: 8px;
+    padding: 14px; display: flex; gap: 16px; flex-wrap: wrap;
+  }
+  .cooldown-item {
+    font-size: 13px; color: #60a0a0;
+    display: flex; align-items: center; gap: 6px;
+  }
+  .cooldown-item::before {
+    content: ''; width: 6px; height: 6px;
+    background: #40a0a0; border-radius: 50%; flex-shrink: 0;
+  }
+
+  .summary {
+    margin: 20px 16px 0;
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px;
+  }
+  .stat-box {
+    background: var(--card); border: 1px solid var(--border);
+    border-radius: 6px; padding: 12px 10px; text-align: center;
+  }
+  .stat-val {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 28px; font-weight: 900; color: var(--accent); line-height: 1;
+  }
+  .stat-label {
+    font-size: 10px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 1px; margin-top: 2px;
+  }
+
+  /* TIMER OVERLAY */
+  .timer-overlay {
+    display: none; position: fixed; inset: 0;
+    background: rgba(0,0,0,0.88); z-index: 200;
+    align-items: center; justify-content: center; flex-direction: column;
+  }
+  .timer-overlay.show { display: flex; }
+  .timer-ex-name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px; font-weight: 600; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--muted); margin-bottom: 16px;
+  }
+  .timer-circle {
+    width: 180px; height: 180px;
+    border: 4px solid var(--accent); border-radius: 50%;
+    display: flex; align-items: center; justify-content: center;
+    flex-direction: column; margin-bottom: 24px;
+    position: relative;
+  }
+  .timer-svg {
+    position: absolute; top: -4px; left: -4px;
+    width: 188px; height: 188px;
+    transform: rotate(-90deg);
+  }
+  .timer-track { fill: none; stroke: #2e2e2e; stroke-width: 4; }
+  .timer-progress { fill: none; stroke: var(--accent); stroke-width: 4; stroke-linecap: round; transition: stroke-dashoffset 1s linear; }
+  .timer-count {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 62px; font-weight: 900; color: var(--text); line-height: 1; z-index: 1;
+  }
+  .timer-label {
+    font-size: 11px; color: var(--muted);
+    text-transform: uppercase; letter-spacing: 2px; margin-top: 2px; z-index: 1;
+  }
+  .timer-close {
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--muted); padding: 10px 28px; border-radius: 4px;
+    font-size: 13px; font-weight: 600; letter-spacing: 1px;
+    text-transform: uppercase; cursor: pointer; margin-top: 8px;
+  }
+  .timer-close:hover { color: var(--accent); border-color: var(--accent); }
+  .timer-done-msg {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px; letter-spacing: 2px; color: var(--green);
+    text-transform: uppercase; margin-top: 12px; opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .timer-done-msg.show { opacity: 1; }
+</style>
+</head>
+<body>
+
+<!-- TIMER OVERLAY -->
+<div class="timer-overlay" id="timerOverlay">
+  <div class="timer-ex-name" id="timerExName">Rest</div>
+  <div class="timer-circle">
+    <svg class="timer-svg" viewBox="0 0 188 188">
+      <circle class="timer-track" cx="94" cy="94" r="90"/>
+      <circle class="timer-progress" id="timerArc" cx="94" cy="94" r="90"
+        stroke-dasharray="565.5" stroke-dashoffset="0"/>
+    </svg>
+    <div class="timer-count" id="timerCount">60</div>
+    <div class="timer-label">seconds</div>
+  </div>
+  <div class="timer-done-msg" id="timerDoneMsg">✓ Rest Complete — Go!</div>
+  <button class="timer-close" onclick="stopTimer()">Skip Rest</button>
+</div>
+
+<!-- HEADER -->
+<div class="header">
+  <div class="header-top">
+    <div>
+      <div class="gym-label">⚡ Powerhouse Gym · South Lyon</div>
+      <div class="day-title">Day 1 — Comeback</div>
+      <div class="day-sub">Wed Jun 10, 2026 · Full Body · Light</div>
+    </div>
+    <div class="badges">
+      <span class="badge">Back after 2 months</span>
+      <span class="badge info">Legs easy — biked yesterday</span>
+    </div>
+  </div>
+  <div class="progress-wrap">
+    <div class="progress-bar" id="progressBar"></div>
+  </div>
+</div>
+
+<div class="notice">
+  <strong>Today's goal:</strong> Wake the muscles up, not break them down. Use 60–70% of your old weights. Focus on form and feel. Stop 1–2 reps before failure on every set. No soreness is a win today.
+</div>
+
+<div class="summary">
+  <div class="stat-box"><div class="stat-val">6</div><div class="stat-label">Exercises</div></div>
+  <div class="stat-box"><div class="stat-val">~45</div><div class="stat-label">Minutes</div></div>
+  <div class="stat-box"><div class="stat-val">16</div><div class="stat-label">Total Sets</div></div>
+</div>
+
+<div class="section-label">Warm-Up · 5 min</div>
+<div class="warmup-card">
+  <div class="warmup-item">5 min treadmill brisk walk or light jog</div>
+  <div class="warmup-item">10 arm circles each direction</div>
+  <div class="warmup-item">10 shoulder rolls</div>
+  <div class="warmup-item">10 bodyweight squats (light, just to open hips)</div>
+</div>
+
+<div class="section-label">Workout · 6 Exercises</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 1 — LAT PULLDOWN -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card1">
+  <div class="card-header" onclick="toggleCard(1)">
+    <div class="ex-num">01</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name1">Lat Pulldown</div>
+      <div class="ex-meta">
+        <span>3 sets × 12 reps</span><span>60s rest</span>
+        <span class="muscle-tag">Back</span><span class="muscle-tag">Biceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,1)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn1" onclick="markDone(event,1)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body1">
+    <div class="ex-visual">🏋️</div>
+    <!-- ALTERNATIVE PANEL -->
+    <div class="alt-panel" id="alt1">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Dumbbell Single-Arm Row</div>
+        <div class="alt-sets">3 sets × 12 reps each side · 60s rest</div>
+        <div class="alt-tip">Plant one knee and hand on a bench. Pull dumbbell up to hip, elbow close to body. Same muscles, full range of motion. No cable needed.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td><span class="set-tag">Warm</span></td><td>15</td><td>Light</td><td><input type="checkbox" class="set-check" data-card="1" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 1</td><td>12</td><td>~50% max</td><td><input type="checkbox" class="set-check" data-card="1" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same or +5</td><td><input type="checkbox" class="set-check" data-card="1" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 3</td><td>10–12</td><td>Same</td><td><input type="checkbox" class="set-check" data-card="1" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Latissimus Dorsi</span>
+        <span class="muscle-pill primary">Teres Major</span>
+        <span class="muscle-pill secondary">Biceps</span>
+        <span class="muscle-pill secondary">Rear Delt</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Form:</strong> Pull bar to upper chest, lean back slightly. Squeeze lats at bottom. Control the return — don't let it snap back. No momentum.</div>
+      <div class="rest-row">
+        <span>Rest 60 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(60,'Lat Pulldown')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 2 — CHEST PRESS MACHINE -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card2">
+  <div class="card-header" onclick="toggleCard(2)">
+    <div class="ex-num">02</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name2">Chest Press Machine</div>
+      <div class="ex-meta">
+        <span>3 sets × 12 reps</span><span>60s rest</span>
+        <span class="muscle-tag">Chest</span><span class="muscle-tag">Triceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,2)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn2" onclick="markDone(event,2)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body2">
+    <div class="ex-visual">💪</div>
+    <div class="alt-panel" id="alt2">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Dumbbell Bench Press</div>
+        <div class="alt-sets">3 sets × 12 reps · 60s rest</div>
+        <div class="alt-tip">Lie flat on a bench. Dumbbells at chest level, elbows at ~45°. Press up and together. More stabilizer work than the machine — use slightly lighter weight.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td><span class="set-tag">Warm</span></td><td>15</td><td>Light</td><td><input type="checkbox" class="set-check" data-card="2" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 1</td><td>12</td><td>~60% max</td><td><input type="checkbox" class="set-check" data-card="2" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same</td><td><input type="checkbox" class="set-check" data-card="2" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 3</td><td>10</td><td>+5 optional</td><td><input type="checkbox" class="set-check" data-card="2" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Pectoralis Major</span>
+        <span class="muscle-pill secondary">Anterior Delt</span>
+        <span class="muscle-pill secondary">Triceps</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Why machine today:</strong> Safer coming back — no stabilizer fatigue risk. Adjust seat so handles align with mid-chest. Full extension but don't lock elbows out.</div>
+      <div class="rest-row">
+        <span>Rest 60 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(60,'Chest Press')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 3 — SEATED CABLE ROW -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card3">
+  <div class="card-header" onclick="toggleCard(3)">
+    <div class="ex-num">03</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name3">Seated Cable Row</div>
+      <div class="ex-meta">
+        <span>3 sets × 12 reps</span><span>60s rest</span>
+        <span class="muscle-tag">Back</span><span class="muscle-tag">Biceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,3)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn3" onclick="markDone(event,3)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body3">
+    <div class="ex-visual">🔗</div>
+    <div class="alt-panel" id="alt3">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Bent-Over Dumbbell Row</div>
+        <div class="alt-sets">3 sets × 12 reps · 60s rest</div>
+        <div class="alt-tip">Hinge at hips, back flat, knees slightly bent. Hold dumbbells and row both up together to lower ribcage. Squeeze shoulder blades. Keep core tight — don't let back round.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td>Set 1</td><td>12</td><td>Light</td><td><input type="checkbox" class="set-check" data-card="3" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same or +5</td><td><input type="checkbox" class="set-check" data-card="3" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 3</td><td>10</td><td>Same</td><td><input type="checkbox" class="set-check" data-card="3" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Mid Trapezius</span>
+        <span class="muscle-pill primary">Rhomboids</span>
+        <span class="muscle-pill secondary">Biceps</span>
+        <span class="muscle-pill secondary">Rear Delt</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Form:</strong> Sit tall, chest up. Pull handle to lower sternum, elbows close to body. Squeeze shoulder blades together at end. Don't round forward on the return.</div>
+      <div class="rest-row">
+        <span>Rest 60 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(60,'Cable Row')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 4 — SHOULDER PRESS MACHINE -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card4">
+  <div class="card-header" onclick="toggleCard(4)">
+    <div class="ex-num">04</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name4">Shoulder Press Machine</div>
+      <div class="ex-meta">
+        <span>3 sets × 12 reps</span><span>60s rest</span>
+        <span class="muscle-tag">Shoulders</span><span class="muscle-tag">Triceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,4)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn4" onclick="markDone(event,4)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body4">
+    <div class="ex-visual">🦾</div>
+    <div class="alt-panel" id="alt4">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Seated Dumbbell Shoulder Press</div>
+        <div class="alt-sets">3 sets × 12 reps · 60s rest</div>
+        <div class="alt-tip">Sit upright on a bench, back supported. Dumbbells at ear height, elbows at 90°. Press straight up without flaring too wide. Don't arch your lower back — brace core first.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td>Set 1</td><td>12</td><td>Light</td><td><input type="checkbox" class="set-check" data-card="4" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same</td><td><input type="checkbox" class="set-check" data-card="4" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 3</td><td>10</td><td>+5 optional</td><td><input type="checkbox" class="set-check" data-card="4" data-rest="60" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Anterior Deltoid</span>
+        <span class="muscle-pill primary">Medial Deltoid</span>
+        <span class="muscle-pill secondary">Triceps</span>
+        <span class="muscle-pill secondary">Upper Trapezius</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Form:</strong> Press straight up — don't flare elbows too wide. Stop just short of full lockout. Keep core braced so you're not arching back to push.</div>
+      <div class="rest-row">
+        <span>Rest 60 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(60,'Shoulder Press')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 5 — DUMBBELL CURL -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card5">
+  <div class="card-header" onclick="toggleCard(5)">
+    <div class="ex-num">05</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name5">Dumbbell Curl</div>
+      <div class="ex-meta">
+        <span>2 sets × 12 reps</span><span>45s rest</span>
+        <span class="muscle-tag">Biceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,5)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn5" onclick="markDone(event,5)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body5">
+    <div class="ex-visual">💪</div>
+    <div class="alt-panel" id="alt5">
+      <div class="alt-header">⚡ Barbell Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Barbell Curl</div>
+        <div class="alt-sets">2 sets × 12 reps · 45s rest</div>
+        <div class="alt-tip">Straight bar, shoulder-width grip, palms up. Curl up keeping elbows pinned at sides. Barbell forces both arms to work equally — great for symmetry.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td>Set 1</td><td>12</td><td>Moderate DB</td><td><input type="checkbox" class="set-check" data-card="5" data-rest="45" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same</td><td><input type="checkbox" class="set-check" data-card="5" data-rest="45" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Biceps Brachii</span>
+        <span class="muscle-pill secondary">Brachialis</span>
+        <span class="muscle-pill secondary">Forearm Flexors</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Form:</strong> Supinate (rotate) as you curl up — palms face ceiling at top. Elbows stay pinned at your sides. Lower slowly: 2 counts down.</div>
+      <div class="rest-row">
+        <span>Rest 45 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(45,'Dumbbell Curl')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════ -->
+<!-- EXERCISE 6 — TRICEP PUSHDOWN -->
+<!-- ═══════════════════════════════════════════ -->
+<div class="card" id="card6">
+  <div class="card-header" onclick="toggleCard(6)">
+    <div class="ex-num">06</div>
+    <div class="ex-info">
+      <div class="ex-name" id="name6">Tricep Pushdown (Cable)</div>
+      <div class="ex-meta">
+        <span>2 sets × 12 reps</span><span>45s rest</span>
+        <span class="muscle-tag">Triceps</span>
+      </div>
+    </div>
+    <div class="card-actions">
+      <button class="unavail-btn" onclick="toggleUnavail(event,6)" title="Mark equipment unavailable">🚫 N/A</button>
+      <button class="done-btn" id="btn6" onclick="markDone(event,6)">✓</button>
+    </div>
+  </div>
+  <div class="card-body" id="body6">
+    <div class="ex-visual">⬇️</div>
+    <div class="alt-panel" id="alt6">
+      <div class="alt-header">⚡ Free Weight Alternative</div>
+      <div class="alt-body">
+        <div class="alt-name">Dumbbell Overhead Tricep Extension</div>
+        <div class="alt-sets">2 sets × 12 reps · 45s rest</div>
+        <div class="alt-tip">Hold one dumbbell with both hands overhead, arms straight. Bend elbows to lower it behind your head, then press back up. Keep upper arms still — only forearms move.</div>
+      </div>
+    </div>
+    <div class="card-detail">
+      <table class="sets-table">
+        <thead><tr><th>Set</th><th>Reps</th><th>Weight</th><th>Done</th></tr></thead>
+        <tbody>
+          <tr><td>Set 1</td><td>12</td><td>Light–moderate</td><td><input type="checkbox" class="set-check" data-card="6" data-rest="45" onchange="onSetCheck(this)"></td></tr>
+          <tr><td>Set 2</td><td>12</td><td>Same or +5</td><td><input type="checkbox" class="set-check" data-card="6" data-rest="45" onchange="onSetCheck(this)"></td></tr>
+        </tbody>
+      </table>
+      <div class="muscle-section">Muscles Worked</div>
+      <div class="muscle-list">
+        <span class="muscle-pill primary">Triceps Brachii</span>
+        <span class="muscle-pill secondary">Anconeus</span>
+      </div>
+      <div style="height:10px"></div>
+      <div class="tip"><strong>Form:</strong> Elbows pinned to sides, don't move them. Push straight down until arms are fully extended. Control back up. Use rope or straight bar — both fine today.</div>
+      <div class="rest-row">
+        <span>Rest 45 sec between sets</span>
+        <button class="rest-timer-btn" onclick="startTimer(45,'Tricep Pushdown')">⏱ Start Rest</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- COOLDOWN -->
+<div class="section-label">Cool Down · 5 min</div>
+<div class="cooldown-card">
+  <div class="cooldown-item">Cross-body shoulder stretch · 30s each side</div>
+  <div class="cooldown-item">Doorway chest opener · 30s</div>
+  <div class="cooldown-item">Seated hamstring stretch · 30s each</div>
+  <div class="cooldown-item">Deep breathing · 1 min</div>
+</div>
+
+<div style="margin: 20px 16px 0; padding: 14px; background: #1a1a10; border: 1px solid #3a3a10; border-radius: 8px; font-size: 12px; color: #a0a060; line-height: 1.6;">
+  <strong style="color:#c0c040;">Tomorrow:</strong> Rest or light walk. No gym. Muscles rebuild during rest. Come back Day 3 and we'll step it up slightly.
+</div>
+
+<script>
+  const totalSets = document.querySelectorAll('.set-check').length;
+  let timerInterval = null;
+  let timerTotal = 60;
+  const CIRCUMFERENCE = 2 * Math.PI * 90; // 565.5
+
+  function toggleCard(n) {
+    document.getElementById('body' + n).classList.toggle('open');
+  }
+
+  function markDone(e, n) {
+    e.stopPropagation();
+    document.getElementById('card' + n).classList.toggle('done');
+    updateProgress();
+  }
+
+  function toggleUnavail(e, n) {
+    e.stopPropagation();
+    const card = document.getElementById('card' + n);
+    const alt  = document.getElementById('alt' + n);
+    card.classList.toggle('unavailable');
+    // Show alt panel and open the card body
+    if (card.classList.contains('unavailable')) {
+      alt.classList.add('show');
+      document.getElementById('body' + n).classList.add('open');
+    } else {
+      alt.classList.remove('show');
+    }
+  }
+
+  // Called when any set checkbox is checked
+  function onSetCheck(checkbox) {
+    updateProgress();
+    if (checkbox.checked) {
+      const restSecs = parseInt(checkbox.getAttribute('data-rest')) || 60;
+      const cardId   = checkbox.getAttribute('data-card');
+      const exName   = document.getElementById('name' + cardId).textContent;
+      startTimer(restSecs, exName);
+    }
+  }
+
+  function updateProgress() {
+    const checked = document.querySelectorAll('.set-check:checked').length;
+    document.getElementById('progressBar').style.width = ((checked / totalSets) * 100) + '%';
+  }
+
+  function startTimer(seconds, label) {
+    clearInterval(timerInterval);
+    timerTotal = seconds;
+    let remaining = seconds;
+
+    const overlay   = document.getElementById('timerOverlay');
+    const countEl   = document.getElementById('timerCount');
+    const arcEl     = document.getElementById('timerArc');
+    const nameEl    = document.getElementById('timerExName');
+    const doneMsg   = document.getElementById('timerDoneMsg');
+
+    nameEl.textContent = label ? label + ' — Rest' : 'Rest';
+    countEl.textContent = remaining;
+    doneMsg.classList.remove('show');
+    arcEl.style.strokeDashoffset = '0';
+    overlay.classList.add('show');
+
+    timerInterval = setInterval(() => {
+      remaining--;
+      countEl.textContent = remaining;
+
+      // Arc shrinks as time passes
+      const elapsed  = timerTotal - remaining;
+      const offset   = (elapsed / timerTotal) * CIRCUMFERENCE;
+      arcEl.style.strokeDashoffset = offset;
+
+      if (remaining <= 0) {
+        clearInterval(timerInterval);
+        countEl.textContent = '0';
+        arcEl.style.strokeDashoffset = CIRCUMFERENCE;
+        doneMsg.classList.add('show');
+        setTimeout(() => overlay.classList.remove('show'), 1500);
+      }
+    }, 1000);
+  }
+
+  function stopTimer() {
+    clearInterval(timerInterval);
+    document.getElementById('timerOverlay').classList.remove('show');
+  }
+
+  // Auto-open first exercise
+  document.getElementById('body1').classList.add('open');
+</script>
+</body>
+</html>

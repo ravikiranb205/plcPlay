@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="theme-color" content="#0f0f0f">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="PLC Workout">
+<meta name="description" content="Your personal workout tracker — offline, installable, no login needed.">
+<title>PLC Workout</title>
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icons/icon-192.png">
+<link rel="icon" href="./icons/icon-192.png">
+<link rel="stylesheet" href="./css/styles.css">
+</head>
+<body>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HOME VIEW                                           -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="view active" id="viewHome">
+  <div class="home-header">
+    <div class="home-gym-label">⚡ Powerhouse Gym · South Lyon</div>
+    <div class="home-title">PLC Workout</div>
+    <div class="home-sub">Pick a workout and let's go.</div>
+  </div>
+
+  <div class="section-heading">Workouts</div>
+  <div class="workout-list" id="workoutList">
+    <!-- populated by app.js -->
+  </div>
+
+  <div style="height:16px"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WORKOUT VIEW                                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="view" id="viewWorkout">
+  <!-- populated by workout.js -->
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- HISTORY VIEW                                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="view" id="viewHistory">
+  <div class="home-header">
+    <div class="home-gym-label">⚡ Powerhouse Gym · South Lyon</div>
+    <div class="home-title">History</div>
+    <div class="home-sub">Your completed sessions.</div>
+  </div>
+  <div class="section-heading">Past Workouts</div>
+  <div id="historyList" class="history-list">
+    <!-- populated by app.js -->
+  </div>
+  <div style="height:16px"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- BOTTOM NAV                                          -->
+<!-- ═══════════════════════════════════════════════════ -->
+<nav class="nav-bar">
+  <button class="nav-btn active" data-view="home">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
+      <polyline points="9 22 9 12 15 12 15 22"/>
+    </svg>
+    Home
+  </button>
+  <button class="nav-btn" data-view="history">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <circle cx="12" cy="12" r="10"/>
+      <polyline points="12 6 12 12 16 14"/>
+    </svg>
+    History
+  </button>
+</nav>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PWA INSTALL PROMPT                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="install-prompt hidden" id="installPrompt">
+  <div class="install-text">
+    <strong>Add to Home Screen</strong>
+    Install for full-screen offline access.
+  </div>
+  <button class="install-yes" id="installYes">Install</button>
+  <button class="install-dismiss" id="installDismiss">✕</button>
+</div>
+
+<script type="module" src="./js/app.js"></script>
+</body>
+</html>

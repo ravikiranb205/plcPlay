@@ -1,7 +1,7 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
 import { loadState, getHistory, pushHistory } from './store.js';
 
-const LAST_KEY = 'plc_last_workout';
+const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
 let deferredInstallPrompt = null;

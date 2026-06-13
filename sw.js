@@ -1,4 +1,4 @@
-const CACHE = 'plc-workout-v1';
+const CACHE = 'fitwin-v1';
 
 const ASSETS = [
   './',

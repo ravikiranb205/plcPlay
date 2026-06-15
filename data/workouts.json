@@ -84,7 +84,9 @@
           "sets": "3 sets × 12 reps each side · 60s rest",
           "tip": "Plant one knee and hand on a bench. Pull dumbbell up to hip, elbow close to body. Same muscles, full range of motion. No cable needed.",
           "emoji": "🏋️"
-        }
+        },
+        "image": "./images/day3-ex2.jpg",
+        "altImage": "./images/day3-ex3-alt.jpg"
       },
       {
         "id": 2,
@@ -135,7 +137,9 @@
           "sets": "3 sets × 12 reps · 60s rest",
           "tip": "Lie flat on a bench. Dumbbells at chest level, elbows at ~45°. Press up and together. More stabilizer work than the machine — use slightly lighter weight.",
           "emoji": "💪"
-        }
+        },
+        "image": "./images/day3-ex1-alt.jpg",
+        "altImage": "./images/day5-ex2-alt.jpg"
       },
       {
         "id": 3,
@@ -180,7 +184,9 @@
           "sets": "3 sets × 12 reps · 60s rest",
           "tip": "Hinge at hips, back flat, knees slightly bent. Hold dumbbells and row both up together to lower ribcage. Squeeze shoulder blades. Keep core tight — don't let back round.",
           "emoji": "🔗"
-        }
+        },
+        "image": "./images/day3-ex3.jpg",
+        "altImage": "./images/day3-ex2-alt.jpg"
       },
       {
         "id": 4,
@@ -225,7 +231,9 @@
           "sets": "3 sets × 12 reps · 60s rest",
           "tip": "Sit upright on a bench, back supported. Dumbbells at ear height, elbows at 90°. Press straight up without flaring too wide. Don't arch your lower back — brace core first.",
           "emoji": "🦾"
-        }
+        },
+        "image": "./images/day3-ex4-alt.jpg",
+        "altImage": "./images/day3-ex4.jpg"
       },
       {
         "id": 5,
@@ -262,7 +270,9 @@
           "sets": "2 sets × 12 reps · 45s rest",
           "tip": "Straight bar, shoulder-width grip, palms up. Curl up keeping elbows pinned at sides. Barbell forces both arms to work equally — great for symmetry.",
           "emoji": "💪"
-        }
+        },
+        "image": "./images/day3-ex6.jpg",
+        "altImage": "./images/day3-ex6-alt.jpg"
       },
       {
         "id": 6,
@@ -298,7 +308,9 @@
           "sets": "2 sets × 12 reps · 45s rest",
           "tip": "Hold one dumbbell with both hands overhead, arms straight. Bend elbows to lower it behind your head, then press back up. Keep upper arms still — only forearms move.",
           "emoji": "⬇️"
-        }
+        },
+        "image": "./images/day3-ex7.jpg",
+        "altImage": "./images/day3-ex7-alt.jpg"
       }
     ],
     "type": "full_body",
@@ -388,7 +400,9 @@
           "sets": "4 sets × 10 · 75s",
           "tip": "Same angle, barbell version. Lock the bench, grip just outside shoulders, lower to upper chest. Need a spotter or safety arms for the last set.",
           "emoji": "📐"
-        }
+        },
+        "image": "./images/day3-ex1.jpg",
+        "altImage": "./images/day3-ex1-alt.jpg"
       },
       {
         "id": 2,
@@ -440,7 +454,9 @@
           "sets": "4 sets × 10 · 75s",
           "tip": "Hinge at hips, flat back. Row both dumbbells to your ribcage, elbows tight. Hits lats and mid-back when no cable is free.",
           "emoji": "🏋️"
-        }
+        },
+        "image": "./images/day3-ex2.jpg",
+        "altImage": "./images/day3-ex2-alt.jpg"
       },
       {
         "id": 3,
@@ -485,7 +501,9 @@
           "sets": "3 sets × 12 each · 60s",
           "tip": "Knee and hand on bench, flat back. Pull dumbbell to hip, elbow close. One side at a time fixes left/right imbalances.",
           "emoji": "🔗"
-        }
+        },
+        "image": "./images/day3-ex3.jpg",
+        "altImage": "./images/day3-ex3-alt.jpg"
       },
       {
         "id": 4,
@@ -530,7 +548,9 @@
           "sets": "3 sets × 10 · 60s",
           "tip": "Skip the rotation. Dumbbells at ear height, press straight up. Simpler and lets you load a bit heavier if shoulders feel good.",
           "emoji": "🦾"
-        }
+        },
+        "image": "./images/day3-ex4.jpg",
+        "altImage": "./images/day3-ex4-alt.jpg"
       },
       {
         "id": 5,
@@ -573,7 +593,9 @@
           "sets": "3 sets × 15 · 45s",
           "tip": "Single cable across body, raise out to the side. Constant tension the whole range. Use if dumbbells are taken.",
           "emoji": "↔️"
-        }
+        },
+        "image": "./images/day3-ex5.jpg",
+        "altImage": "./images/day3-ex5-alt.jpg"
       },
       {
         "id": 6,
@@ -617,7 +639,9 @@
           "sets": "3 sets × 12 · 45s",
           "tip": "Straight or EZ bar, shoulder-width. Both arms work equally. Keep elbows still, no swinging.",
           "emoji": "💪"
-        }
+        },
+        "image": "./images/day3-ex6.jpg",
+        "altImage": "./images/day3-ex6-alt.jpg"
       },
       {
         "id": 7,
@@ -659,7 +683,9 @@
           "sets": "3 sets × 12 · 45s",
           "tip": "One dumbbell, both hands, overhead. Lower behind head, press up. Hits the long head harder than pushdowns.",
           "emoji": "⬇️"
-        }
+        },
+        "image": "./images/day3-ex7.jpg",
+        "altImage": "./images/day3-ex7-alt.jpg"
       },
       {
         "id": 8,
@@ -697,7 +723,9 @@
           "sets": "2 sets × 15 · 45s",
           "tip": "Hinge forward, light dumbbells. Raise out to the sides squeezing rear delts. Same target, no cable.",
           "emoji": "🎯"
-        }
+        },
+        "image": "./images/day3-ex8.jpg",
+        "altImage": "./images/day3-ex8-alt.jpg"
       }
     ],
     "type": "upper",
@@ -787,7 +815,9 @@
           "sets": "3 sets × 12 · 75s",
           "tip": "Hold one dumbbell at your chest. Squat down between your knees, chest up, heels down. Easier on the back than a barbell and great for grooving the pattern back in.",
           "emoji": "🏋️"
-        }
+        },
+        "image": "./images/day4-ex1.jpg",
+        "altImage": "./images/day4-ex1-alt.jpg"
       },
       {
         "id": 2,
@@ -829,7 +859,9 @@
           "sets": "3 sets × 12 · 60s",
           "tip": "Dumbbells in front of thighs, soft knees. Push hips back, lower the weights along your legs until you feel the hamstring stretch, then drive hips forward. Back stays flat.",
           "emoji": "🔁"
-        }
+        },
+        "image": "./images/day4-ex2.jpg",
+        "altImage": "./images/day4-ex2-alt.jpg"
       },
       {
         "id": 3,
@@ -869,7 +901,9 @@
           "sets": "3 sets × 10 each leg · 60s",
           "tip": "One foot forward, one back. Drop straight down, front knee tracks over the foot. A dumbbell in each hand. Unilateral work fixes side-to-side weakness.",
           "emoji": "⬆️"
-        }
+        },
+        "image": "./images/day4-ex3.jpg",
+        "altImage": "./images/day4-ex3-alt.jpg"
       },
       {
         "id": 4,
@@ -913,7 +947,9 @@
           "sets": "3 sets × 12 · 75s",
           "tip": "Upper back on a bench, bar over hips (use a pad). Drive through heels, squeeze glutes at the top, chin tucked. Easier on the lower back than RDLs if it feels cranky.",
           "emoji": "🏗️"
-        }
+        },
+        "image": "./images/day4-ex4.jpg",
+        "altImage": "./images/day4-ex4-alt.jpg"
       },
       {
         "id": 5,
@@ -955,7 +991,9 @@
           "sets": "3 sets × 10 each · 45s",
           "tip": "Dumbbell each hand, step onto a flat bench, drive through the heel, stand tall, control back down. Hits calves, quads and glutes if the calf machine is taken.",
           "emoji": "🦶"
-        }
+        },
+        "image": "./images/day4-ex5.jpg",
+        "altImage": "./images/day4-ex5-alt.jpg"
       },
       {
         "id": 6,
@@ -992,7 +1030,326 @@
           "sets": "2 sets × 10 each · 45s",
           "tip": "If you'd rather end on legs than core: dumbbells at your sides, step forward into a lunge, alternate. Keep torso upright. Skip if quads are already torched.",
           "emoji": "🧱"
-        }
+        },
+        "image": "./images/day4-ex6.jpg",
+        "altImage": "./images/day4-ex6-alt.jpg"
+      }
+    ],
+    "type": "lower",
+    "nextWorkoutId": "day5"
+  },
+  {
+    "id": "day5",
+    "type": "push",
+    "nextWorkoutId": "day4",
+    "title": "Day 5 — Push",
+    "subtitle": "Chest / Shoulders / Triceps · Moderate+",
+    "gym": "Powerhouse Gym · South Lyon",
+    "badges": [
+      {
+        "text": "Week 2 — real split",
+        "type": "alert"
+      },
+      {
+        "text": "Nudging weights up",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Week 2 starts — this is a real Push day:</strong> You cleared a full upper/lower cycle and recovered. Now we progress. Add ~5 lb per dumbbell on the incline press vs Friday and treat it as the main lift. Everything else: solid working weight, still stop 1–2 reps short of failure. If Saturday legs left you sore, that's fine — today is all upper.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~55",
+      "totalSets": 19
+    },
+    "warmup": [
+      "3–5 min light cardio or rower",
+      "15 band pull-aparts",
+      "10 shoulder dislocates with a band",
+      "1–2 light warm-up sets on the incline press"
+    ],
+    "cooldown": [
+      "Doorway chest stretch · 30s each side",
+      "Cross-body shoulder stretch · 30s each",
+      "Overhead triceps stretch · 30s each",
+      "Deep breathing · 1 min"
+    ],
+    "closing": "",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Incline Dumbbell Press",
+        "emoji": "📐",
+        "muscles": [
+          "Upper Chest",
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Upper Pectorals",
+          "Anterior Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps"
+        ],
+        "tip": "<strong>Form:</strong> Lead lift today, warm up properly then add 5 lb/DB over what you used Friday. Bench at 30°. Lower under control, press up and slightly in. Last set should feel hard but leave 1 rep.",
+        "sets": [
+          {
+            "label": "Warm",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 90,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Day 3 weight +5",
+            "rest": 90
+          },
+          {
+            "label": "Set 2",
+            "reps": "8–10",
+            "weight": "Same",
+            "rest": 90
+          },
+          {
+            "label": "Set 3",
+            "reps": "8",
+            "weight": "Push it",
+            "rest": 90
+          }
+        ],
+        "restSecs": 90,
+        "alt": {
+          "name": "Flat Barbell Bench Press",
+          "sets": "4 sets × 8–10 · 90s",
+          "tip": "If incline DBs are taken or you want to go heavier: flat barbell. Grip just outside shoulders, lower to mid-chest, drive up. Use safety arms or a spotter on the top set.",
+          "emoji": "📐"
+        },
+        "image": "./images/day3-ex1.jpg",
+        "altImage": "./images/day5-ex1-alt.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Flat Dumbbell Press",
+        "emoji": "💪",
+        "muscles": [
+          "Chest",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Pectoralis Major"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Triceps"
+        ],
+        "tip": "<strong>Form:</strong> Second chest angle to hit the mid and lower pecs. Flat bench, dumbbells at chest level, elbows ~45°. Press up and together, squeeze at top. Controlled negative.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Moderate",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8–10",
+            "weight": "+5 opt",
+            "rest": 75
+          }
+        ],
+        "restSecs": 75,
+        "alt": {
+          "name": "Chest Dips",
+          "sets": "3 sets × 8–10 · 75s",
+          "tip": "Lean torso forward to bias the chest. Lower until you feel a stretch across the pecs, press back up. Bodyweight is plenty today.",
+          "emoji": "💪"
+        },
+        "image": "./images/day3-ex1-alt.jpg",
+        "altImage": "./images/day5-ex2-alt.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Seated Dumbbell Shoulder Press",
+        "emoji": "🦾",
+        "muscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Anterior Delt",
+          "Medial Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps",
+          "Upper Traps"
+        ],
+        "tip": "<strong>Form:</strong> Back supported, DBs at ear height, press straight up without banging them together. Don't arch the lower back — brace core first. Stop just short of lockout to keep tension on the delts.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Moderate",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8",
+            "weight": "+5 opt",
+            "rest": 75
+          }
+        ],
+        "restSecs": 75,
+        "alt": {
+          "name": "Arnold Press",
+          "sets": "3 sets × 10 · 75s",
+          "tip": "Start palms facing you, rotate out as you press. Hits all three delt heads. Go a touch lighter — the rotation adds difficulty.",
+          "emoji": "🔄"
+        },
+        "image": "./images/day3-ex4-alt.jpg",
+        "altImage": "./images/day3-ex4.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Side Lateral Raise",
+        "emoji": "↔️",
+        "muscles": [
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Medial Deltoid"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt"
+        ],
+        "tip": "<strong>Form:</strong> The move that builds shoulder width. Slight elbow bend, raise to shoulder height leading with elbows, lower slow. If you're swinging, it's too heavy.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "12–15",
+            "weight": "Same",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Front Two-Dumbbell Raise",
+          "sets": "3 sets × 12 · 45s",
+          "tip": "Raise dumbbells straight in front to shoulder height. Hits the front delt. Light weight, strict form.",
+          "emoji": "↔️"
+        },
+        "image": "./images/day3-ex5-alt.jpg",
+        "altImage": "./images/day5-ex4-alt.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Triceps Rope Pushdown",
+        "emoji": "⬇️",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Anconeus"
+        ],
+        "tip": "<strong>Form:</strong> Elbows pinned to your sides. Push down and spread the rope apart at the bottom for a peak squeeze. Control back up. First triceps move so you've got fresh strength here.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "+5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Close-Grip Bench Press",
+          "sets": "3 sets × 10 · 60s",
+          "tip": "Hands shoulder-width on the bar, elbows tucked. Lower to lower chest, press up. A compound triceps builder if the cable station is taken.",
+          "emoji": "⬇️"
+        },
+        "image": "./images/day3-ex7.jpg",
+        "altImage": "./images/day5-ex5-alt.jpg"
+      },
+      {
+        "id": 6,
+        "name": "Overhead DB Triceps Extension",
+        "emoji": "🔼",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Form:</strong> Targets the long head — the part overhead work hits best. One dumbbell, both hands, lower behind your head. Upper arms stay still and close to your ears, only the forearms move.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "EZ-Bar Skullcrusher",
+          "sets": "3 sets × 12 · 45s",
+          "tip": "Lie on bench, EZ bar over forehead. Bend at elbows to lower toward hairline, extend back up. Keep upper arms vertical and still. Lighter than you think — protect the elbows.",
+          "emoji": "🔼"
+        },
+        "image": "./images/day3-ex7-alt.jpg",
+        "altImage": "./images/day5-ex6-alt.jpg"
       }
     ],
     "type": "lower",

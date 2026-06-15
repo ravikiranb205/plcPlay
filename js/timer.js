@@ -28,15 +28,23 @@ export function startTimer(seconds, currentExercise, allExercises) {
     ? allExercises.find(e => e.id > currentExercise.id)
     : null;
 
+  function setNextPhoto(el, ex, fallbackEmoji) {
+    if (ex?.image) {
+      el.innerHTML = `<img src="${ex.image}" alt="${ex.name}" style="width:56px;height:56px;object-fit:cover;border-radius:6px;">`;
+    } else {
+      el.textContent = fallbackEmoji;
+    }
+  }
+
   if (nextEx) {
     nextName.textContent = nextEx.name;
     nextMeta.textContent = `${nextEx.sets.filter(s => !s.isWarm).length} sets · ${nextEx.restSecs}s rest`;
-    nextPhoto.textContent = nextEx.emoji;
+    setNextPhoto(nextPhoto, nextEx, nextEx.emoji);
     nextUp.classList.remove('hidden');
   } else {
     nextName.textContent = currentExercise ? 'Last one — you\'re done!' : 'Finished!';
     nextMeta.textContent = 'Cool down next';
-    nextPhoto.textContent = currentExercise ? currentExercise.emoji : '🏁';
+    setNextPhoto(nextPhoto, currentExercise, '🏁');
     nextUp.classList.remove('hidden');
   }
 

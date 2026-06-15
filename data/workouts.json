@@ -1,15 +1,25 @@
 [
   {
     "id": "day1",
-    "title": "Day 1 — Comeback",
-    "subtitle": "Full Body · Light",
-    "gym": "⚡ Powerhouse Gym · South Lyon",
+    "title": "Day 1 \u2014 Comeback",
+    "subtitle": "Full Body \u00b7 Light",
+    "gym": "\u26a1 Powerhouse Gym \u00b7 South Lyon",
     "badges": [
-      { "text": "Back after 2 months", "type": "alert" },
-      { "text": "Legs easy — biked yesterday", "type": "info" }
+      {
+        "text": "Back after 2 months",
+        "type": "alert"
+      },
+      {
+        "text": "Legs easy \u2014 biked yesterday",
+        "type": "info"
+      }
     ],
-    "notice": "<strong>Today's goal:</strong> Wake the muscles up, not break them down. Use 60–70% of your old weights. Focus on form and feel. Stop 1–2 reps before failure on every set. No soreness is a win today.",
-    "stats": { "exercises": 6, "minutes": "~45", "totalSets": 16 },
+    "notice": "<strong>Today's goal:</strong> Wake the muscles up, not break them down. Use 60\u201370% of your old weights. Focus on form and feel. Stop 1\u20132 reps before failure on every set. No soreness is a win today.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~45",
+      "totalSets": 16
+    },
     "warmup": [
       "5 min treadmill brisk walk or light jog",
       "10 arm circles each direction",
@@ -17,152 +27,304 @@
       "10 bodyweight squats (light, just to open hips)"
     ],
     "cooldown": [
-      "Cross-body shoulder stretch · 30s each side",
-      "Doorway chest opener · 30s",
-      "Seated hamstring stretch · 30s each",
-      "Deep breathing · 1 min"
+      "Cross-body shoulder stretch \u00b7 30s each side",
+      "Doorway chest opener \u00b7 30s",
+      "Seated hamstring stretch \u00b7 30s each",
+      "Deep breathing \u00b7 1 min"
     ],
     "closing": "<strong style='color:#c0c040;'>Tomorrow:</strong> Rest or light walk. No gym. Muscles rebuild during rest. Come back Day 3 and we'll step it up slightly.",
     "exercises": [
       {
         "id": 1,
         "name": "Lat Pulldown",
-        "emoji": "🏋️",
-        "muscles": ["Back", "Biceps"],
-        "primaryMuscles": ["Latissimus Dorsi", "Teres Major"],
-        "secondaryMuscles": ["Biceps", "Rear Delt"],
-        "tip": "<strong>Form:</strong> Pull bar to upper chest, lean back slightly. Squeeze lats at bottom. Control the return — don't let it snap back. No momentum.",
+        "emoji": "\ud83c\udfcb\ufe0f",
+        "muscles": [
+          "Back",
+          "Biceps"
+        ],
+        "primaryMuscles": [
+          "Latissimus Dorsi",
+          "Teres Major"
+        ],
+        "secondaryMuscles": [
+          "Biceps",
+          "Rear Delt"
+        ],
+        "tip": "<strong>Form:</strong> Pull bar to upper chest, lean back slightly. Squeeze lats at bottom. Control the return \u2014 don't let it snap back. No momentum.",
         "sets": [
-          { "label": "Warm", "reps": "15", "weight": "Light", "rest": 60, "isWarm": true },
-          { "label": "Set 1", "reps": "12", "weight": "~50% max", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "Same or +5", "rest": 60 },
-          { "label": "Set 3", "reps": "10–12", "weight": "Same", "rest": 60 }
+          {
+            "label": "Warm",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 60,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "~50% max",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same or +5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10\u201312",
+            "weight": "Same",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Dumbbell Single-Arm Row",
-          "sets": "3 sets × 12 reps each side · 60s rest",
+          "sets": "3 sets \u00d7 12 reps each side \u00b7 60s rest",
           "tip": "Plant one knee and hand on a bench. Pull dumbbell up to hip, elbow close to body. Same muscles, full range of motion. No cable needed.",
-          "emoji": "🏋️"
+          "emoji": "\ud83c\udfcb\ufe0f"
         }
       },
       {
         "id": 2,
         "name": "Chest Press Machine",
-        "emoji": "💪",
-        "muscles": ["Chest", "Triceps"],
-        "primaryMuscles": ["Pectoralis Major"],
-        "secondaryMuscles": ["Anterior Delt", "Triceps"],
-        "tip": "<strong>Why machine today:</strong> Safer coming back — no stabilizer fatigue risk. Adjust seat so handles align with mid-chest. Full extension but don't lock elbows out.",
+        "emoji": "\ud83d\udcaa",
+        "muscles": [
+          "Chest",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Pectoralis Major"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Triceps"
+        ],
+        "tip": "<strong>Why machine today:</strong> Safer coming back \u2014 no stabilizer fatigue risk. Adjust seat so handles align with mid-chest. Full extension but don't lock elbows out.",
         "sets": [
-          { "label": "Warm", "reps": "15", "weight": "Light", "rest": 60, "isWarm": true },
-          { "label": "Set 1", "reps": "12", "weight": "~60% max", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "Same", "rest": 60 },
-          { "label": "Set 3", "reps": "10", "weight": "+5 optional", "rest": 60 }
+          {
+            "label": "Warm",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 60,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "~60% max",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "+5 optional",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Dumbbell Bench Press",
-          "sets": "3 sets × 12 reps · 60s rest",
-          "tip": "Lie flat on a bench. Dumbbells at chest level, elbows at ~45°. Press up and together. More stabilizer work than the machine — use slightly lighter weight.",
-          "emoji": "💪"
+          "sets": "3 sets \u00d7 12 reps \u00b7 60s rest",
+          "tip": "Lie flat on a bench. Dumbbells at chest level, elbows at ~45\u00b0. Press up and together. More stabilizer work than the machine \u2014 use slightly lighter weight.",
+          "emoji": "\ud83d\udcaa"
         }
       },
       {
         "id": 3,
         "name": "Seated Cable Row",
-        "emoji": "🔗",
-        "muscles": ["Back", "Biceps"],
-        "primaryMuscles": ["Mid Trapezius", "Rhomboids"],
-        "secondaryMuscles": ["Biceps", "Rear Delt"],
+        "emoji": "\ud83d\udd17",
+        "muscles": [
+          "Back",
+          "Biceps"
+        ],
+        "primaryMuscles": [
+          "Mid Trapezius",
+          "Rhomboids"
+        ],
+        "secondaryMuscles": [
+          "Biceps",
+          "Rear Delt"
+        ],
         "tip": "<strong>Form:</strong> Sit tall, chest up. Pull handle to lower sternum, elbows close to body. Squeeze shoulder blades together at end. Don't round forward on the return.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Light", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "Same or +5", "rest": 60 },
-          { "label": "Set 3", "reps": "10", "weight": "Same", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same or +5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Bent-Over Dumbbell Row",
-          "sets": "3 sets × 12 reps · 60s rest",
-          "tip": "Hinge at hips, back flat, knees slightly bent. Hold dumbbells and row both up together to lower ribcage. Squeeze shoulder blades. Keep core tight — don't let back round.",
-          "emoji": "🔗"
+          "sets": "3 sets \u00d7 12 reps \u00b7 60s rest",
+          "tip": "Hinge at hips, back flat, knees slightly bent. Hold dumbbells and row both up together to lower ribcage. Squeeze shoulder blades. Keep core tight \u2014 don't let back round.",
+          "emoji": "\ud83d\udd17"
         }
       },
       {
         "id": 4,
         "name": "Shoulder Press Machine",
-        "emoji": "🦾",
-        "muscles": ["Shoulders", "Triceps"],
-        "primaryMuscles": ["Anterior Deltoid", "Medial Deltoid"],
-        "secondaryMuscles": ["Triceps", "Upper Trapezius"],
-        "tip": "<strong>Form:</strong> Press straight up — don't flare elbows too wide. Stop just short of full lockout. Keep core braced so you're not arching back to push.",
+        "emoji": "\ud83e\uddbe",
+        "muscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Anterior Deltoid",
+          "Medial Deltoid"
+        ],
+        "secondaryMuscles": [
+          "Triceps",
+          "Upper Trapezius"
+        ],
+        "tip": "<strong>Form:</strong> Press straight up \u2014 don't flare elbows too wide. Stop just short of full lockout. Keep core braced so you're not arching back to push.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Light", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "Same", "rest": 60 },
-          { "label": "Set 3", "reps": "10", "weight": "+5 optional", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "+5 optional",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Seated Dumbbell Shoulder Press",
-          "sets": "3 sets × 12 reps · 60s rest",
-          "tip": "Sit upright on a bench, back supported. Dumbbells at ear height, elbows at 90°. Press straight up without flaring too wide. Don't arch your lower back — brace core first.",
-          "emoji": "🦾"
+          "sets": "3 sets \u00d7 12 reps \u00b7 60s rest",
+          "tip": "Sit upright on a bench, back supported. Dumbbells at ear height, elbows at 90\u00b0. Press straight up without flaring too wide. Don't arch your lower back \u2014 brace core first.",
+          "emoji": "\ud83e\uddbe"
         }
       },
       {
         "id": 5,
         "name": "Dumbbell Curl",
-        "emoji": "💪",
-        "muscles": ["Biceps"],
-        "primaryMuscles": ["Biceps Brachii"],
-        "secondaryMuscles": ["Brachialis", "Forearm Flexors"],
-        "tip": "<strong>Form:</strong> Supinate (rotate) as you curl up — palms face ceiling at top. Elbows stay pinned at your sides. Lower slowly: 2 counts down.",
+        "emoji": "\ud83d\udcaa",
+        "muscles": [
+          "Biceps"
+        ],
+        "primaryMuscles": [
+          "Biceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Brachialis",
+          "Forearm Flexors"
+        ],
+        "tip": "<strong>Form:</strong> Supinate (rotate) as you curl up \u2014 palms face ceiling at top. Elbows stay pinned at your sides. Lower slowly: 2 counts down.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Moderate DB", "rest": 45 },
-          { "label": "Set 2", "reps": "12", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate DB",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Barbell Curl",
-          "sets": "2 sets × 12 reps · 45s rest",
-          "tip": "Straight bar, shoulder-width grip, palms up. Curl up keeping elbows pinned at sides. Barbell forces both arms to work equally — great for symmetry.",
-          "emoji": "💪"
+          "sets": "2 sets \u00d7 12 reps \u00b7 45s rest",
+          "tip": "Straight bar, shoulder-width grip, palms up. Curl up keeping elbows pinned at sides. Barbell forces both arms to work equally \u2014 great for symmetry.",
+          "emoji": "\ud83d\udcaa"
         }
       },
       {
         "id": 6,
         "name": "Tricep Pushdown (Cable)",
-        "emoji": "⬇️",
-        "muscles": ["Triceps"],
-        "primaryMuscles": ["Triceps Brachii"],
-        "secondaryMuscles": ["Anconeus"],
-        "tip": "<strong>Form:</strong> Elbows pinned to sides, don't move them. Push straight down until arms are fully extended. Control back up. Use rope or straight bar — both fine today.",
+        "emoji": "\u2b07\ufe0f",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Anconeus"
+        ],
+        "tip": "<strong>Form:</strong> Elbows pinned to sides, don't move them. Push straight down until arms are fully extended. Control back up. Use rope or straight bar \u2014 both fine today.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Light–moderate", "rest": 45 },
-          { "label": "Set 2", "reps": "12", "weight": "Same or +5", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Light\u2013moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same or +5",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Dumbbell Overhead Tricep Extension",
-          "sets": "2 sets × 12 reps · 45s rest",
-          "tip": "Hold one dumbbell with both hands overhead, arms straight. Bend elbows to lower it behind your head, then press back up. Keep upper arms still — only forearms move.",
-          "emoji": "⬇️"
+          "sets": "2 sets \u00d7 12 reps \u00b7 45s rest",
+          "tip": "Hold one dumbbell with both hands overhead, arms straight. Bend elbows to lower it behind your head, then press back up. Keep upper arms still \u2014 only forearms move.",
+          "emoji": "\u2b07\ufe0f"
         }
       }
-    ]
+    ],
+    "type": "full_body",
+    "nextWorkoutId": "day3"
   },
   {
     "id": "day3",
-    "title": "Day 3 — Upper Body",
-    "subtitle": "Push/Pull · Moderate",
-    "gym": "Powerhouse Gym · South Lyon",
+    "title": "Day 3 \u2014 Upper Body",
+    "subtitle": "Push/Pull \u00b7 Moderate",
+    "gym": "Powerhouse Gym \u00b7 South Lyon",
     "badges": [
-      { "text": "Volume up from Day 1", "type": "alert" },
-      { "text": "Legs still resting", "type": "info" }
+      {
+        "text": "Volume up from Day 1",
+        "type": "alert"
+      },
+      {
+        "text": "Legs still resting",
+        "type": "info"
+      }
     ],
-    "notice": "<strong>Today:</strong> You survived Day 1. Now add a little. Real working weight on the first two lifts — still leave 1–2 reps in the tank. If Day 1 left you sore, drop a set anywhere. Check a set and the rest timer starts automatically and shows what's coming next.",
-    "stats": { "exercises": 8, "minutes": "~55", "totalSets": 25 },
+    "notice": "<strong>Today:</strong> You survived Day 1. Now add a little. Real working weight on the first two lifts \u2014 still leave 1\u20132 reps in the tank. If Day 1 left you sore, drop a set anywhere. Check a set and the rest timer starts automatically and shows what's coming next.",
+    "stats": {
+      "exercises": 8,
+      "minutes": "~55",
+      "totalSets": 25
+    },
     "warmup": [
       "5 min incline treadmill walk or rowing machine",
       "15 band pull-aparts",
@@ -170,195 +332,398 @@
       "1 light warm-up set on first lift"
     ],
     "cooldown": [
-      "Doorway chest stretch · 30s each side",
-      "Cross-body shoulder stretch · 30s each",
-      "Overhead triceps stretch · 30s each",
-      "Lat hang or stretch · 30s"
+      "Doorway chest stretch \u00b7 30s each side",
+      "Cross-body shoulder stretch \u00b7 30s each",
+      "Overhead triceps stretch \u00b7 30s each",
+      "Lat hang or stretch \u00b7 30s"
     ],
     "closing": "",
     "exercises": [
       {
         "id": 1,
         "name": "Incline Dumbbell Press",
-        "emoji": "📐",
-        "muscles": ["Chest", "Shoulders"],
-        "primaryMuscles": ["Upper Pectorals", "Anterior Delt"],
-        "secondaryMuscles": ["Triceps"],
-        "tip": "<strong>Form:</strong> Bench at 30–45°. Press dumbbells up and slightly together. Don't bounce off chest. This hits upper chest the machine press skipped Day 1.",
+        "emoji": "\ud83d\udcd0",
+        "muscles": [
+          "Chest",
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Upper Pectorals",
+          "Anterior Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps"
+        ],
+        "tip": "<strong>Form:</strong> Bench at 30\u201345\u00b0. Press dumbbells up and slightly together. Don't bounce off chest. This hits upper chest the machine press skipped Day 1.",
         "sets": [
-          { "label": "Warm", "reps": "12", "weight": "Light", "rest": 75, "isWarm": true },
-          { "label": "Set 1", "reps": "10", "weight": "~65% max", "rest": 75 },
-          { "label": "Set 2", "reps": "10", "weight": "Same", "rest": 75 },
-          { "label": "Set 3", "reps": "8–10", "weight": "+5 opt", "rest": 75 }
+          {
+            "label": "Warm",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 75,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "~65% max",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8\u201310",
+            "weight": "+5 opt",
+            "rest": 75
+          }
         ],
         "restSecs": 75,
         "alt": {
           "name": "Barbell Incline Bench Press",
-          "sets": "4 sets × 10 · 75s",
+          "sets": "4 sets \u00d7 10 \u00b7 75s",
           "tip": "Same angle, barbell version. Lock the bench, grip just outside shoulders, lower to upper chest. Need a spotter or safety arms for the last set.",
-          "emoji": "📐"
+          "emoji": "\ud83d\udcd0"
         }
       },
       {
         "id": 2,
         "name": "Wide-Grip Lat Pulldown",
-        "emoji": "🏋️",
-        "muscles": ["Back", "Biceps"],
-        "primaryMuscles": ["Latissimus Dorsi", "Teres Major"],
-        "secondaryMuscles": ["Biceps", "Rear Delt"],
-        "tip": "<strong>Form:</strong> Grip wider than shoulders. Pull bar to upper chest, drive elbows down and back. Lean back ~15°. Stretch fully at top each rep.",
+        "emoji": "\ud83c\udfcb\ufe0f",
+        "muscles": [
+          "Back",
+          "Biceps"
+        ],
+        "primaryMuscles": [
+          "Latissimus Dorsi",
+          "Teres Major"
+        ],
+        "secondaryMuscles": [
+          "Biceps",
+          "Rear Delt"
+        ],
+        "tip": "<strong>Form:</strong> Grip wider than shoulders. Pull bar to upper chest, drive elbows down and back. Lean back ~15\u00b0. Stretch fully at top each rep.",
         "sets": [
-          { "label": "Warm", "reps": "15", "weight": "Light", "rest": 75, "isWarm": true },
-          { "label": "Set 1", "reps": "10", "weight": "Moderate", "rest": 75 },
-          { "label": "Set 2", "reps": "10", "weight": "+5", "rest": 75 },
-          { "label": "Set 3", "reps": "8–10", "weight": "Same", "rest": 75 }
+          {
+            "label": "Warm",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 75,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Moderate",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "+5",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8\u201310",
+            "weight": "Same",
+            "rest": 75
+          }
         ],
         "restSecs": 75,
         "alt": {
           "name": "Bent-Over Two-DB Row",
-          "sets": "4 sets × 10 · 75s",
+          "sets": "4 sets \u00d7 10 \u00b7 75s",
           "tip": "Hinge at hips, flat back. Row both dumbbells to your ribcage, elbows tight. Hits lats and mid-back when no cable is free.",
-          "emoji": "🏋️"
+          "emoji": "\ud83c\udfcb\ufe0f"
         }
       },
       {
         "id": 3,
         "name": "Seated Cable Row",
-        "emoji": "🔗",
-        "muscles": ["Back", "Biceps"],
-        "primaryMuscles": ["Mid Trapezius", "Rhomboids"],
-        "secondaryMuscles": ["Biceps", "Lats"],
+        "emoji": "\ud83d\udd17",
+        "muscles": [
+          "Back",
+          "Biceps"
+        ],
+        "primaryMuscles": [
+          "Mid Trapezius",
+          "Rhomboids"
+        ],
+        "secondaryMuscles": [
+          "Biceps",
+          "Lats"
+        ],
         "tip": "<strong>Form:</strong> Sit tall, chest up. Pull to lower sternum, squeeze blades together. Slow return, feel the stretch. No jerking with lower back.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Moderate", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "+5", "rest": 60 },
-          { "label": "Set 3", "reps": "10", "weight": "Same", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "+5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "One-Arm Dumbbell Row",
-          "sets": "3 sets × 12 each · 60s",
+          "sets": "3 sets \u00d7 12 each \u00b7 60s",
           "tip": "Knee and hand on bench, flat back. Pull dumbbell to hip, elbow close. One side at a time fixes left/right imbalances.",
-          "emoji": "🔗"
+          "emoji": "\ud83d\udd17"
         }
       },
       {
         "id": 4,
         "name": "Arnold Dumbbell Press",
-        "emoji": "🔄",
-        "muscles": ["Shoulders", "Triceps"],
-        "primaryMuscles": ["Anterior Delt", "Medial Delt"],
-        "secondaryMuscles": ["Triceps", "Upper Traps"],
-        "tip": "<strong>Form:</strong> Start palms facing you at chin. Rotate out as you press up. Hits all three delt heads. Go lighter than a normal press — the rotation is harder.",
+        "emoji": "\ud83d\udd04",
+        "muscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Anterior Delt",
+          "Medial Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps",
+          "Upper Traps"
+        ],
+        "tip": "<strong>Form:</strong> Start palms facing you at chin. Rotate out as you press up. Hits all three delt heads. Go lighter than a normal press \u2014 the rotation is harder.",
         "sets": [
-          { "label": "Set 1", "reps": "10", "weight": "Light", "rest": 60 },
-          { "label": "Set 2", "reps": "10", "weight": "Same", "rest": 60 },
-          { "label": "Set 3", "reps": "8–10", "weight": "+5 opt", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Light",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "8\u201310",
+            "weight": "+5 opt",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Dumbbell Shoulder Press",
-          "sets": "3 sets × 10 · 60s",
+          "sets": "3 sets \u00d7 10 \u00b7 60s",
           "tip": "Skip the rotation. Dumbbells at ear height, press straight up. Simpler and lets you load a bit heavier if shoulders feel good.",
-          "emoji": "🦾"
+          "emoji": "\ud83e\uddbe"
         }
       },
       {
         "id": 5,
         "name": "Side Lateral Raise",
-        "emoji": "↔️",
-        "muscles": ["Shoulders"],
-        "primaryMuscles": ["Medial Deltoid"],
-        "secondaryMuscles": ["Anterior Delt", "Traps"],
-        "tip": "<strong>Form:</strong> Slight bend in elbows. Raise to shoulder height, lead with elbows not hands. Control down slowly. Light weight — ego has no place here.",
+        "emoji": "\u2194\ufe0f",
+        "muscles": [
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Medial Deltoid"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Traps"
+        ],
+        "tip": "<strong>Form:</strong> Slight bend in elbows. Raise to shoulder height, lead with elbows not hands. Control down slowly. Light weight \u2014 ego has no place here.",
         "sets": [
-          { "label": "Set 1", "reps": "15", "weight": "Light", "rest": 45 },
-          { "label": "Set 2", "reps": "15", "weight": "Same", "rest": 45 },
-          { "label": "Set 3", "reps": "12–15", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "12\u201315",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Cable Seated Lateral Raise",
-          "sets": "3 sets × 15 · 45s",
+          "sets": "3 sets \u00d7 15 \u00b7 45s",
           "tip": "Single cable across body, raise out to the side. Constant tension the whole range. Use if dumbbells are taken.",
-          "emoji": "↔️"
+          "emoji": "\u2194\ufe0f"
         }
       },
       {
         "id": 6,
         "name": "Hammer Curl",
-        "emoji": "🔨",
-        "muscles": ["Biceps", "Forearms"],
-        "primaryMuscles": ["Brachialis", "Biceps Brachii"],
-        "secondaryMuscles": ["Forearm"],
-        "tip": "<strong>Form:</strong> Neutral grip — palms face each other the whole time. Elbows pinned. Builds the brachialis for thicker-looking arms. Lower slow.",
+        "emoji": "\ud83d\udd28",
+        "muscles": [
+          "Biceps",
+          "Forearms"
+        ],
+        "primaryMuscles": [
+          "Brachialis",
+          "Biceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Forearm"
+        ],
+        "tip": "<strong>Form:</strong> Neutral grip \u2014 palms face each other the whole time. Elbows pinned. Builds the brachialis for thicker-looking arms. Lower slow.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Moderate", "rest": 45 },
-          { "label": "Set 2", "reps": "12", "weight": "Same", "rest": 45 },
-          { "label": "Set 3", "reps": "10", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Barbell Curl",
-          "sets": "3 sets × 12 · 45s",
+          "sets": "3 sets \u00d7 12 \u00b7 45s",
           "tip": "Straight or EZ bar, shoulder-width. Both arms work equally. Keep elbows still, no swinging.",
-          "emoji": "💪"
+          "emoji": "\ud83d\udcaa"
         }
       },
       {
         "id": 7,
         "name": "Triceps Pushdown (Rope)",
-        "emoji": "⬇️",
-        "muscles": ["Triceps"],
-        "primaryMuscles": ["Triceps Brachii"],
-        "secondaryMuscles": ["Anconeus"],
-        "tip": "<strong>Form:</strong> Elbows pinned to sides. Push down and split the rope apart at the bottom for a harder squeeze. Control back up — don't let it yank you.",
+        "emoji": "\u2b07\ufe0f",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Anconeus"
+        ],
+        "tip": "<strong>Form:</strong> Elbows pinned to sides. Push down and split the rope apart at the bottom for a harder squeeze. Control back up \u2014 don't let it yank you.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Moderate", "rest": 45 },
-          { "label": "Set 2", "reps": "12", "weight": "+5", "rest": 45 },
-          { "label": "Set 3", "reps": "10", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "+5",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "DB Overhead Triceps Extension",
-          "sets": "3 sets × 12 · 45s",
+          "sets": "3 sets \u00d7 12 \u00b7 45s",
           "tip": "One dumbbell, both hands, overhead. Lower behind head, press up. Hits the long head harder than pushdowns.",
-          "emoji": "⬇️"
+          "emoji": "\u2b07\ufe0f"
         }
       },
       {
         "id": 8,
         "name": "Face Pull",
-        "emoji": "🎯",
-        "muscles": ["Rear Delts", "Upper Back"],
-        "primaryMuscles": ["Rear Deltoid", "Rhomboids"],
-        "secondaryMuscles": ["Mid Traps"],
+        "emoji": "\ud83c\udfaf",
+        "muscles": [
+          "Rear Delts",
+          "Upper Back"
+        ],
+        "primaryMuscles": [
+          "Rear Deltoid",
+          "Rhomboids"
+        ],
+        "secondaryMuscles": [
+          "Mid Traps"
+        ],
         "tip": "<strong>Form:</strong> Rope at face height. Pull toward your forehead, hands splitting apart, elbows high. The best move for shoulder health and posture. Finish here.",
         "sets": [
-          { "label": "Set 1", "reps": "15", "weight": "Light", "rest": 45 },
-          { "label": "Set 2", "reps": "15", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Bent-Over DB Rear Delt Raise",
-          "sets": "2 sets × 15 · 45s",
+          "sets": "2 sets \u00d7 15 \u00b7 45s",
           "tip": "Hinge forward, light dumbbells. Raise out to the sides squeezing rear delts. Same target, no cable.",
-          "emoji": "🎯"
+          "emoji": "\ud83c\udfaf"
         }
       }
-    ]
+    ],
+    "type": "upper",
+    "nextWorkoutId": "day4"
   },
   {
     "id": "day4",
-    "title": "Day 4 — Legs",
-    "subtitle": "Lower Body · Light",
-    "gym": "Powerhouse Gym · South Lyon",
+    "title": "Day 4 \u2014 Legs",
+    "subtitle": "Lower Body \u00b7 Light",
+    "gym": "Powerhouse Gym \u00b7 South Lyon",
     "badges": [
-      { "text": "First leg day back", "type": "alert" },
-      { "text": "Light — ease the knees in", "type": "info" }
+      {
+        "text": "First leg day back",
+        "type": "alert"
+      },
+      {
+        "text": "Light \u2014 ease the knees in",
+        "type": "info"
+      }
     ],
-    "notice": "<strong>Today — legs are back:</strong> First real lower session in over two months. The bike woke them up Tuesday but that's not the same as loading them. Go LIGHT, full range, control everything. Expect some soreness Sunday — that's normal. If anything pinches in a knee, stop that move and use the alternative.",
-    "stats": { "exercises": 6, "minutes": "~45", "totalSets": 18 },
+    "notice": "<strong>Today \u2014 legs are back:</strong> First real lower session in over two months. The bike woke them up Tuesday but that's not the same as loading them. Go LIGHT, full range, control everything. Expect some soreness Sunday \u2014 that's normal. If anything pinches in a knee, stop that move and use the alternative.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~45",
+      "totalSets": 18
+    },
     "warmup": [
       "5 min bike or incline walk to warm the legs",
       "10 bodyweight squats, slow",
@@ -366,137 +731,572 @@
       "10 walking lunges, no weight"
     ],
     "cooldown": [
-      "Standing quad stretch · 30s each",
-      "Seated hamstring stretch · 30s each",
-      "Figure-4 glute stretch · 30s each",
-      "Calf stretch on wall · 30s each"
+      "Standing quad stretch \u00b7 30s each",
+      "Seated hamstring stretch \u00b7 30s each",
+      "Figure-4 glute stretch \u00b7 30s each",
+      "Calf stretch on wall \u00b7 30s each"
     ],
     "closing": "",
     "exercises": [
       {
         "id": 1,
         "name": "Leg Press",
-        "emoji": "🦵",
-        "muscles": ["Quads", "Glutes"],
-        "primaryMuscles": ["Quadriceps", "Glutes"],
-        "secondaryMuscles": ["Hamstrings"],
-        "tip": "<strong>Form:</strong> Feet shoulder-width, toes slightly out. Lower until knees at 90°, don't let them cave in. Push through the whole foot. Back stays flat on the pad.",
+        "emoji": "\ud83e\uddb5",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings"
+        ],
+        "tip": "<strong>Form:</strong> Feet shoulder-width, toes slightly out. Lower until knees at 90\u00b0, don't let them cave in. Push through the whole foot. Back stays flat on the pad.",
         "sets": [
-          { "label": "Warm", "reps": "15", "weight": "Empty/light", "rest": 75, "isWarm": true },
-          { "label": "Set 1", "reps": "12", "weight": "~50% max", "rest": 75 },
-          { "label": "Set 2", "reps": "12", "weight": "Same", "rest": 75 },
-          { "label": "Set 3", "reps": "12", "weight": "Same or +10", "rest": 75 }
+          {
+            "label": "Warm",
+            "reps": "15",
+            "weight": "Empty/light",
+            "rest": 75,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "~50% max",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "12",
+            "weight": "Same or +10",
+            "rest": 75
+          }
         ],
         "restSecs": 75,
         "alt": {
           "name": "Goblet Squat",
-          "sets": "3 sets × 12 · 75s",
+          "sets": "3 sets \u00d7 12 \u00b7 75s",
           "tip": "Hold one dumbbell at your chest. Squat down between your knees, chest up, heels down. Easier on the back than a barbell and great for grooving the pattern back in.",
-          "emoji": "🏋️"
+          "emoji": "\ud83c\udfcb\ufe0f"
         }
       },
       {
         "id": 2,
         "name": "Lying Leg Curl",
-        "emoji": "🔁",
-        "muscles": ["Hamstrings"],
-        "primaryMuscles": ["Hamstrings"],
-        "secondaryMuscles": ["Calves"],
-        "tip": "<strong>Form:</strong> Hips flat on the pad. Curl smoothly, don't jerk. Squeeze at the top. Lower slowly — 2-3 counts. Don't let your hips rise off the pad.",
+        "emoji": "\ud83d\udd01",
+        "muscles": [
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [
+          "Calves"
+        ],
+        "tip": "<strong>Form:</strong> Hips flat on the pad. Curl smoothly, don't jerk. Squeeze at the top. Lower slowly \u2014 2-3 counts. Don't let your hips rise off the pad.",
         "sets": [
-          { "label": "Set 1", "reps": "12", "weight": "Light", "rest": 60 },
-          { "label": "Set 2", "reps": "12", "weight": "Same or +5", "rest": 60 },
-          { "label": "Set 3", "reps": "10", "weight": "Same", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same or +5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Dumbbell Romanian Deadlift",
-          "sets": "3 sets × 12 · 60s",
+          "sets": "3 sets \u00d7 12 \u00b7 60s",
           "tip": "Dumbbells in front of thighs, soft knees. Push hips back, lower the weights along your legs until you feel the hamstring stretch, then drive hips forward. Back stays flat.",
-          "emoji": "🔁"
+          "emoji": "\ud83d\udd01"
         }
       },
       {
         "id": 3,
         "name": "Leg Extension",
-        "emoji": "⬆️",
-        "muscles": ["Quads"],
-        "primaryMuscles": ["Quadriceps"],
+        "emoji": "\u2b06\ufe0f",
+        "muscles": [
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Quadriceps"
+        ],
         "secondaryMuscles": [],
-        "tip": "<strong>Form:</strong> Adjust pad to just above ankles. Extend fully, squeeze quads at the top. Lower controlled — don't let it drop. High reps, light weight today.",
+        "tip": "<strong>Form:</strong> Adjust pad to just above ankles. Extend fully, squeeze quads at the top. Lower controlled \u2014 don't let it drop. High reps, light weight today.",
         "sets": [
-          { "label": "Set 1", "reps": "15", "weight": "Light", "rest": 60 },
-          { "label": "Set 2", "reps": "15", "weight": "Same", "rest": 60 },
-          { "label": "Set 3", "reps": "12–15", "weight": "Same", "rest": 60 }
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "12\u201315",
+            "weight": "Same",
+            "rest": 60
+          }
         ],
         "restSecs": 60,
         "alt": {
           "name": "Split Squat with Dumbbells",
-          "sets": "3 sets × 10 each leg · 60s",
+          "sets": "3 sets \u00d7 10 each leg \u00b7 60s",
           "tip": "One foot forward, one back. Drop straight down, front knee tracks over the foot. A dumbbell in each hand. Unilateral work fixes side-to-side weakness.",
-          "emoji": "⬆️"
+          "emoji": "\u2b06\ufe0f"
         }
       },
       {
         "id": 4,
         "name": "Romanian Deadlift",
-        "emoji": "🏗️",
-        "muscles": ["Hamstrings", "Glutes"],
-        "primaryMuscles": ["Hamstrings", "Glutes"],
-        "secondaryMuscles": ["Lower Back"],
-        "tip": "<strong>Form:</strong> Soft knees, push hips back not down. Bar or dumbbells stay close to your legs. Feel the hamstring stretch at the bottom. Drive hips forward to stand — don't use your back.",
+        "emoji": "\ud83c\udfd7\ufe0f",
+        "muscles": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Lower Back"
+        ],
+        "tip": "<strong>Form:</strong> Soft knees, push hips back not down. Bar or dumbbells stay close to your legs. Feel the hamstring stretch at the bottom. Drive hips forward to stand \u2014 don't use your back.",
         "sets": [
-          { "label": "Set 1", "reps": "10", "weight": "Light", "rest": 75 },
-          { "label": "Set 2", "reps": "10", "weight": "Same", "rest": 75 },
-          { "label": "Set 3", "reps": "10", "weight": "+ small", "rest": 75 }
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Light",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "+ small",
+            "rest": 75
+          }
         ],
         "restSecs": 75,
         "alt": {
           "name": "Barbell Hip Thrust",
-          "sets": "3 sets × 12 · 75s",
+          "sets": "3 sets \u00d7 12 \u00b7 75s",
           "tip": "Upper back on a bench, bar over hips (use a pad). Drive through heels, squeeze glutes at the top, chin tucked. Easier on the lower back than RDLs if it feels cranky.",
-          "emoji": "🏗️"
+          "emoji": "\ud83c\udfd7\ufe0f"
         }
       },
       {
         "id": 5,
         "name": "Standing Calf Raise",
-        "emoji": "🦶",
-        "muscles": ["Calves"],
-        "primaryMuscles": ["Gastrocnemius"],
-        "secondaryMuscles": ["Soleus"],
-        "tip": "<strong>Form:</strong> Full range — all the way up on tiptoes, all the way down for a stretch. Slow and controlled. Pause at the top. Calves need range more than load.",
+        "emoji": "\ud83e\uddb6",
+        "muscles": [
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Gastrocnemius"
+        ],
+        "secondaryMuscles": [
+          "Soleus"
+        ],
+        "tip": "<strong>Form:</strong> Full range \u2014 all the way up on tiptoes, all the way down for a stretch. Slow and controlled. Pause at the top. Calves need range more than load.",
         "sets": [
-          { "label": "Set 1", "reps": "15", "weight": "Moderate", "rest": 45 },
-          { "label": "Set 2", "reps": "15", "weight": "Same", "rest": 45 },
-          { "label": "Set 3", "reps": "15", "weight": "Same", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Dumbbell Step-Ups",
-          "sets": "3 sets × 10 each · 45s",
+          "sets": "3 sets \u00d7 10 each \u00b7 45s",
           "tip": "Dumbbell each hand, step onto a flat bench, drive through the heel, stand tall, control back down. Hits calves, quads and glutes if the calf machine is taken.",
-          "emoji": "🦶"
+          "emoji": "\ud83e\uddb6"
         }
       },
       {
         "id": 6,
         "name": "Plank",
-        "emoji": "🧱",
-        "muscles": ["Core"],
-        "primaryMuscles": ["Rectus Abdominis", "Transverse Abdominis"],
-        "secondaryMuscles": ["Obliques"],
+        "emoji": "\ud83e\uddf1",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Rectus Abdominis",
+          "Transverse Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Obliques"
+        ],
         "tip": "<strong>Form:</strong> Forearms down, body straight from head to heels. Squeeze glutes and brace like you're about to take a punch. Don't let hips sag or pike. Breathe.",
         "sets": [
-          { "label": "Set 1", "reps": "45 sec", "weight": "Hold", "rest": 45 },
-          { "label": "Set 2", "reps": "45 sec", "weight": "Hold", "rest": 45 }
+          {
+            "label": "Set 1",
+            "reps": "45 sec",
+            "weight": "Hold",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "45 sec",
+            "weight": "Hold",
+            "rest": 45
+          }
         ],
         "restSecs": 45,
         "alt": {
           "name": "Dumbbell Walking Lunge",
-          "sets": "2 sets × 10 each · 45s",
+          "sets": "2 sets \u00d7 10 each \u00b7 45s",
           "tip": "If you'd rather end on legs than core: dumbbells at your sides, step forward into a lunge, alternate. Keep torso upright. Skip if quads are already torched.",
-          "emoji": "🧱"
+          "emoji": "\ud83e\uddf1"
+        }
+      }
+    ],
+    "type": "lower",
+    "nextWorkoutId": "day5"
+  },
+  {
+    "id": "day5",
+    "type": "push",
+    "nextWorkoutId": "day4",
+    "title": "Day 5 \u2014 Push",
+    "subtitle": "Chest / Shoulders / Triceps \u00b7 Moderate+",
+    "gym": "Powerhouse Gym \u00b7 South Lyon",
+    "badges": [
+      {
+        "text": "Week 2 \u2014 real split",
+        "type": "alert"
+      },
+      {
+        "text": "Nudging weights up",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Week 2 starts \u2014 this is a real Push day:</strong> You cleared a full upper/lower cycle and recovered. Now we progress. Add ~5 lb per dumbbell on the incline press vs Friday and treat it as the main lift. Everything else: solid working weight, still stop 1\u20132 reps short of failure. If Saturday legs left you sore, that's fine \u2014 today is all upper.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~55",
+      "totalSets": 19
+    },
+    "warmup": [
+      "3\u20135 min light cardio or rower",
+      "15 band pull-aparts",
+      "10 shoulder dislocates with a band",
+      "1\u20132 light warm-up sets on the incline press"
+    ],
+    "cooldown": [
+      "Doorway chest stretch \u00b7 30s each side",
+      "Cross-body shoulder stretch \u00b7 30s each",
+      "Overhead triceps stretch \u00b7 30s each",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Incline Dumbbell Press",
+        "emoji": "\ud83d\udcd0",
+        "muscles": [
+          "Upper Chest",
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Upper Pectorals",
+          "Anterior Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps"
+        ],
+        "tip": "<strong>Form:</strong> Lead lift today, warm up properly then add 5 lb/DB over what you used Friday. Bench at 30\u00b0. Lower under control, press up and slightly in. Last set should feel hard but leave 1 rep.",
+        "sets": [
+          {
+            "label": "Warm",
+            "reps": "12",
+            "weight": "Light",
+            "rest": 90,
+            "isWarm": true
+          },
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Day 3 weight +5",
+            "rest": 90
+          },
+          {
+            "label": "Set 2",
+            "reps": "8\u201310",
+            "weight": "Same",
+            "rest": 90
+          },
+          {
+            "label": "Set 3",
+            "reps": "8",
+            "weight": "Push it",
+            "rest": 90
+          }
+        ],
+        "restSecs": 90,
+        "alt": {
+          "name": "Flat Barbell Bench Press",
+          "sets": "4 sets \u00d7 8\u201310 \u00b7 90s",
+          "tip": "If incline DBs are taken or you want to go heavier: flat barbell. Grip just outside shoulders, lower to mid-chest, drive up. Use safety arms or a spotter on the top set.",
+          "emoji": "\ud83d\udcd0"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Flat Dumbbell Press",
+        "emoji": "\ud83d\udcaa",
+        "muscles": [
+          "Chest",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Pectoralis Major"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Triceps"
+        ],
+        "tip": "<strong>Form:</strong> Second chest angle to hit the mid and lower pecs. Flat bench, dumbbells at chest level, elbows ~45\u00b0. Press up and together, squeeze at top. Controlled negative.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Moderate",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8\u201310",
+            "weight": "+5 opt",
+            "rest": 75
+          }
+        ],
+        "restSecs": 75,
+        "alt": {
+          "name": "Chest Dips",
+          "sets": "3 sets \u00d7 8\u201310 \u00b7 75s",
+          "tip": "Lean torso forward to bias the chest. Lower until you feel a stretch across the pecs, press back up. Bodyweight is plenty today.",
+          "emoji": "\ud83d\udcaa"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Seated Dumbbell Shoulder Press",
+        "emoji": "\ud83e\uddbe",
+        "muscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Anterior Delt",
+          "Medial Delt"
+        ],
+        "secondaryMuscles": [
+          "Triceps",
+          "Upper Traps"
+        ],
+        "tip": "<strong>Form:</strong> Back supported, DBs at ear height, press straight up without banging them together. Don't arch the lower back \u2014 brace core first. Stop just short of lockout to keep tension on the delts.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "Moderate",
+            "rest": 75
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 75
+          },
+          {
+            "label": "Set 3",
+            "reps": "8",
+            "weight": "+5 opt",
+            "rest": 75
+          }
+        ],
+        "restSecs": 75,
+        "alt": {
+          "name": "Arnold Press",
+          "sets": "3 sets \u00d7 10 \u00b7 75s",
+          "tip": "Start palms facing you, rotate out as you press. Hits all three delt heads. Go a touch lighter \u2014 the rotation adds difficulty.",
+          "emoji": "\ud83d\udd04"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Side Lateral Raise",
+        "emoji": "\u2194\ufe0f",
+        "muscles": [
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Medial Deltoid"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt"
+        ],
+        "tip": "<strong>Form:</strong> The move that builds shoulder width. Slight elbow bend, raise to shoulder height leading with elbows, lower slow. If you're swinging, it's too heavy.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "Light",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "12\u201315",
+            "weight": "Same",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Front Two-Dumbbell Raise",
+          "sets": "3 sets \u00d7 12 \u00b7 45s",
+          "tip": "Raise dumbbells straight in front to shoulder height. Hits the front delt. Light weight, strict form.",
+          "emoji": "\u2194\ufe0f"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Triceps Rope Pushdown",
+        "emoji": "\u2b07\ufe0f",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Anconeus"
+        ],
+        "tip": "<strong>Form:</strong> Elbows pinned to your sides. Push down and spread the rope apart at the bottom for a peak squeeze. Control back up. First triceps move so you've got fresh strength here.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "+5",
+            "rest": 60
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Close-Grip Bench Press",
+          "sets": "3 sets \u00d7 10 \u00b7 60s",
+          "tip": "Hands shoulder-width on the bar, elbows tucked. Lower to lower chest, press up. A compound triceps builder if the cable station is taken.",
+          "emoji": "\u2b07\ufe0f"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Overhead DB Triceps Extension",
+        "emoji": "\ud83d\udd3c",
+        "muscles": [
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Form:</strong> Targets the long head \u2014 the part overhead work hits best. One dumbbell, both hands, lower behind your head. Upper arms stay still and close to your ears, only the forearms move.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "Moderate",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "Same",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10",
+            "weight": "Same",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "EZ-Bar Skullcrusher",
+          "sets": "3 sets \u00d7 12 \u00b7 45s",
+          "tip": "Lie on bench, EZ bar over forehead. Bend at elbows to lower toward hairline, extend back up. Keep upper arms vertical and still. Lighter than you think \u2014 protect the elbows.",
+          "emoji": "\ud83d\udd3c"
         }
       }
     ]

@@ -534,3 +534,115 @@ body {
   background: none; border: none; color: var(--muted);
   font-size: 18px; cursor: pointer; padding: 4px; flex-shrink: 0;
 }
+
+/* ── I'M AT GYM BUTTON ───────────────────────────── */
+.gym-btn-wrap {
+  padding: 16px 16px 4px;
+}
+.gym-btn {
+  width: 100%; display: flex; align-items: center; gap: 14px;
+  background: linear-gradient(135deg, #2a2210 0%, #1e1808 100%);
+  border: 2px solid var(--accent); border-radius: 12px;
+  padding: 16px 18px; cursor: pointer; text-align: left;
+  transition: transform 0.1s, border-color 0.2s;
+  -webkit-user-select: none; user-select: none;
+}
+.gym-btn:active { transform: scale(0.98); border-color: #f0d060; }
+.gym-btn-icon { font-size: 32px; line-height: 1; flex-shrink: 0; }
+.gym-btn-text { flex: 1; }
+.gym-btn-label {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 24px; font-weight: 900; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--accent); line-height: 1;
+  display: block;
+}
+.gym-btn-sub {
+  font-size: 12px; color: #a08828; margin-top: 3px; display: block;
+}
+.gym-btn-arrow {
+  font-size: 28px; color: var(--accent); font-weight: 900; flex-shrink: 0;
+}
+
+/* ── GYM PICKER BOTTOM SHEET ─────────────────────── */
+.sheet-backdrop {
+  position: fixed; inset: 0; background: rgba(0,0,0,0.7);
+  z-index: 210; transition: opacity 0.3s;
+}
+.sheet-backdrop.hidden { display: none; }
+
+.gym-sheet {
+  position: fixed; bottom: 0; left: 0; right: 0;
+  background: #181818; border-top: 2px solid var(--accent);
+  border-radius: 16px 16px 0 0; z-index: 220;
+  padding: 0 0 8px;
+  transform: translateY(0);
+  transition: transform 0.35s cubic-bezier(0.32,0.72,0,1);
+}
+.gym-sheet.hidden { display: none; }
+.gym-sheet.sliding-out { transform: translateY(100%); }
+
+.sheet-handle {
+  width: 40px; height: 4px; background: var(--border);
+  border-radius: 2px; margin: 12px auto 0;
+}
+.sheet-header {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 12px 20px 4px;
+}
+.sheet-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 900; text-transform: uppercase;
+  letter-spacing: 1px; color: var(--accent);
+}
+.sheet-close {
+  background: none; border: none; color: var(--muted);
+  font-size: 18px; cursor: pointer; padding: 4px 8px;
+}
+
+.sheet-reason {
+  margin: 0 16px 12px;
+  font-size: 12px; color: var(--muted); line-height: 1.5;
+  background: var(--surface); padding: 8px 12px;
+  border-radius: 6px; border-left: 3px solid var(--accent);
+}
+.sheet-reason strong { color: var(--text); }
+
+.sheet-workout-card {
+  margin: 0 16px 16px;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 10px; padding: 16px;
+}
+.swc-emoji {
+  font-size: 40px; margin-bottom: 10px; display: block; line-height: 1;
+}
+.swc-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 26px; font-weight: 900; text-transform: uppercase;
+  letter-spacing: 0.5px; color: var(--text); line-height: 1.1;
+}
+.swc-sub { font-size: 13px; color: var(--muted); margin-top: 3px; }
+.swc-stats { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; }
+.swc-stat {
+  font-size: 11px; color: var(--accent); font-weight: 600;
+  background: #2a2210; padding: 3px 9px; border-radius: 3px;
+}
+
+.sheet-actions {
+  padding: 0 16px; display: flex; flex-direction: column; gap: 10px;
+}
+.sheet-go-btn {
+  width: 100%; background: var(--accent); color: #000;
+  border: none; border-radius: 8px; padding: 16px;
+  font-family: 'Barlow Condensed', sans-serif;
+  font-size: 22px; font-weight: 900; letter-spacing: 1px;
+  text-transform: uppercase; cursor: pointer;
+  transition: opacity 0.2s;
+}
+.sheet-go-btn:active { opacity: 0.85; }
+.sheet-alt-btn {
+  width: 100%; background: none; border: 1px solid var(--border);
+  color: var(--muted); border-radius: 8px; padding: 12px;
+  font-size: 13px; font-weight: 600; cursor: pointer;
+  transition: border-color 0.2s, color 0.2s;
+}
+.sheet-alt-btn:hover { border-color: var(--muted); color: var(--text); }

@@ -1,17 +1,18 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
-import { loadState, getHistory, pushHistory } from './store.js';
+import { loadState, getHistory } from './store.js';
 
 const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
 let deferredInstallPrompt = null;
+let pickedWorkout = null;   // the workout the sheet is currently showing
 
 // ── INIT ────────────────────────────────────────────────────────────────
 async function init() {
   try {
     const resp = await fetch('./data/workouts.json');
     workouts = await resp.json();
-  } catch (err) {
+  } catch {
     document.getElementById('workoutList').innerHTML =
       '<div class="history-empty">Could not load workouts. Please check your connection.</div>';
     return;
@@ -23,14 +24,9 @@ async function init() {
   renderHome();
   renderHistory();
   setupNav();
+  setupGymButton();
   setupInstallPrompt();
   registerSW();
-
-  // Restore last viewed workout after page load
-  const lastId = localStorage.getItem(LAST_KEY);
-  if (lastId && workouts.find(w => w.id === lastId)) {
-    // Stay on home for now; user can tap back in if desired
-  }
 }
 
 // ── VIEW ROUTING ─────────────────────────────────────────────────────────
@@ -118,6 +114,87 @@ function renderHistory() {
   <div class="hi-sets">${entry.setsDone}<br><span style="font-size:10px;color:var(--muted)">sets</span></div>
 </div>`;
   }).join('');
+}
+
+// ── I'M AT GYM SMART PICKER ──────────────────────────────────────────────
+function pickNextWorkout() {
+  const hist = getHistory();
+
+  if (!hist.length) {
+    // No history — start at Day 1
+    return { workout: workouts[0], reason: 'No previous sessions found. Starting with the comeback workout.' };
+  }
+
+  const last      = hist[0];
+  const lastDate  = new Date(last.date);
+  const hoursAgo  = Math.round((Date.now() - lastDate) / 36e5);
+  const daysAgo   = hoursAgo < 24 ? 'today' : hoursAgo < 48 ? 'yesterday' : `${Math.floor(hoursAgo / 24)}d ago`;
+
+  const lastW     = workouts.find(w => w.id === last.workoutId);
+  const nextId    = lastW?.nextWorkoutId;
+  const nextW     = workouts.find(w => w.id === nextId) || workouts[0];
+
+  const reason = lastW
+    ? `Last session: <strong>${last.workoutTitle}</strong> (${daysAgo}) → today's pick targets a different muscle group.`
+    : `Last session: <strong>${last.workoutTitle}</strong> (${daysAgo}).`;
+
+  // Warn if same session was done very recently (< 18 hours)
+  const sameRecently = hoursAgo < 18 && last.workoutId === nextW.id;
+  const warningNote  = sameRecently
+    ? ' ⚠️ You trained this recently — consider an extra rest day.'
+    : '';
+
+  return { workout: nextW, reason: reason + warningNote };
+}
+
+function setupGymButton() {
+  document.getElementById('gymBtn')?.addEventListener('click', showGymSheet);
+  document.getElementById('sheetClose')?.addEventListener('click', hideGymSheet);
+  document.getElementById('sheetBackdrop')?.addEventListener('click', hideGymSheet);
+
+  document.getElementById('sheetGoBtn')?.addEventListener('click', () => {
+    if (pickedWorkout) {
+      hideGymSheet();
+      openWorkout(pickedWorkout.id);
+    }
+  });
+
+  document.getElementById('sheetAltBtn')?.addEventListener('click', () => {
+    hideGymSheet();
+    // Scroll the workout list into view so they can pick manually
+    document.getElementById('workoutList')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+}
+
+function showGymSheet() {
+  const { workout, reason } = pickNextWorkout();
+  pickedWorkout = workout;
+
+  document.getElementById('sheetReason').innerHTML = reason;
+  document.getElementById('sheetWorkoutCard').innerHTML = `
+<span class="swc-emoji">${workout.exercises[0]?.emoji || '💪'}</span>
+<div class="swc-title">${workout.title}</div>
+<div class="swc-sub">${workout.subtitle}</div>
+<div class="swc-stats">
+  <span class="swc-stat">${workout.stats.exercises} exercises</span>
+  <span class="swc-stat">${workout.stats.minutes} min</span>
+  <span class="swc-stat">${workout.stats.totalSets} sets</span>
+</div>`;
+
+  document.getElementById('gymSheet').classList.remove('hidden', 'sliding-out');
+  document.getElementById('sheetBackdrop').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function hideGymSheet() {
+  const sheet = document.getElementById('gymSheet');
+  sheet.classList.add('sliding-out');
+  setTimeout(() => {
+    sheet.classList.add('hidden');
+    sheet.classList.remove('sliding-out');
+    document.getElementById('sheetBackdrop').classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 350);
 }
 
 // ── NAV ───────────────────────────────────────────────────────────────────

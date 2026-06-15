@@ -293,9 +293,14 @@ function buildExerciseCard(ex) {
     </div>
   </div>
   <div class="card-body" id="body${ex.id}">
-    <div class="ex-visual">${ex.emoji}</div>
+    <div class="ex-visual">
+      ${ex.image
+        ? `<img class="ex-photo" src="${ex.image}" alt="${ex.name}" loading="lazy">`
+        : `<span class="ex-emoji">${ex.emoji}</span>`}
+    </div>
     <div class="alt-panel" id="alt${ex.id}">
       <div class="alt-header">⚡ Free Weight Alternative</div>
+      ${ex.altImage ? `<img class="alt-photo" src="${ex.altImage}" alt="${ex.alt.name}" loading="lazy">` : ''}
       <div class="alt-body">
         <div class="alt-name">${ex.alt.name}</div>
         <div class="alt-sets">${ex.alt.sets}</div>

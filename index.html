@@ -26,7 +26,19 @@
     <div class="home-sub">Pick a workout and let's go.</div>
   </div>
 
-  <div class="section-heading">Workouts</div>
+  <!-- I'M AT GYM BUTTON -->
+  <div class="gym-btn-wrap">
+    <button class="gym-btn" id="gymBtn">
+      <span class="gym-btn-icon">🏋️</span>
+      <span class="gym-btn-text">
+        <span class="gym-btn-label">I'm at the Gym</span>
+        <span class="gym-btn-sub">Pick today's workout for me</span>
+      </span>
+      <span class="gym-btn-arrow">›</span>
+    </button>
+  </div>
+
+  <div class="section-heading">All Workouts</div>
   <div class="workout-list" id="workoutList">
     <!-- populated by app.js -->
   </div>
@@ -76,6 +88,25 @@
     History
   </button>
 </nav>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- GYM PICKER BOTTOM SHEET                            -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="sheet-backdrop hidden" id="sheetBackdrop"></div>
+<div class="gym-sheet hidden" id="gymSheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-header">
+    <div class="sheet-title">Today's Pick</div>
+    <button class="sheet-close" id="sheetClose">✕</button>
+  </div>
+  <div class="sheet-reason" id="sheetReason"></div>
+  <div class="sheet-workout-card" id="sheetWorkoutCard"></div>
+  <div class="sheet-actions">
+    <button class="sheet-go-btn" id="sheetGoBtn">Let's Go →</button>
+    <button class="sheet-alt-btn" id="sheetAltBtn">Pick Different</button>
+  </div>
+  <div style="height: env(safe-area-inset-bottom, 8px)"></div>
+</div>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- PWA INSTALL PROMPT                                  -->

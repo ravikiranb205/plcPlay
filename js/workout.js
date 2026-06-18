@@ -175,6 +175,7 @@ function checkCompletion(allowSave) {
     pushHistory({
       workoutId:    currentWorkout.id,
       workoutTitle: currentWorkout.title,
+      workoutType:  currentWorkout.type,
       date:         new Date().toISOString(),
       setsDone
     });

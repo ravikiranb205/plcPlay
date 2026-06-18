@@ -1,5 +1,6 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
 import { loadState, getHistory } from './store.js';
+import { generateWorkout } from './generator.js';
 
 const LAST_KEY = 'fitwin_last_workout';
 
@@ -116,35 +117,10 @@ function renderHistory() {
   }).join('');
 }
 
-// ── I'M AT GYM SMART PICKER ──────────────────────────────────────────────
+// ── I'M AT GYM — DYNAMIC WORKOUT GENERATOR ──────────────────────────────
 function pickNextWorkout() {
   const hist = getHistory();
-
-  if (!hist.length) {
-    // No history — start at Day 1
-    return { workout: workouts[0], reason: 'No previous sessions found. Starting with the comeback workout.' };
-  }
-
-  const last      = hist[0];
-  const lastDate  = new Date(last.date);
-  const hoursAgo  = Math.round((Date.now() - lastDate) / 36e5);
-  const daysAgo   = hoursAgo < 24 ? 'today' : hoursAgo < 48 ? 'yesterday' : `${Math.floor(hoursAgo / 24)}d ago`;
-
-  const lastW     = workouts.find(w => w.id === last.workoutId);
-  const nextId    = lastW?.nextWorkoutId;
-  const nextW     = workouts.find(w => w.id === nextId) || workouts[0];
-
-  const reason = lastW
-    ? `Last session: <strong>${last.workoutTitle}</strong> (${daysAgo}) → today's pick targets a different muscle group.`
-    : `Last session: <strong>${last.workoutTitle}</strong> (${daysAgo}).`;
-
-  // Warn if same session was done very recently (< 18 hours)
-  const sameRecently = hoursAgo < 18 && last.workoutId === nextW.id;
-  const warningNote  = sameRecently
-    ? ' ⚠️ You trained this recently — consider an extra rest day.'
-    : '';
-
-  return { workout: nextW, reason: reason + warningNote };
+  return generateWorkout(workouts, hist);
 }
 
 function setupGymButton() {
@@ -155,7 +131,9 @@ function setupGymButton() {
   document.getElementById('sheetGoBtn')?.addEventListener('click', () => {
     if (pickedWorkout) {
       hideGymSheet();
-      openWorkout(pickedWorkout.id);
+      localStorage.setItem(LAST_KEY, pickedWorkout.id);
+      renderWorkout(pickedWorkout);
+      showView('workout');
     }
   });
 

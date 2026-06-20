@@ -1,12 +1,14 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
-import { loadState, getHistory } from './store.js';
+import { loadState, getHistory, getProfile } from './store.js';
 import { generateWorkout } from './generator.js';
+import { renderRegistration, wireRegistrationEvents, renderProfile, getNutrientTargets } from './profile.js';
+import { startWaterReminder, stopWaterReminder, startMealNotifications, getMealSuggestions } from './nutrition.js';
 
 const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
 let deferredInstallPrompt = null;
-let pickedWorkout = null;   // the workout the sheet is currently showing
+let pickedWorkout = null;
 
 // ── INIT ────────────────────────────────────────────────────────────────
 async function init() {
@@ -20,14 +22,57 @@ async function init() {
   }
 
   wireWorkoutEvents();
-  setBackCallback(() => showView('home'));
+  setBackCallback(() => {
+    stopWaterReminder();
+    showView('home');
+  });
 
-  renderHome();
+  const profile = getProfile();
+  if (!profile) {
+    showRegistration();
+  } else {
+    personalizeHome(profile);
+    showView('home');
+    startMealNotifications();
+  }
+
   renderHistory();
   setupNav();
   setupGymButton();
   setupInstallPrompt();
+  setupWaterDismiss();
   registerSW();
+}
+
+// ── REGISTRATION ─────────────────────────────────────────────────────────
+function showRegistration() {
+  const view = document.getElementById('viewRegister');
+  view.innerHTML = renderRegistration();
+  document.getElementById('navBar').classList.add('hidden');
+
+  document.querySelectorAll('.view').forEach(v => v.classList.remove('active'));
+  view.classList.add('active');
+
+  wireRegistrationEvents(profile => {
+    document.getElementById('navBar').classList.remove('hidden');
+    personalizeHome(profile);
+    showView('home');
+    renderHome();
+    startMealNotifications();
+  });
+}
+
+function personalizeHome(profile) {
+  const gymLabel = document.getElementById('homeGymLabel');
+  const greeting = document.getElementById('homeGreeting');
+  if (gymLabel && profile.gymName) {
+    gymLabel.textContent = `⚡ ${profile.gymName}${profile.gymLocation ? ' · ' + profile.gymLocation : ''}`;
+  }
+  if (greeting && profile.name) {
+    const hour = new Date().getHours();
+    const greet = hour < 12 ? 'Good morning' : hour < 17 ? 'Good afternoon' : 'Good evening';
+    greeting.textContent = `${greet}, ${profile.name}. Let's train.`;
+  }
 }
 
 // ── VIEW ROUTING ─────────────────────────────────────────────────────────
@@ -42,6 +87,7 @@ export function showView(name) {
 
   if (name === 'home')    renderHome();
   if (name === 'history') renderHistory();
+  if (name === 'profile') renderProfileView();
 }
 
 // ── HOME ─────────────────────────────────────────────────────────────────
@@ -89,6 +135,7 @@ function openWorkout(id) {
   const w = workouts.find(w => w.id === id);
   if (!w) return;
   localStorage.setItem(LAST_KEY, id);
+  startWaterReminder(15);
   renderWorkout(w);
   showView('workout');
 }
@@ -117,6 +164,45 @@ function renderHistory() {
   }).join('');
 }
 
+// ── PROFILE ──────────────────────────────────────────────────────────────
+function renderProfileView() {
+  const view = document.getElementById('viewProfile');
+  if (!view) return;
+
+  const profile = getProfile();
+  if (!profile) {
+    view.innerHTML = '<div class="history-empty">No profile yet. Complete registration first.</div>';
+    return;
+  }
+
+  const targets = getNutrientTargets(profile);
+  const meals = getMealSuggestions(profile);
+
+  let html = renderProfile();
+
+  html += `
+<div class="section-heading" style="margin-top:0">Today's Meal Plan</div>
+<div class="meal-plan-list">
+  ${meals.map(m => `
+    <div class="meal-card">
+      <div class="meal-time">${m.label} · ${m.hour > 12 ? (m.hour - 12) : m.hour}${m.hour >= 12 ? 'pm' : 'am'}</div>
+      <div class="meal-suggestion">${m.suggestion}</div>
+      <div class="meal-cuisine">${m.cuisine}</div>
+    </div>
+  `).join('')}
+</div>
+<div class="meal-targets-note">
+  Daily targets: ${targets.calories} cal · ${targets.protein}g protein · ${targets.carbs}g carbs · ${targets.fat}g fat · ${targets.water}L water
+</div>
+<div style="height:20px"></div>`;
+
+  view.innerHTML = html;
+
+  document.getElementById('editProfileBtn')?.addEventListener('click', () => {
+    showRegistration();
+  });
+}
+
 // ── I'M AT GYM — DYNAMIC WORKOUT GENERATOR ──────────────────────────────
 function pickNextWorkout() {
   const hist = getHistory();
@@ -132,6 +218,7 @@ function setupGymButton() {
     if (pickedWorkout) {
       hideGymSheet();
       localStorage.setItem(LAST_KEY, pickedWorkout.id);
+      startWaterReminder(15);
       renderWorkout(pickedWorkout);
       showView('workout');
     }
@@ -139,7 +226,6 @@ function setupGymButton() {
 
   document.getElementById('sheetAltBtn')?.addEventListener('click', () => {
     hideGymSheet();
-    // Scroll the workout list into view so they can pick manually
     document.getElementById('workoutList')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
@@ -173,6 +259,13 @@ function hideGymSheet() {
     document.getElementById('sheetBackdrop').classList.add('hidden');
     document.body.style.overflow = '';
   }, 350);
+}
+
+// ── WATER TOAST ──────────────────────────────────────────────────────────
+function setupWaterDismiss() {
+  document.getElementById('waterDismiss')?.addEventListener('click', () => {
+    document.getElementById('waterToast')?.classList.add('hidden');
+  });
 }
 
 // ── NAV ───────────────────────────────────────────────────────────────────

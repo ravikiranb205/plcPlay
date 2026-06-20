@@ -30,9 +30,9 @@ export function startTimer(seconds, currentExercise, allExercises) {
 
   function setNextPhoto(el, ex, fallbackEmoji) {
     if (ex?.image) {
-      el.innerHTML = `<img src="${ex.image}" alt="${ex.name}" style="width:56px;height:56px;object-fit:cover;border-radius:6px;">`;
+      el.innerHTML = `<img class="next-up-img" src="${ex.image}" alt="${ex.name}">`;
     } else {
-      el.textContent = fallbackEmoji;
+      el.innerHTML = `<div class="next-up-emoji">${fallbackEmoji}</div>`;
     }
   }
 

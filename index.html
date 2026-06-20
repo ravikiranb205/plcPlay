@@ -7,7 +7,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 <meta name="apple-mobile-web-app-title" content="FitWin">
-<meta name="description" content="FitWin — your personal workout tracker. Offline, installable, no login needed.">
+<meta name="description" content="FitWin — your personal workout tracker with nutrition guidance. Offline, installable.">
 <title>FitWin</title>
 <link rel="manifest" href="./manifest.json">
 <link rel="apple-touch-icon" href="./icons/icon-192.png">
@@ -17,32 +17,35 @@
 <body>
 
 <!-- ═══════════════════════════════════════════════════ -->
+<!-- REGISTRATION VIEW                                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="view" id="viewRegister">
+  <!-- populated by profile.js -->
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
 <!-- HOME VIEW                                           -->
 <!-- ═══════════════════════════════════════════════════ -->
-<div class="view active" id="viewHome">
+<div class="view" id="viewHome">
   <div class="home-header">
-    <div class="home-gym-label">⚡ Powerhouse Gym · South Lyon</div>
+    <div class="home-gym-label" id="homeGymLabel">⚡ Powerhouse Gym · South Lyon</div>
     <div class="home-title">FitWin</div>
-    <div class="home-sub">Pick a workout and let's go.</div>
+    <div class="home-sub" id="homeGreeting">Pick a workout and let's go.</div>
   </div>
 
-  <!-- I'M AT GYM BUTTON -->
   <div class="gym-btn-wrap">
     <button class="gym-btn" id="gymBtn">
       <span class="gym-btn-icon">🏋️</span>
       <span class="gym-btn-text">
         <span class="gym-btn-label">I'm at the Gym</span>
-        <span class="gym-btn-sub">Pick today's workout for me</span>
+        <span class="gym-btn-sub">Generate today's workout for me</span>
       </span>
       <span class="gym-btn-arrow">›</span>
     </button>
   </div>
 
   <div class="section-heading">All Workouts</div>
-  <div class="workout-list" id="workoutList">
-    <!-- populated by app.js -->
-  </div>
-
+  <div class="workout-list" id="workoutList"></div>
   <div style="height:16px"></div>
 </div>
 
@@ -58,21 +61,26 @@
 <!-- ═══════════════════════════════════════════════════ -->
 <div class="view" id="viewHistory">
   <div class="home-header">
-    <div class="home-gym-label">⚡ Powerhouse Gym · South Lyon</div>
+    <div class="home-gym-label">⚡ FitWin</div>
     <div class="home-title">History</div>
     <div class="home-sub">Your completed sessions.</div>
   </div>
   <div class="section-heading">Past Workouts</div>
-  <div id="historyList" class="history-list">
-    <!-- populated by app.js -->
-  </div>
+  <div id="historyList" class="history-list"></div>
   <div style="height:16px"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- PROFILE VIEW                                        -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="view" id="viewProfile">
+  <!-- populated by app.js / profile.js -->
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- BOTTOM NAV                                          -->
 <!-- ═══════════════════════════════════════════════════ -->
-<nav class="nav-bar">
+<nav class="nav-bar" id="navBar">
   <button class="nav-btn active" data-view="home">
     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
       <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/>
@@ -87,6 +95,13 @@
     </svg>
     History
   </button>
+  <button class="nav-btn" data-view="profile">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/>
+      <circle cx="12" cy="7" r="4"/>
+    </svg>
+    Profile
+  </button>
 </nav>
 
 <!-- ═══════════════════════════════════════════════════ -->
@@ -96,7 +111,7 @@
 <div class="gym-sheet hidden" id="gymSheet">
   <div class="sheet-handle"></div>
   <div class="sheet-header">
-    <div class="sheet-title">Today's Pick</div>
+    <div class="sheet-title">Today's Smart Pick</div>
     <button class="sheet-close" id="sheetClose">✕</button>
   </div>
   <div class="sheet-reason" id="sheetReason"></div>
@@ -106,6 +121,32 @@
     <button class="sheet-alt-btn" id="sheetAltBtn">Pick Different</button>
   </div>
   <div style="height: env(safe-area-inset-bottom, 8px)"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WEIGHT INPUT MODAL                                  -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="weight-modal hidden" id="weightModal">
+  <div class="weight-modal-content">
+    <div class="weight-modal-title">Log Weight</div>
+    <div class="weight-modal-ex" id="weightModalEx"></div>
+    <div class="weight-modal-set" id="weightModalSet"></div>
+    <div class="weight-modal-last" id="weightModalLast"></div>
+    <input type="number" class="weight-input" id="weightInput" placeholder="Weight (lbs)" step="2.5" min="0">
+    <div class="weight-modal-actions">
+      <button class="weight-skip" id="weightSkip">Skip</button>
+      <button class="weight-save" id="weightSave">Save</button>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- WATER REMINDER TOAST                                -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="water-toast hidden" id="waterToast">
+  <span class="water-icon">💧</span>
+  <span class="water-text">Time for a sip of water!</span>
+  <button class="water-dismiss" id="waterDismiss">OK</button>
 </div>
 
 <!-- ═══════════════════════════════════════════════════ -->

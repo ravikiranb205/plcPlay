@@ -1,9 +1,10 @@
 import { startTimer, stopTimer } from './timer.js';
-import { saveState, loadState, pushHistory } from './store.js';
+import { saveState, loadState, pushHistory, logWeight, getLastWeight } from './store.js';
 
 let currentWorkout = null;
 let workoutState   = {};
 let onBackCallback = null;
+let pendingWeightCb = null;
 
 export function setBackCallback(fn) { onBackCallback = fn; }
 
@@ -78,8 +79,63 @@ export function wireWorkoutEvents() {
     updateProgress();
     checkCompletion(true);
 
-    if (cb.checked) fireTimer(exId, rest);
+    if (cb.checked) {
+      showWeightModal(exId, setIdx, () => fireTimer(exId, rest));
+    }
   });
+
+  wireWeightModal();
+}
+
+// ── WEIGHT INPUT MODAL ──────────────────────────────────────────────────
+function showWeightModal(exId, setIdx, onDone) {
+  const ex = currentWorkout?.exercises.find(e => e.id === exId);
+  if (!ex) { onDone?.(); return; }
+
+  const set = ex.sets[setIdx];
+  const lastW = getLastWeight(ex.name);
+
+  document.getElementById('weightModalEx').textContent = ex.name;
+  document.getElementById('weightModalSet').textContent = set?.isWarm ? 'Warm-up Set' : (set?.label || `Set ${setIdx + 1}`);
+  document.getElementById('weightModalLast').textContent = lastW ? `Last used: ${lastW} lbs` : 'No previous weight logged';
+
+  const input = document.getElementById('weightInput');
+  input.value = lastW || '';
+  input.placeholder = lastW ? `${lastW} lbs` : 'Weight (lbs)';
+
+  pendingWeightCb = { exerciseName: ex.name, setLabel: set?.label || `Set ${setIdx + 1}`, onDone };
+
+  document.getElementById('weightModal').classList.remove('hidden');
+  setTimeout(() => input.focus(), 100);
+}
+
+function wireWeightModal() {
+  document.getElementById('weightSave')?.addEventListener('click', () => {
+    const input = document.getElementById('weightInput');
+    const val = parseFloat(input.value);
+    if (val > 0 && pendingWeightCb) {
+      logWeight(pendingWeightCb.exerciseName, pendingWeightCb.setLabel, val);
+    }
+    closeWeightModal();
+  });
+
+  document.getElementById('weightSkip')?.addEventListener('click', () => {
+    closeWeightModal();
+  });
+
+  document.getElementById('weightInput')?.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      document.getElementById('weightSave').click();
+    }
+  });
+}
+
+function closeWeightModal() {
+  document.getElementById('weightModal').classList.add('hidden');
+  const onDone = pendingWeightCb?.onDone;
+  pendingWeightCb = null;
+  onDone?.();
 }
 
 function fireTimer(exId, overrideRest) {
@@ -211,9 +267,9 @@ function buildWorkoutHTML(w) {
     <div class="timer-label">seconds</div>
   </div>
   <div class="timer-done-msg" id="timerDoneMsg">✓ Rest Complete — Go!</div>
-  <div class="next-up hidden" id="nextUp">
-    <div class="next-photo" id="nextPhoto"></div>
-    <div>
+  <div class="next-up-large hidden" id="nextUp">
+    <div id="nextPhoto"></div>
+    <div class="next-up-body">
       <div class="next-label">Next Up</div>
       <div class="next-name" id="nextName">—</div>
       <div class="next-meta" id="nextMeta">—</div>
@@ -276,6 +332,8 @@ ${w.closing ? `<div class="closing-card">${w.closing}</div>` : ''}
 function buildExerciseCard(ex) {
   const numStr = String(ex.id).padStart(2, '0');
   const workSets = ex.sets.filter(s => !s.isWarm);
+  const lastW = getLastWeight(ex.name);
+  const refUrl = ex.referenceUrl;
 
   return `
 <div class="card" id="card${ex.id}">
@@ -285,6 +343,7 @@ function buildExerciseCard(ex) {
       <div class="ex-name">${ex.name}</div>
       <div class="ex-meta">
         <span>${workSets.length} sets</span><span>${ex.restSecs}s rest</span>
+        ${lastW ? `<span style="color:var(--green);font-weight:600">Last: ${lastW} lbs</span>` : ''}
         ${ex.muscles.map(m => `<span class="muscle-tag">${m}</span>`).join('')}
       </div>
     </div>
@@ -306,6 +365,7 @@ function buildExerciseCard(ex) {
         <div class="alt-name">${ex.alt.name}</div>
         <div class="alt-sets">${ex.alt.sets}</div>
         <div class="alt-tip">${ex.alt.tip}</div>
+        ${ex.alt.referenceUrl ? `<a class="ref-link" href="${ex.alt.referenceUrl}" target="_blank" rel="noopener">📖 View Exercise Guide →</a>` : ''}
       </div>
     </div>
     <div class="card-detail">
@@ -329,6 +389,7 @@ function buildExerciseCard(ex) {
       </div>
       <div style="height:10px"></div>
       <div class="tip">${ex.tip}</div>
+      ${refUrl ? `<a class="ref-link" href="${refUrl}" target="_blank" rel="noopener">📖 View Exercise Guide & Anatomy →</a>` : ''}
       <div class="rest-row">
         <span>Rest ${ex.restSecs}s between sets</span>
         <button class="rest-timer-btn" data-timer-ex="${ex.id}">⏱ Start Rest</button>

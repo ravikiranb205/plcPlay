@@ -3,7 +3,7 @@ const CIRC = 2 * Math.PI * 90; // 565.5
 let timerInterval = null;
 let timerTotal = 60;
 
-export function startTimer(seconds, currentExercise, allExercises) {
+export function startTimer(seconds, currentExercise, allExercises, opts = {}) {
   clearInterval(timerInterval);
   timerTotal = seconds;
   let remaining = seconds;
@@ -14,8 +14,10 @@ export function startTimer(seconds, currentExercise, allExercises) {
   const nameEl   = document.getElementById('timerExName');
   const doneMsg  = document.getElementById('timerDoneMsg');
   const nextUp   = document.getElementById('nextUp');
+  const nextLabel= document.getElementById('nextLabel');
   const nextName = document.getElementById('nextName');
   const nextMeta = document.getElementById('nextMeta');
+  const nextTip  = document.getElementById('nextTip');
   const nextPhoto= document.getElementById('nextPhoto');
 
   nameEl.textContent = currentExercise ? `${currentExercise.name} — Rest` : 'Rest';
@@ -23,7 +25,6 @@ export function startTimer(seconds, currentExercise, allExercises) {
   doneMsg.classList.remove('show');
   arc.style.strokeDashoffset = '0';
 
-  // Next-up card
   const nextEx = allExercises
     ? allExercises.find(e => e.id > currentExercise.id)
     : null;
@@ -36,12 +37,24 @@ export function startTimer(seconds, currentExercise, allExercises) {
     }
   }
 
-  if (nextEx) {
+  if (nextTip) nextTip.innerHTML = '';
+
+  if (opts.midExercise && currentExercise) {
+    // More sets left in this exercise — coach the current movement
+    if (nextLabel) nextLabel.textContent = 'Form Tip · Same Exercise';
+    nextName.textContent = currentExercise.name;
+    nextMeta.textContent = `${opts.setsDone}/${opts.setsTotal} sets done · more to go`;
+    if (nextTip) nextTip.innerHTML = currentExercise.tip || '';
+    setNextPhoto(nextPhoto, currentExercise, currentExercise.emoji);
+    nextUp.classList.remove('hidden');
+  } else if (nextEx) {
+    if (nextLabel) nextLabel.textContent = 'Next Up';
     nextName.textContent = nextEx.name;
     nextMeta.textContent = `${nextEx.sets.filter(s => !s.isWarm).length} sets · ${nextEx.restSecs}s rest`;
     setNextPhoto(nextPhoto, nextEx, nextEx.emoji);
     nextUp.classList.remove('hidden');
   } else {
+    if (nextLabel) nextLabel.textContent = 'Next Up';
     nextName.textContent = currentExercise ? 'Last one — you\'re done!' : 'Finished!';
     nextMeta.textContent = 'Cool down next';
     setNextPhoto(nextPhoto, currentExercise, '🏁');

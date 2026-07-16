@@ -142,8 +142,14 @@ function fireTimer(exId, overrideRest) {
   const ex = currentWorkout.exercises.find(e => e.id === exId);
   if (!ex) return;
   const rest = overrideRest ?? ex.restSecs;
+  const setsDone  = workoutState[exId]?.sets?.filter(Boolean).length || 0;
+  const setsTotal = ex.sets.length;
   const remaining = currentWorkout.exercises.filter(e => e.id > exId && !workoutState[e.id]?.done);
-  startTimer(rest, ex, remaining);
+  startTimer(rest, ex, remaining, {
+    midExercise: setsDone < setsTotal && !workoutState[exId]?.done,
+    setsDone,
+    setsTotal
+  });
 }
 
 // ── CARD STATE ──────────────────────────────────────────────────────────
@@ -270,9 +276,10 @@ function buildWorkoutHTML(w) {
   <div class="next-up-large hidden" id="nextUp">
     <div id="nextPhoto"></div>
     <div class="next-up-body">
-      <div class="next-label">Next Up</div>
+      <div class="next-label" id="nextLabel">Next Up</div>
       <div class="next-name" id="nextName">—</div>
       <div class="next-meta" id="nextMeta">—</div>
+      <div class="next-tip" id="nextTip"></div>
     </div>
   </div>
   <button class="timer-close" id="timerCloseBtn">Skip Rest</button>

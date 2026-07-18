@@ -1,4 +1,4 @@
-const CACHE = 'fitwin-v12';
+const CACHE = 'fitwin-v13';
 
 const ASSETS = [
   './',
@@ -13,6 +13,7 @@ const ASSETS = [
   './js/profile.js',
   './js/nutrition.js',
   './data/workouts.json',
+  './data/home-workouts.json',
   './icons/icon-192.png',
   './icons/icon-512.png',
   './images/tile-gym.jpg',

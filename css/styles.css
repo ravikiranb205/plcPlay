@@ -46,6 +46,11 @@ body {
   text-transform: uppercase; line-height: 1;
 }
 .home-sub { font-size: 13px; color: var(--muted); margin-top: 6px; }
+.app-version {
+  font-family: 'Inter', sans-serif;
+  font-size: 10px; font-weight: 600; letter-spacing: 1px;
+  color: var(--muted); vertical-align: super;
+}
 
 .section-heading {
   font-family: 'Barlow Condensed', sans-serif;

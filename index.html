@@ -124,14 +124,42 @@
 <div class="gym-sheet hidden" id="gymSheet">
   <div class="sheet-handle"></div>
   <div class="sheet-header">
-    <div class="sheet-title">Today's Smart Pick</div>
+    <div class="sheet-title" id="sheetTitle">How Much Time?</div>
     <button class="sheet-close" id="sheetClose">✕</button>
   </div>
-  <div class="sheet-reason" id="sheetReason"></div>
-  <div class="sheet-workout-card" id="sheetWorkoutCard"></div>
-  <div class="sheet-actions">
-    <button class="sheet-go-btn" id="sheetGoBtn">Let's Go →</button>
-    <button class="sheet-alt-btn" id="sheetAltBtn">Pick Different</button>
+
+  <!-- Step 1: time available -->
+  <div id="sheetTimeStep">
+    <div class="sheet-reason">How long can you train today? The workout will be built to fit.</div>
+    <div class="time-grid">
+      <button class="time-opt" data-mins="20">
+        <span class="time-num">20</span><span class="time-unit">min</span>
+        <span class="time-desc">Quick hit</span>
+      </button>
+      <button class="time-opt" data-mins="30">
+        <span class="time-num">30</span><span class="time-unit">min</span>
+        <span class="time-desc">Express</span>
+      </button>
+      <button class="time-opt" data-mins="45">
+        <span class="time-num">45</span><span class="time-unit">min</span>
+        <span class="time-desc">Solid session</span>
+      </button>
+      <button class="time-opt" data-mins="75">
+        <span class="time-num">60+</span><span class="time-unit">min</span>
+        <span class="time-desc">Full workout</span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Step 2: today's pick -->
+  <div id="sheetPickStep" class="hidden">
+    <div class="sheet-reason" id="sheetReason"></div>
+    <div class="sheet-workout-card" id="sheetWorkoutCard"></div>
+    <div class="sheet-actions">
+      <button class="sheet-go-btn" id="sheetGoBtn">Let's Go →</button>
+      <button class="sheet-alt-btn" id="sheetTimeBack">← Change Time</button>
+      <button class="sheet-alt-btn" id="sheetAltBtn">Pick Different</button>
+    </div>
   </div>
   <div style="height: env(safe-area-inset-bottom, 8px)"></div>
 </div>

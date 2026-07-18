@@ -247,7 +247,11 @@ function pickType(allWorkouts, history) {
   const lastCatIdx = { push: Infinity, pull: Infinity, legs: Infinity };
 
   history.forEach((entry, idx) => {
-    const type = normalizeType(entry.workoutType || typeMap[entry.workoutId] || 'full_body');
+    const raw = entry.workoutType || typeMap[entry.workoutId] || 'full_body';
+    // Home sessions: strength counts as a full-body day for recovery;
+    // mobility/yoga/core/HIIT don't affect the gym rotation
+    if (raw.startsWith('home_') && raw !== 'home_strength') return;
+    const type = normalizeType(raw === 'home_strength' ? 'full_body' : raw);
     if (lastTypeIdx[type] === Infinity) lastTypeIdx[type] = idx;
     (TYPE_CATS[type] || []).forEach(c => {
       if (lastCatIdx[c] > idx) lastCatIdx[c] = idx;
@@ -382,7 +386,7 @@ function buildReason(type, history, allWorkouts) {
 
 // Trim exercises/sets/rest so the session fits the available minutes.
 // ~0.75 min of work per set plus its rest; warmup + cooldown ≈ 8 min overhead.
-function fitToTime(exercises, minutes) {
+export function fitToTime(exercises, minutes) {
   const shortMode = minutes <= 25;   // 20 min: 2 work sets, 45s rest cap, no warm sets
   const medMode   = minutes <= 35;   // 30 min: 3 work sets, no warm sets
   const setCap    = shortMode ? 2 : medMode ? 3 : Infinity;

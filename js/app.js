@@ -1,20 +1,23 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
 import { loadState, getHistory, getProfile } from './store.js';
-import { generateWorkout } from './generator.js';
+import { generateWorkout, fitToTime } from './generator.js';
 import { renderRegistration, wireRegistrationEvents, renderProfile, getNutrientTargets } from './profile.js';
 import { startWaterReminder, stopWaterReminder, startMealNotifications, getMealSuggestions } from './nutrition.js';
 
 const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
+let homeWorkouts = [];
 let deferredInstallPrompt = null;
 let pickedWorkout = null;
+let pickedHomeId = null;
 
 // ── INIT ────────────────────────────────────────────────────────────────
 async function init() {
   try {
     const resp = await fetch('./data/workouts.json');
     workouts = await resp.json();
+    try { homeWorkouts = await (await fetch('./data/home-workouts.json')).json(); } catch { homeWorkouts = []; }
   } catch {
     document.getElementById('workoutList').innerHTML =
       '<div class="history-empty">Could not load workouts. Please check your connection.</div>';
@@ -215,9 +218,7 @@ function setupGymButton() {
   });
   document.getElementById('sheetTimeBack')?.addEventListener('click', showTimeStep);
 
-  // Home / Outdoors tiles — behavior coming next
-  document.getElementById('homeBtn')?.addEventListener('click', () =>
-    showSoonToast('🏠 Home workouts are coming soon!'));
+  setupHomeSheet();
   document.getElementById('outdoorBtn')?.addEventListener('click', () =>
     showSoonToast('🌳 Outdoor workouts are coming soon!'));
 
@@ -229,7 +230,10 @@ function setupGymButton() {
     btn.textContent = open ? 'Browse All Workouts ▾' : 'Hide All Workouts ▴';
   });
   document.getElementById('sheetClose')?.addEventListener('click', hideGymSheet);
-  document.getElementById('sheetBackdrop')?.addEventListener('click', hideGymSheet);
+  document.getElementById('sheetBackdrop')?.addEventListener('click', () => {
+    if (!document.getElementById('gymSheet').classList.contains('hidden')) hideGymSheet();
+    if (!document.getElementById('homeSheet').classList.contains('hidden')) hideHomeSheet();
+  });
 
   document.getElementById('sheetGoBtn')?.addEventListener('click', () => {
     if (pickedWorkout) {
@@ -294,6 +298,84 @@ function hideGymSheet() {
     document.getElementById('sheetBackdrop').classList.add('hidden');
     document.body.style.overflow = '';
   }, 350);
+}
+
+// ── I'M AT HOME — SESSION PICKER ─────────────────────────────────────────
+function setupHomeSheet() {
+  document.getElementById('homeBtn')?.addEventListener('click', showHomeSheet);
+  document.getElementById('homeSheetClose')?.addEventListener('click', hideHomeSheet);
+  document.getElementById('homeVarBack')?.addEventListener('click', showHomeVarStep);
+
+  document.getElementById('homeVarList')?.addEventListener('click', e => {
+    const opt = e.target.closest('[data-varid]');
+    if (!opt) return;
+    pickedHomeId = opt.dataset.varid;
+    document.getElementById('homeSheetTitle').textContent = 'How Much Time?';
+    document.getElementById('homeVarStep').classList.add('hidden');
+    document.getElementById('homeTimeStep').classList.remove('hidden');
+  });
+
+  document.querySelectorAll('.htime-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const base = homeWorkouts.find(w => w.id === pickedHomeId);
+      if (!base) return;
+      const workout = fitHomeWorkout(base, parseInt(btn.dataset.mins));
+      hideHomeSheet();
+      localStorage.setItem(LAST_KEY, workout.id);
+      startWaterReminder(15);
+      renderWorkout(workout);
+      showView('workout');
+    });
+  });
+}
+
+function showHomeSheet() {
+  if (!homeWorkouts.length) { showSoonToast('🏠 Home workouts failed to load.'); return; }
+  const list = document.getElementById('homeVarList');
+  list.innerHTML = homeWorkouts.map(w => `
+<button class="var-opt" data-varid="${w.id}">
+  <div class="var-info">
+    <div class="var-title">${w.title}</div>
+    <div class="var-sub">${w.subtitle} · ${w.exercises.length} exercises</div>
+  </div>
+  <span class="var-arrow">›</span>
+</button>`).join('');
+
+  showHomeVarStep();
+  document.getElementById('homeSheet').classList.remove('hidden', 'sliding-out');
+  document.getElementById('sheetBackdrop').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function showHomeVarStep() {
+  document.getElementById('homeSheetTitle').textContent = 'Home Workout';
+  document.getElementById('homeVarStep').classList.remove('hidden');
+  document.getElementById('homeTimeStep').classList.add('hidden');
+}
+
+function hideHomeSheet() {
+  const sheet = document.getElementById('homeSheet');
+  sheet.classList.add('sliding-out');
+  setTimeout(() => {
+    sheet.classList.add('hidden');
+    sheet.classList.remove('sliding-out');
+    document.getElementById('sheetBackdrop').classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 350);
+}
+
+function fitHomeWorkout(base, minutes) {
+  const { fitted, estMinutes } = fitToTime(base.exercises, minutes);
+  const numbered = fitted.map((ex, i) => ({ ...ex, id: i + 1 }));
+  const totalSets = numbered.reduce((a, ex) => a + ex.sets.length, 0);
+  const timeLabel = minutes >= 75 ? '60+' : String(minutes);
+  return {
+    ...base,
+    id: `${base.id}_${minutes}m`,
+    badges: [...base.badges, { text: `Fits ${timeLabel} min`, type: 'info' }],
+    stats: { exercises: numbered.length, minutes: `~${estMinutes}`, totalSets },
+    exercises: numbered
+  };
 }
 
 // ── COMING SOON TOAST ────────────────────────────────────────────────────

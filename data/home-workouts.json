@@ -1,0 +1,1423 @@
+[
+  {
+    "id": "home_strength",
+    "type": "home_strength",
+    "title": "Bodyweight Strength",
+    "subtitle": "Full Body \u00b7 No Equipment",
+    "gym": "\ud83c\udfe0 Home Session",
+    "badges": [
+      {
+        "text": "Home Workout",
+        "type": "alert"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> Full-body strength with just your bodyweight. Slow, controlled reps \u2014 2 seconds down on everything. Quality beats quantity.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~40",
+      "totalSets": 18
+    },
+    "warmup": [
+      "2 min marching in place or jump rope",
+      "10 arm circles each direction",
+      "10 bodyweight good-mornings",
+      "10 slow air squats"
+    ],
+    "cooldown": [
+      "Quad stretch \u00b7 30s each side",
+      "Doorway chest opener \u00b7 30s",
+      "Seated hamstring stretch \u00b7 30s each",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>No gym, no excuses.</strong> Bodyweight sessions add up fast when you stay consistent.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Push-Up",
+        "emoji": "\ud83d\udcaa",
+        "muscles": [
+          "Chest",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Pectoralis Major"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Triceps",
+          "Core"
+        ],
+        "tip": "<strong>Form:</strong> Hands under shoulders, body in one straight line. Chest to the floor, elbows ~45\u00b0. Squeeze glutes so hips don't sag.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Knee Push-Up",
+          "sets": "3 sets \u00d7 12\u201315 reps \u00b7 45s rest",
+          "tip": "Same movement from the knees. Keep hips forward in one line from knees to head \u2014 don't hinge.",
+          "emoji": "\ud83d\udcaa"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/push-up/"
+      },
+      {
+        "id": 2,
+        "name": "Bodyweight Squat",
+        "emoji": "\ud83e\uddb5",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Core"
+        ],
+        "tip": "<strong>Form:</strong> Feet shoulder-width, toes slightly out. Sit back and down until thighs are parallel. Knees track over toes, heels stay planted.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Chair Squat",
+          "sets": "3 sets \u00d7 12 reps \u00b7 45s rest",
+          "tip": "Squat down until you lightly touch a chair, then stand. Builds confidence in depth without losing balance.",
+          "emoji": "\ud83e\uddb5"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Reverse Lunge",
+        "emoji": "\ud83d\udeb6",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Calves"
+        ],
+        "tip": "<strong>Form:</strong> Step back, drop the back knee toward the floor, front shin vertical. Push through the front heel to stand.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Split Squat (holding wall)",
+          "sets": "3 sets \u00d7 8 each leg \u00b7 45s rest",
+          "tip": "Feet stay planted in a lunge stance; just drop and drive up. Hold a wall for balance.",
+          "emoji": "\ud83d\udeb6"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Pike Push-Up",
+        "emoji": "\ud83d\udd3a",
+        "muscles": [
+          "Shoulders",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Anterior Deltoid"
+        ],
+        "secondaryMuscles": [
+          "Triceps",
+          "Upper Chest"
+        ],
+        "tip": "<strong>Form:</strong> Hips high in a pike, head toward the floor between your hands. The steeper the pike, the more shoulder work.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "8\u201312",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "8\u201312",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "8\u201312",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Incline Push-Up",
+          "sets": "3 sets \u00d7 12 reps \u00b7 45s rest",
+          "tip": "Hands on a counter or sturdy chair. Easier angle, still hits shoulders and chest.",
+          "emoji": "\ud83d\udd3a"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Glute Bridge",
+        "emoji": "\ud83c\udf09",
+        "muscles": [
+          "Glutes",
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Lower Back"
+        ],
+        "tip": "<strong>Form:</strong> Heels close to your hips. Drive through heels, squeeze glutes hard at the top, 1-second hold. Don't arch the lower back.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "15\u201320",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Single-Leg Glute Bridge",
+          "sets": "3 sets \u00d7 8 each leg \u00b7 45s rest",
+          "tip": "One foot on the floor, other leg extended. Harder \u2014 keep hips level.",
+          "emoji": "\ud83c\udf09"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/glute-bridge/"
+      },
+      {
+        "id": 6,
+        "name": "Plank",
+        "emoji": "\ud83e\uddf1",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Rectus Abdominis",
+          "Transverse Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Obliques",
+          "Shoulders"
+        ],
+        "tip": "<strong>Form:</strong> Elbows under shoulders, squeeze glutes and brace abs like you're about to be poked. Don't let hips pike or sag.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Knee Plank",
+          "sets": "3 \u00d7 30s hold \u00b7 30s rest",
+          "tip": "Same brace from the knees. Build up hold time before moving to full plank.",
+          "emoji": "\ud83e\uddf1"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/"
+      }
+    ]
+  },
+  {
+    "id": "home_mobility",
+    "type": "home_mobility",
+    "title": "Mobility Flow",
+    "subtitle": "Hips \u00b7 Spine \u00b7 Shoulders",
+    "gym": "\ud83c\udfe0 Home Session",
+    "badges": [
+      {
+        "text": "Recovery",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> Move better, feel looser. Slow controlled movement through full ranges \u2014 no forcing, breathe into each position.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~25",
+      "totalSets": 12
+    },
+    "warmup": [
+      "2 min easy walk or march in place",
+      "10 shoulder rolls",
+      "10 gentle neck circles each way"
+    ],
+    "cooldown": [
+      "Lie on back, knees to chest \u00b7 1 min",
+      "Deep belly breathing \u00b7 2 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Mobility is training.</strong> This session pays you back in every other workout.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Cat-Cow",
+        "emoji": "\ud83d\udc31",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Spinal Erectors"
+        ],
+        "secondaryMuscles": [
+          "Abs",
+          "Neck"
+        ],
+        "tip": "<strong>Form:</strong> On all fours. Arch and round the spine slowly, one vertebra at a time, moving with your breath \u2014 inhale cow, exhale cat.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 slow reps",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 slow reps",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Seated Cat-Cow",
+          "sets": "2 \u00d7 10 reps \u00b7 20s rest",
+          "tip": "Same spinal wave sitting on a chair, hands on knees.",
+          "emoji": "\ud83d\udc31"
+        }
+      },
+      {
+        "id": 2,
+        "name": "World's Greatest Stretch",
+        "emoji": "\ud83c\udf0d",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Hip Flexors",
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [
+          "Thoracic Spine",
+          "Glutes"
+        ],
+        "tip": "<strong>Form:</strong> Deep lunge, both hands inside the front foot. Drop the back knee, then rotate the inside arm up toward the ceiling. Follow your hand with your eyes.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "5 each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "5 each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Low Lunge Hold",
+          "sets": "2 \u00d7 30s each side \u00b7 20s rest",
+          "tip": "Just hold the deep lunge with the back knee down. Sink hips forward and down.",
+          "emoji": "\ud83c\udf0d"
+        }
+      },
+      {
+        "id": 3,
+        "name": "90/90 Hip Switch",
+        "emoji": "\ud83d\udd04",
+        "muscles": [
+          "Glutes",
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Hip Rotators"
+        ],
+        "secondaryMuscles": [
+          "Glutes",
+          "Groin"
+        ],
+        "tip": "<strong>Form:</strong> Sit with both knees bent at 90\u00b0, one in front, one to the side. Rotate knees together to the other side without using hands. Tall chest.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Butterfly Stretch",
+          "sets": "2 \u00d7 45s hold \u00b7 20s rest",
+          "tip": "Soles of feet together, knees dropping outward. Gently press knees down with elbows.",
+          "emoji": "\ud83d\udd04"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Thoracic Rotation",
+        "emoji": "\ud83c\udf00",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Thoracic Spine"
+        ],
+        "secondaryMuscles": [
+          "Obliques",
+          "Shoulders"
+        ],
+        "tip": "<strong>Form:</strong> On all fours, hand behind head. Rotate elbow toward ceiling, follow with your eyes, then bring it to the opposite wrist. Move only the upper back.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Open Book Stretch",
+          "sets": "2 \u00d7 8 each side \u00b7 20s rest",
+          "tip": "Lying on your side, knees stacked at 90\u00b0. Open the top arm like a book to the other side.",
+          "emoji": "\ud83c\udf00"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Deep Squat Hold",
+        "emoji": "\ud83c\udfcb\ufe0f",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Hips",
+          "Ankles"
+        ],
+        "secondaryMuscles": [
+          "Groin",
+          "Lower Back"
+        ],
+        "tip": "<strong>Form:</strong> Sink into the deepest squat you can, heels down. Use elbows to gently press knees out. Breathe and relax into it.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Supported Squat Hold",
+          "sets": "2 \u00d7 30s \u00b7 30s rest",
+          "tip": "Hold onto a door frame or heavy table for balance and depth.",
+          "emoji": "\ud83c\udfcb\ufe0f"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Hamstring Scoop",
+        "emoji": "\ud83e\uddb5",
+        "muscles": [
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Lower Back"
+        ],
+        "tip": "<strong>Form:</strong> One heel forward on the floor, toes up. Hinge at hips and 'scoop' hands past the front foot. Soft knee on the standing leg.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Standing Forward Fold",
+          "sets": "2 \u00d7 30s hold \u00b7 20s rest",
+          "tip": "Feet hip-width, fold forward and hang heavy. Bend knees as much as needed.",
+          "emoji": "\ud83e\uddb5"
+        }
+      }
+    ]
+  },
+  {
+    "id": "home_yoga",
+    "type": "home_yoga",
+    "title": "Yoga Session",
+    "subtitle": "Strength \u00b7 Balance \u00b7 Breath",
+    "gym": "\ud83c\udfe0 Home Session",
+    "badges": [
+      {
+        "text": "Mind & Body",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> A simple flow for strength and calm. Move with your breath \u2014 in through the nose, out slow. Nothing should hurt.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~30",
+      "totalSets": 12
+    },
+    "warmup": [
+      "1 min easy breathing, standing tall",
+      "5 slow neck rolls each way",
+      "10 shoulder rolls"
+    ],
+    "cooldown": [
+      "Child's pose \u00b7 1 min",
+      "Lying twist \u00b7 30s each side",
+      "Savasana (lie flat, eyes closed) \u00b7 2 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Namaste.</strong> Even one short flow resets your body and your head.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Sun Salutation A",
+        "emoji": "\ud83c\udf05",
+        "muscles": [
+          "Core",
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Full Body"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Hamstrings"
+        ],
+        "tip": "<strong>Flow:</strong> Reach up \u2192 fold \u2192 half lift \u2192 plank \u2192 lower \u2192 upward dog \u2192 downward dog \u2192 step forward \u2192 rise. One breath per movement.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "3 rounds",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "3 rounds",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Half Sun Salutation",
+          "sets": "2 \u00d7 3 rounds \u00b7 30s rest",
+          "tip": "Skip the plank/floor section: reach up, fold, half lift, fold, rise. Great when wrists complain.",
+          "emoji": "\ud83c\udf05"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Warrior II",
+        "emoji": "\u2694\ufe0f",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Hips"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Core"
+        ],
+        "tip": "<strong>Form:</strong> Wide stance, front knee bent over the ankle, arms reaching opposite directions. Gaze over the front hand. Strong, not tense.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Supported Warrior II",
+          "sets": "2 \u00d7 20s each side \u00b7 20s rest",
+          "tip": "Shorten the stance and bend the knee less. Same shape, less load.",
+          "emoji": "\u2694\ufe0f"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Triangle Pose",
+        "emoji": "\ud83d\udcd0",
+        "muscles": [
+          "Hamstrings",
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Hamstrings",
+          "Obliques"
+        ],
+        "secondaryMuscles": [
+          "Hips",
+          "Shoulders"
+        ],
+        "tip": "<strong>Form:</strong> Straight front leg, hinge sideways and reach the bottom hand to shin or block. Top arm to the ceiling, chest open.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Triangle with Chair",
+          "sets": "2 \u00d7 20s each side \u00b7 20s rest",
+          "tip": "Rest the bottom hand on a chair seat instead of your shin.",
+          "emoji": "\ud83d\udcd0"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Downward Dog",
+        "emoji": "\ud83d\udc15",
+        "muscles": [
+          "Shoulders",
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Shoulders",
+          "Hamstrings"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Back"
+        ],
+        "tip": "<strong>Form:</strong> Hips high, arms and back in one line, heels reaching (not necessarily touching) the floor. Pedal your feet if tight.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "30\u201345s hold",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Puppy Pose",
+          "sets": "2 \u00d7 30s \u00b7 20s rest",
+          "tip": "Knees stay down, chest melts toward the floor, arms extended. Gentler shoulder stretch.",
+          "emoji": "\ud83d\udc15"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Pigeon Pose",
+        "emoji": "\ud83d\udd4a\ufe0f",
+        "muscles": [
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Glutes",
+          "Hip Rotators"
+        ],
+        "secondaryMuscles": [
+          "Hip Flexors"
+        ],
+        "tip": "<strong>Form:</strong> Front shin across the mat, back leg long behind. Square the hips, fold forward over the front leg and breathe.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "45s each side",
+            "weight": "BW",
+            "rest": 20
+          },
+          {
+            "label": "Set 2",
+            "reps": "45s each side",
+            "weight": "BW",
+            "rest": 20
+          }
+        ],
+        "restSecs": 20,
+        "alt": {
+          "name": "Figure-4 Stretch",
+          "sets": "2 \u00d7 45s each side \u00b7 20s rest",
+          "tip": "On your back, ankle over the opposite knee, pull the bottom thigh toward you. Same stretch, easier on knees.",
+          "emoji": "\ud83d\udd4a\ufe0f"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Chair Pose",
+        "emoji": "\ud83e\ude91",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps"
+        ],
+        "secondaryMuscles": [
+          "Core",
+          "Shoulders"
+        ],
+        "tip": "<strong>Form:</strong> Feet together, sit back like into an invisible chair, arms overhead. Weight in the heels, chest lifted.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s hold",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Wall Sit",
+          "sets": "2 \u00d7 30s \u00b7 30s rest",
+          "tip": "Back flat against a wall, thighs parallel to floor. Same burn, more support.",
+          "emoji": "\ud83e\ude91"
+        }
+      }
+    ]
+  },
+  {
+    "id": "home_core",
+    "type": "home_core",
+    "title": "Core Crusher",
+    "subtitle": "Abs \u00b7 Obliques \u00b7 Deep Core",
+    "gym": "\ud83c\udfe0 Home Session",
+    "badges": [
+      {
+        "text": "Home Workout",
+        "type": "alert"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> Everything between your ribs and hips. Brace hard, move slow \u2014 momentum is cheating.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~30",
+      "totalSets": 18
+    },
+    "warmup": [
+      "1 min marching in place",
+      "10 cat-cows",
+      "10 standing torso twists each way"
+    ],
+    "cooldown": [
+      "Cobra stretch \u00b7 30s",
+      "Child's pose \u00b7 1 min",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Strong core, strong everything.</strong> It shows up in every lift and every run.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Dead Bug",
+        "emoji": "\ud83e\udeb2",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Transverse Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Hip Flexors",
+          "Obliques"
+        ],
+        "tip": "<strong>Form:</strong> Lower back pressed into the floor the whole time. Opposite arm and leg extend slowly, return, switch. Exhale as you extend.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "10 each side",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Heel Taps",
+          "sets": "3 \u00d7 12 each side \u00b7 30s rest",
+          "tip": "Knees at 90\u00b0, tap one heel to the floor at a time. Keep the lower back glued down.",
+          "emoji": "\ud83e\udeb2"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/dead-bug/"
+      },
+      {
+        "id": 2,
+        "name": "Plank",
+        "emoji": "\ud83e\uddf1",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Rectus Abdominis",
+          "Transverse Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Obliques",
+          "Shoulders"
+        ],
+        "tip": "<strong>Form:</strong> One straight line, glutes squeezed, abs braced. Breathe \u2014 don't hold your breath.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30\u201360s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30\u201360s hold",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30\u201360s hold",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Knee Plank",
+          "sets": "3 \u00d7 30s \u00b7 30s rest",
+          "tip": "Same position from the knees. Progress hold time each week.",
+          "emoji": "\ud83e\uddf1"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/"
+      },
+      {
+        "id": 3,
+        "name": "Side Plank",
+        "emoji": "\ud83d\udccf",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Obliques"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Glutes"
+        ],
+        "tip": "<strong>Form:</strong> Elbow under shoulder, hips stacked and lifted high. Body in one line from head to feet.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "20\u201330s each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "20\u201330s each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "20\u201330s each side",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Knee Side Plank",
+          "sets": "3 \u00d7 20s each side \u00b7 30s rest",
+          "tip": "Bottom knee bent on the floor for support. Keep hips lifted and stacked.",
+          "emoji": "\ud83d\udccf"
+        }
+      },
+      {
+        "id": 4,
+        "name": "Bicycle Crunch",
+        "emoji": "\ud83d\udeb4",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Obliques",
+          "Rectus Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Hip Flexors"
+        ],
+        "tip": "<strong>Form:</strong> Slow and controlled \u2014 opposite elbow toward knee as the other leg extends. Shoulder blades off the floor, no neck pulling.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "12 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "12 each side",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Standing Bicycle",
+          "sets": "3 \u00d7 12 each side \u00b7 30s rest",
+          "tip": "Standing, raise a knee to the opposite elbow. Easier on the neck and lower back.",
+          "emoji": "\ud83d\udeb4"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Leg Raises",
+        "emoji": "\ud83e\uddb5",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Lower Abs",
+          "Hip Flexors"
+        ],
+        "secondaryMuscles": [
+          "Obliques"
+        ],
+        "tip": "<strong>Form:</strong> Legs straight, lower them slowly until just above the floor, then raise. Hands under hips if the lower back arches.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "10\u201315",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Bent-Knee Raises",
+          "sets": "3 \u00d7 12 \u00b7 30s rest",
+          "tip": "Same movement with knees bent at 90\u00b0. Shorter lever, easier on the back.",
+          "emoji": "\ud83e\uddb5"
+        },
+        "referenceUrl": "https://weighttraining.guide/exercises/lying-leg-raise/"
+      },
+      {
+        "id": 6,
+        "name": "Bird Dog",
+        "emoji": "\ud83d\udc26",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Spinal Erectors",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Abs"
+        ],
+        "tip": "<strong>Form:</strong> Opposite arm and leg extend until parallel to the floor. Pause 2s. Hips stay level \u2014 imagine balancing a cup on your back.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "8 each side",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Bird Dog (arm only)",
+          "sets": "3 \u00d7 10 each arm \u00b7 30s rest",
+          "tip": "Extend only the arms first, keeping both knees down. Add legs later.",
+          "emoji": "\ud83d\udc26"
+        }
+      }
+    ]
+  },
+  {
+    "id": "home_hiit",
+    "type": "home_hiit",
+    "title": "HIIT Cardio Blast",
+    "subtitle": "Heart Rate \u00b7 Fat Burn \u00b7 Sweat",
+    "gym": "\ud83c\udfe0 Home Session",
+    "badges": [
+      {
+        "text": "High Intensity",
+        "type": "alert"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> Short, hard efforts with short rests. Go as hard as you can for each work interval \u2014 the rest is coming.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~25",
+      "totalSets": 18
+    },
+    "warmup": [
+      "2 min easy marching or slow jacks",
+      "10 air squats",
+      "10 arm swings",
+      "20s light high knees"
+    ],
+    "cooldown": [
+      "2 min slow walk in place",
+      "Quad stretch \u00b7 30s each",
+      "Hamstring stretch \u00b7 30s each",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>That's the good kind of tired.</strong> HIIT keeps burning long after you stop.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Jumping Jacks",
+        "emoji": "\u2b50",
+        "muscles": [
+          "Calves",
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Full Body"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Calves"
+        ],
+        "tip": "<strong>Go:</strong> 30 seconds fast, light on your feet. Land soft with knees slightly bent.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Step Jacks",
+          "sets": "3 \u00d7 30s \u00b7 30s rest",
+          "tip": "Step side to side with the arm swing instead of jumping. Low impact, same rhythm.",
+          "emoji": "\u2b50"
+        }
+      },
+      {
+        "id": 2,
+        "name": "Burpees",
+        "emoji": "\ud83d\udca5",
+        "muscles": [
+          "Quads",
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Full Body"
+        ],
+        "secondaryMuscles": [
+          "Chest",
+          "Legs"
+        ],
+        "tip": "<strong>Go:</strong> Squat, hands down, kick back to plank, (push-up optional), jump feet in, jump up. Steady pace beats sloppy speed.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "No-Jump Burpees",
+          "sets": "3 \u00d7 30s \u00b7 45s rest",
+          "tip": "Step back and step in instead of jumping, stand tall instead of jumping up.",
+          "emoji": "\ud83d\udca5"
+        }
+      },
+      {
+        "id": 3,
+        "name": "Mountain Climbers",
+        "emoji": "\u26f0\ufe0f",
+        "muscles": [
+          "Core",
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Core",
+          "Hip Flexors"
+        ],
+        "secondaryMuscles": [
+          "Shoulders",
+          "Calves"
+        ],
+        "tip": "<strong>Go:</strong> Plank position, drive knees toward chest alternately. Hips low, core braced \u2014 don't bounce.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Slow Climbers",
+          "sets": "3 \u00d7 30s \u00b7 30s rest",
+          "tip": "Same movement at half speed with a 1-second pause per knee drive.",
+          "emoji": "\u26f0\ufe0f"
+        }
+      },
+      {
+        "id": 4,
+        "name": "High Knees",
+        "emoji": "\ud83c\udfc3",
+        "muscles": [
+          "Quads",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Hip Flexors",
+          "Quads"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Core"
+        ],
+        "tip": "<strong>Go:</strong> Run in place driving knees to hip height, pump the arms. Stay on the balls of your feet.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Marching High Knees",
+          "sets": "3 \u00d7 30s \u00b7 30s rest",
+          "tip": "March the knees up instead of running. Keep the arm drive.",
+          "emoji": "\ud83c\udfc3"
+        }
+      },
+      {
+        "id": 5,
+        "name": "Squat Jumps",
+        "emoji": "\ud83d\udc38",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Core"
+        ],
+        "tip": "<strong>Go:</strong> Squat to parallel, explode up, land soft straight into the next rep. Chest up the whole time.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Fast Air Squats",
+          "sets": "3 \u00d7 30s \u00b7 45s rest",
+          "tip": "Regular squats done quickly with no jump. Keep depth honest.",
+          "emoji": "\ud83d\udc38"
+        }
+      },
+      {
+        "id": 6,
+        "name": "Skater Hops",
+        "emoji": "\u26f8\ufe0f",
+        "muscles": [
+          "Glutes",
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Glutes",
+          "Quadriceps"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Core"
+        ],
+        "tip": "<strong>Go:</strong> Bound side to side landing on one leg, back leg sweeping behind. Stick each landing for a beat.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30s work",
+            "weight": "BW",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Side Steps with Reach",
+          "sets": "3 \u00d7 30s \u00b7 30s rest",
+          "tip": "Step side to side, reaching down toward the lead foot. No hop.",
+          "emoji": "\u26f8\ufe0f"
+        }
+      }
+    ]
+  }
+]

@@ -128,7 +128,9 @@ body {
 
 /* ── WORKOUT HEADER ─────────────────────────────── */
 .workout-header {
-  background: linear-gradient(135deg, #1a1a1a 0%, #111 100%);
+  background:
+    linear-gradient(135deg, rgba(18,18,18,0.88) 0%, rgba(8,8,8,0.92) 100%),
+    url('../images/tile-gym.jpg') center/cover no-repeat;
   border-bottom: 2px solid var(--accent);
   padding: 14px 16px 12px;
   position: sticky; top: 0; z-index: 100;
@@ -659,7 +661,10 @@ body {
 
 .gym-sheet {
   position: fixed; bottom: 0; left: 0; right: 0;
-  background: #181818; border-top: 2px solid var(--accent);
+  background:
+    linear-gradient(180deg, rgba(14,14,14,0.9) 0%, rgba(14,14,14,0.82) 100%),
+    url('../images/tile-gym.jpg') center/cover no-repeat #181818;
+  border-top: 2px solid var(--accent);
   border-radius: 16px 16px 0 0; z-index: 220;
   padding: 0 0 8px;
   transform: translateY(0);
@@ -688,15 +693,15 @@ body {
 
 .sheet-reason {
   margin: 0 16px 12px;
-  font-size: 12px; color: var(--muted); line-height: 1.5;
-  background: var(--surface); padding: 8px 12px;
+  font-size: 12px; color: #b8b8b8; line-height: 1.5;
+  background: rgba(20,20,20,0.75); padding: 8px 12px;
   border-radius: 6px; border-left: 3px solid var(--accent);
 }
 .sheet-reason strong { color: var(--text); }
 
 .sheet-workout-card {
   margin: 0 16px 16px;
-  background: var(--card); border: 1px solid var(--border);
+  background: rgba(28,28,28,0.82); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 10px; padding: 16px;
 }
 .swc-emoji {
@@ -741,7 +746,7 @@ body {
   padding: 0 16px 16px;
 }
 .time-opt {
-  background: var(--card); border: 1px solid var(--border);
+  background: rgba(28,28,28,0.8); border: 1px solid rgba(255,255,255,0.12);
   border-radius: 12px; padding: 18px 10px 14px;
   display: flex; flex-direction: column; align-items: center;
   cursor: pointer; transition: border-color 0.15s, transform 0.1s;

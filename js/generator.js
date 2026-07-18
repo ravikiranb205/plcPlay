@@ -86,19 +86,134 @@ const TEMPLATES = {
   }
 };
 
-const TYPE_ORDER = ['push', 'lower', 'pull', 'upper'];
+const hasM = (ex, ...names) => ex.muscles.some(m => names.includes(m));
+
+Object.assign(TEMPLATES, {
+  chest_tris: {
+    label: 'Chest & Triceps',
+    subtitle: 'Chest · Upper Chest · Triceps',
+    categories: ['push'],
+    match: ex => hasM(ex, 'Chest', 'Upper Chest') || (hasM(ex, 'Triceps') && !hasM(ex, 'Shoulders')),
+    target: 6,
+    notice: "<strong>Today's focus:</strong> Chest and triceps. Press movements first while you're fresh, then burn out the triceps with isolation work.",
+    warmup: [
+      '5 min treadmill brisk walk or light jog',
+      '10 arm circles each direction',
+      '10 push-ups (light, activate chest)',
+      '10 band chest flyes or light presses'
+    ],
+    cooldown: [
+      'Doorway chest opener · 30s',
+      'Tricep overhead stretch · 30s each arm',
+      'Cross-body shoulder stretch · 30s each side',
+      'Deep breathing · 1 min'
+    ]
+  },
+  back_bis: {
+    label: 'Back & Biceps',
+    subtitle: 'Back · Rear Delts · Biceps',
+    categories: ['pull'],
+    match: ex => hasM(ex, 'Back', 'Upper Back', 'Rear Delts', 'Biceps', 'Forearms'),
+    target: 6,
+    notice: "<strong>Today's focus:</strong> Back and biceps. Pull heavy on rows and pulldowns first, then finish the biceps with curls.",
+    warmup: [
+      '5 min treadmill brisk walk or light jog',
+      '10 band pull-aparts',
+      '10 light lat pulldowns to warm up lats',
+      '10 arm circles each direction'
+    ],
+    cooldown: [
+      'Lat stretch (hang from bar) · 30s',
+      'Bicep wall stretch · 30s each arm',
+      'Upper back stretch (hug yourself) · 30s',
+      'Deep breathing · 1 min'
+    ]
+  },
+  shoulders: {
+    label: 'Shoulder Day',
+    subtitle: 'Front · Side · Rear Delts',
+    categories: ['push'],
+    match: ex => hasM(ex, 'Shoulders', 'Rear Delts'),
+    target: 5,
+    notice: "<strong>Today's focus:</strong> All three heads of the delts. Press first, then raises — light weight, strict form, full control.",
+    warmup: [
+      '5 min treadmill brisk walk or light jog',
+      '10 arm circles each direction',
+      '10 shoulder rolls forward and back',
+      '10 light lateral raises (empty hands)'
+    ],
+    cooldown: [
+      'Cross-body shoulder stretch · 30s each side',
+      'Behind-back shoulder stretch · 30s',
+      'Neck side stretch · 20s each side',
+      'Deep breathing · 1 min'
+    ]
+  },
+  arms: {
+    label: 'Arm Day',
+    subtitle: 'Biceps · Triceps · Forearms',
+    categories: ['push', 'pull'],
+    match: ex => hasM(ex, 'Biceps', 'Forearms') || (hasM(ex, 'Triceps') && !hasM(ex, 'Chest', 'Upper Chest', 'Shoulders')),
+    target: 6,
+    notice: "<strong>Today's focus:</strong> Arms only — alternate biceps and triceps so one side rests while the other works. Chase the pump.",
+    warmup: [
+      '5 min treadmill brisk walk or light jog',
+      '10 arm circles each direction',
+      '15 light curls (empty hands or band)',
+      '15 light pushdowns or band extensions'
+    ],
+    cooldown: [
+      'Bicep wall stretch · 30s each arm',
+      'Tricep overhead stretch · 30s each arm',
+      'Wrist flexor stretch · 20s each side',
+      'Deep breathing · 1 min'
+    ]
+  },
+  full_body: {
+    label: 'Full Body',
+    subtitle: 'Push · Pull · Legs',
+    categories: ['push', 'pull', 'legs'],
+    target: 7,
+    notice: "<strong>Today's focus:</strong> The whole body in one session — legs, pull, push in rotation. Great when training fewer days per week.",
+    warmup: [
+      '5 min treadmill brisk walk or light jog',
+      '10 bodyweight squats (open hips)',
+      '10 arm circles each direction',
+      '10 band pull-aparts'
+    ],
+    cooldown: [
+      'Quad stretch · 30s each side',
+      'Seated hamstring stretch · 30s each leg',
+      'Cross-body shoulder stretch · 30s each side',
+      'Deep breathing · 1 min'
+    ]
+  }
+});
+
+const TYPE_ORDER = ['push', 'lower', 'pull', 'chest_tris', 'back_bis', 'shoulders', 'arms', 'upper', 'full_body'];
+
+// Broad muscle families each split trains — used to rotate for recovery
+const TYPE_CATS = {
+  push: ['push'], lower: ['legs'], pull: ['pull'],
+  chest_tris: ['push'], back_bis: ['pull'], shoulders: ['push'],
+  arms: ['push', 'pull'], upper: ['push', 'pull'], full_body: ['push', 'pull', 'legs']
+};
 
 const FRIENDLY_LABELS = {
   push: 'Push Day (chest, shoulders, triceps)',
   pull: 'Pull Day (back, biceps, rear delts)',
   lower: 'Leg Day (quads, hamstrings, glutes)',
-  upper: 'Upper Body (full upper mix)'
+  chest_tris: 'Chest & Triceps',
+  back_bis: 'Back & Biceps',
+  shoulders: 'Shoulder Day (all three delt heads)',
+  arms: 'Arm Day (biceps & triceps)',
+  upper: 'Upper Body (full upper mix)',
+  full_body: 'Full Body (push, pull, legs)'
 };
 
 function normalizeType(type) {
-  if (type === 'full_body') return 'upper';
   if (TYPE_ORDER.includes(type)) return type;
-  return 'upper';
+  return 'full_body';
 }
 
 function categorize(ex) {
@@ -120,26 +235,33 @@ function shuffle(arr) {
 }
 
 function pickType(allWorkouts, history) {
-  if (!history.length) return 'upper';
+  if (!history.length) return 'full_body';
 
   const typeMap = {};
   allWorkouts.forEach(w => { typeMap[w.id] = w.type; });
 
-  const lastDone = {};
-  TYPE_ORDER.forEach(t => { lastDone[t] = Infinity; });
+  // lastTypeIdx: sessions since each split was done; lastCatIdx: since each
+  // muscle family (push/pull/legs) was trained. Lower index = more recent.
+  const lastTypeIdx = {};
+  TYPE_ORDER.forEach(t => { lastTypeIdx[t] = Infinity; });
+  const lastCatIdx = { push: Infinity, pull: Infinity, legs: Infinity };
 
   history.forEach((entry, idx) => {
-    const raw = entry.workoutType || typeMap[entry.workoutId] || 'upper';
-    const type = normalizeType(raw);
-    if (lastDone[type] === Infinity) lastDone[type] = idx;
+    const type = normalizeType(entry.workoutType || typeMap[entry.workoutId] || 'full_body');
+    if (lastTypeIdx[type] === Infinity) lastTypeIdx[type] = idx;
+    (TYPE_CATS[type] || []).forEach(c => {
+      if (lastCatIdx[c] > idx) lastCatIdx[c] = idx;
+    });
   });
 
-  let best = TYPE_ORDER[0];
-  let bestScore = -1;
+  // A split is only as fresh as its most-recently-trained muscle family.
+  // Among equally fresh splits, prefer the one you've done least recently.
+  let best = 'full_body', bestScore = -1, bestOwn = -1;
   TYPE_ORDER.forEach(t => {
-    if (lastDone[t] > bestScore) {
-      bestScore = lastDone[t];
-      best = t;
+    const score = Math.min(...TYPE_CATS[t].map(c => lastCatIdx[c]));
+    const own = lastTypeIdx[t];
+    if (score > bestScore || (score === bestScore && own > bestOwn)) {
+      best = t; bestScore = score; bestOwn = own;
     }
   });
 
@@ -150,7 +272,9 @@ function selectExercises(pool, type, history) {
   const template = TEMPLATES[type];
 
   const candidates = pool.filter(ex =>
-    ex._cats.some(c => template.categories.includes(c))
+    template.match
+      ? template.match(ex)
+      : ex._cats.some(c => template.categories.includes(c))
   );
 
   const lastWorkoutExNames = new Set();
@@ -159,15 +283,24 @@ function selectExercises(pool, type, history) {
     pool.filter(ex => ex._src === lastId).forEach(ex => lastWorkoutExNames.add(ex.name));
   }
 
+  // Collapse near-identical variants (e.g. rope/bar/cable pushdowns) so a
+  // split isn't three flavors of the same movement
+  const dedupeKey = name => name.toLowerCase()
+    .replace(/\(.*?\)/g, '')
+    .replace(/\btriceps?\b/g, 'tricep')
+    .replace(/\b(rope|bar|cable)\b/g, '')
+    .replace(/\s+/g, ' ').trim();
+
   const byName = {};
   candidates.forEach(ex => {
-    if (!byName[ex.name]) byName[ex.name] = [];
-    byName[ex.name].push(ex);
+    const key = dedupeKey(ex.name);
+    if (!byName[key]) byName[key] = [];
+    byName[key].push(ex);
   });
 
-  const unique = Object.entries(byName).map(([name, variants]) => {
+  const unique = Object.values(byName).map(variants => {
     const picked = variants[Math.floor(Math.random() * variants.length)];
-    return { ...picked, _wasRecent: lastWorkoutExNames.has(name) };
+    return { ...picked, _wasRecent: lastWorkoutExNames.has(picked.name) };
   });
 
   const fresh = unique.filter(ex => !ex._wasRecent);
@@ -175,7 +308,21 @@ function selectExercises(pool, type, history) {
 
   let selected;
 
-  if (type === 'upper') {
+  if (type === 'full_body') {
+    // Round-robin legs / pull / push so the session hits everything
+    const all = shuffle([...fresh, ...recent]);
+    const legs   = all.filter(e => e._cats.includes('legs'));
+    const pulls  = all.filter(e => !e._cats.includes('legs') && e._cats.includes('pull'));
+    const pushes = all.filter(e => !e._cats.includes('legs') && !e._cats.includes('pull'));
+    const picks = [];
+    const rounds = Math.ceil(template.target / 3);
+    for (let i = 0; i < rounds; i++) {
+      if (legs[i])   picks.push(legs[i]);
+      if (pulls[i])  picks.push(pulls[i]);
+      if (pushes[i]) picks.push(pushes[i]);
+    }
+    selected = picks.slice(0, template.target);
+  } else if (type === 'upper') {
     const all = shuffle([...fresh, ...recent]);
     const pushExs = all.filter(ex => ex._cats.includes('push') && !ex._cats.includes('pull'));
     const pullExs = all.filter(ex => ex._cats.includes('pull') && !ex._cats.includes('push'));
@@ -199,6 +346,9 @@ function selectExercises(pool, type, history) {
     selected = interleaved;
   } else {
     selected = [...shuffle(fresh), ...shuffle(recent)].slice(0, template.target);
+    // Compounds first, isolation last
+    const isCompound = ex => /press|pulldown|row|deadlift|squat/i.test(ex.name);
+    selected.sort((a, b) => (isCompound(b) ? 1 : 0) - (isCompound(a) ? 1 : 0));
   }
 
   if (selected.length < 3 && candidates.length >= 3) {

@@ -64,29 +64,40 @@ body {
 .workout-card {
   margin: 12px 16px 0;
   background: var(--card);
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border: 1px solid rgba(255,255,255,0.12);
+  border-radius: 12px;
   padding: 16px;
   cursor: pointer;
   transition: border-color 0.2s, transform 0.1s;
   display: flex; align-items: center; gap: 14px;
   -webkit-user-select: none; user-select: none;
+  position: relative; overflow: hidden;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.4);
 }
 .workout-card:active { transform: scale(0.98); border-color: var(--accent); }
 
-.wc-emoji {
-  font-size: 36px; line-height: 1; flex-shrink: 0;
-  width: 52px; height: 52px;
-  background: var(--surface); border-radius: 10px;
-  display: flex; align-items: center; justify-content: center;
+.wc-bg {
+  position: absolute; inset: -12%;
+  background-size: cover; background-position: center;
+  filter: blur(7px) brightness(0.5) saturate(0.85);
+  transform: scale(1.08);
+  z-index: 0;
 }
-.wc-info { flex: 1; min-width: 0; }
+.wc-shade {
+  position: absolute; inset: 0; z-index: 0;
+  background: linear-gradient(90deg, rgba(0,0,0,0.62) 0%, rgba(0,0,0,0.3) 100%);
+}
+.wc-info { flex: 1; min-width: 0; position: relative; z-index: 1; }
 .wc-title {
   font-family: 'Barlow Condensed', sans-serif;
   font-size: 22px; font-weight: 700; text-transform: uppercase;
-  letter-spacing: 0.5px; line-height: 1.1;
+  letter-spacing: 0.5px; line-height: 1.1; color: #fff;
+  text-shadow: 0 2px 8px rgba(0,0,0,0.8);
 }
-.wc-sub { font-size: 12px; color: var(--muted); margin-top: 3px; }
+.wc-sub {
+  font-size: 12px; color: rgba(255,255,255,0.72); margin-top: 3px;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
 .wc-stats { display: flex; gap: 10px; margin-top: 6px; }
 .wc-stat {
   font-size: 11px; color: var(--accent); font-weight: 600;
@@ -99,12 +110,16 @@ body {
   height: 3px; background: var(--green); border-radius: 2px;
   transition: width 0.4s;
 }
-.wc-arrow { color: var(--muted); font-size: 18px; flex-shrink: 0; }
+.wc-arrow {
+  color: rgba(255,255,255,0.8); font-size: 20px; flex-shrink: 0;
+  position: relative; z-index: 1;
+  text-shadow: 0 1px 4px rgba(0,0,0,0.7);
+}
 .wc-done-badge {
   font-size: 10px; font-weight: 700; letter-spacing: 1px;
   text-transform: uppercase; padding: 3px 8px; border-radius: 3px;
-  background: #1a3a1a; color: var(--green); border: 1px solid var(--green);
-  flex-shrink: 0;
+  background: rgba(20,50,20,0.85); color: var(--green); border: 1px solid var(--green);
+  flex-shrink: 0; position: relative; z-index: 1;
 }
 
 /* ── HISTORY SECTION ─────────────────────────────── */
@@ -709,8 +724,9 @@ body {
   background: rgba(28,28,28,0.82); border: 1px solid rgba(255,255,255,0.1);
   border-radius: 10px; padding: 16px;
 }
-.swc-emoji {
-  font-size: 40px; margin-bottom: 10px; display: block; line-height: 1;
+.swc-photo {
+  width: 100%; height: 120px; object-fit: cover; display: block;
+  border-radius: 8px; margin-bottom: 12px;
 }
 .swc-title {
   font-family: 'Barlow Condensed', sans-serif;

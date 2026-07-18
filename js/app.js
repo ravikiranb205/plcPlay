@@ -104,9 +104,12 @@ function renderHome() {
     const pct       = totalSets ? Math.round((checked / totalSets) * 100) : 0;
     const completed = !!state._completed;
 
+    const img = w.exercises.find(e => e.image)?.image || '';
+
     return `
 <div class="workout-card" data-open="${w.id}">
-  <div class="wc-emoji">${w.exercises[0]?.emoji || '💪'}</div>
+  ${img ? `<div class="wc-bg" style="background-image:url('${img}')"></div>` : ''}
+  <div class="wc-shade"></div>
   <div class="wc-info">
     <div class="wc-title">${w.title}</div>
     <div class="wc-sub">${w.subtitle}</div>
@@ -267,8 +270,9 @@ function buildPickForTime(minutes) {
 
   document.getElementById('sheetTitle').textContent = "Today's Smart Pick";
   document.getElementById('sheetReason').innerHTML = reason;
+  const pickImg = workout.exercises.find(e => e.image)?.image || '';
   document.getElementById('sheetWorkoutCard').innerHTML = `
-<span class="swc-emoji">${workout.exercises[0]?.emoji || '💪'}</span>
+${pickImg ? `<img class="swc-photo" src="${pickImg}" alt="${workout.title}">` : ''}
 <div class="swc-title">${workout.title}</div>
 <div class="swc-sub">${workout.subtitle}</div>
 <div class="swc-stats">

@@ -1,4 +1,4 @@
-const CACHE = 'fitwin-v4';
+const CACHE = 'fitwin-v5';
 
 const ASSETS = [
   './',

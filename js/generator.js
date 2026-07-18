@@ -230,7 +230,39 @@ function buildReason(type, history, allWorkouts) {
   return reason;
 }
 
-export function generateWorkout(allWorkouts, history) {
+// Trim exercises/sets/rest so the session fits the available minutes.
+// ~0.75 min of work per set plus its rest; warmup + cooldown ≈ 8 min overhead.
+function fitToTime(exercises, minutes) {
+  const shortMode = minutes <= 25;   // 20 min: 2 work sets, 45s rest cap, no warm sets
+  const medMode   = minutes <= 35;   // 30 min: 3 work sets, no warm sets
+  const setCap    = shortMode ? 2 : medMode ? 3 : Infinity;
+
+  const fitted = [];
+  let est = 8;
+
+  for (const ex of exercises) {
+    const clone = { ...ex };
+    const restS = shortMode ? Math.min(clone.restSecs, 45) : clone.restSecs;
+
+    let warm = clone.sets.filter(s => s.isWarm);
+    let work = clone.sets.filter(s => !s.isWarm);
+    if (minutes < 45) warm = [];
+    work = work.slice(0, setCap);
+
+    clone.sets = [...warm, ...work].map(s => ({ ...s, rest: Math.min(s.rest || restS, restS) }));
+    clone.restSecs = restS;
+
+    const exTime = clone.sets.length * (0.75 + restS / 60);
+    if (fitted.length >= 3 && est + exTime > minutes) break;
+    est += exTime;
+    fitted.push(clone);
+    if (fitted.length >= 3 && est >= minutes - 3) break;
+  }
+
+  return { fitted, estMinutes: Math.round(est) };
+}
+
+export function generateWorkout(allWorkouts, history, opts = {}) {
   const pool = [];
   allWorkouts.forEach(w => {
     w.exercises.forEach(ex => {
@@ -242,7 +274,10 @@ export function generateWorkout(allWorkouts, history) {
   const template = TEMPLATES[type];
   const exercises = selectExercises(pool, type, history);
 
-  const numbered = exercises.map((ex, i) => {
+  const minutes = opts.minutes || 60;
+  const { fitted, estMinutes } = fitToTime(exercises, minutes);
+
+  const numbered = fitted.map((ex, i) => {
     const clean = { ...ex };
     delete clean._src;
     delete clean._cats;
@@ -254,21 +289,22 @@ export function generateWorkout(allWorkouts, history) {
   const totalSets = numbered.reduce((a, ex) => a + ex.sets.length, 0);
   const today = new Date();
   const dateStr = today.toLocaleDateString('en-US', { month: 'short', day: 'numeric' });
+  const timeLabel = minutes >= 75 ? '60+' : String(minutes);
 
   const workout = {
-    id: `gen_${type}_${today.toISOString().slice(0, 10)}`,
+    id: `gen_${type}_${today.toISOString().slice(0, 10)}_${minutes}m`,
     type,
     title: template.label,
     subtitle: template.subtitle,
     gym: '⚡ Powerhouse Gym · South Lyon',
     badges: [
       { text: `Smart Pick · ${dateStr}`, type: 'alert' },
-      { text: 'Generated from history', type: 'info' }
+      { text: `Fits ${timeLabel} min`, type: 'info' }
     ],
     notice: template.notice,
     stats: {
       exercises: numbered.length,
-      minutes: `~${Math.round(totalSets * 2.5)}`,
+      minutes: `~${estMinutes}`,
       totalSets
     },
     warmup: template.warmup,
@@ -277,7 +313,8 @@ export function generateWorkout(allWorkouts, history) {
     exercises: numbered
   };
 
-  const reason = buildReason(type, history, allWorkouts);
+  let reason = buildReason(type, history, allWorkouts);
+  reason += ` Trimmed to fit your <strong>${timeLabel}-minute</strong> window.`;
 
   return { workout, reason };
 }

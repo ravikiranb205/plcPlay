@@ -204,13 +204,13 @@ function renderProfileView() {
 }
 
 // ── I'M AT GYM — DYNAMIC WORKOUT GENERATOR ──────────────────────────────
-function pickNextWorkout() {
-  const hist = getHistory();
-  return generateWorkout(workouts, hist);
-}
-
 function setupGymButton() {
   document.getElementById('gymBtn')?.addEventListener('click', showGymSheet);
+
+  document.querySelectorAll('.time-opt').forEach(btn => {
+    btn.addEventListener('click', () => buildPickForTime(parseInt(btn.dataset.mins)));
+  });
+  document.getElementById('sheetTimeBack')?.addEventListener('click', showTimeStep);
 
   // Home / Outdoors tiles — behavior coming next
   document.getElementById('homeBtn')?.addEventListener('click', () =>
@@ -249,9 +249,23 @@ function setupGymButton() {
 }
 
 function showGymSheet() {
-  const { workout, reason } = pickNextWorkout();
+  showTimeStep();
+  document.getElementById('gymSheet').classList.remove('hidden', 'sliding-out');
+  document.getElementById('sheetBackdrop').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function showTimeStep() {
+  document.getElementById('sheetTitle').textContent = 'How Much Time?';
+  document.getElementById('sheetTimeStep').classList.remove('hidden');
+  document.getElementById('sheetPickStep').classList.add('hidden');
+}
+
+function buildPickForTime(minutes) {
+  const { workout, reason } = generateWorkout(workouts, getHistory(), { minutes });
   pickedWorkout = workout;
 
+  document.getElementById('sheetTitle').textContent = "Today's Smart Pick";
   document.getElementById('sheetReason').innerHTML = reason;
   document.getElementById('sheetWorkoutCard').innerHTML = `
 <span class="swc-emoji">${workout.exercises[0]?.emoji || '💪'}</span>
@@ -263,9 +277,8 @@ function showGymSheet() {
   <span class="swc-stat">${workout.stats.totalSets} sets</span>
 </div>`;
 
-  document.getElementById('gymSheet').classList.remove('hidden', 'sliding-out');
-  document.getElementById('sheetBackdrop').classList.remove('hidden');
-  document.body.style.overflow = 'hidden';
+  document.getElementById('sheetTimeStep').classList.add('hidden');
+  document.getElementById('sheetPickStep').classList.remove('hidden');
 }
 
 function hideGymSheet() {

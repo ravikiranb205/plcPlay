@@ -1,4 +1,4 @@
-const CACHE = 'fitwin-v7';
+const CACHE = 'fitwin-v8';
 
 const ASSETS = [
   './',
@@ -23,7 +23,15 @@ const ASSETS = [
 
 self.addEventListener('install', e => {
   e.waitUntil(
-    caches.open(CACHE).then(cache => cache.addAll(ASSETS)).then(() => self.skipWaiting())
+    caches.open(CACHE).then(cache =>
+      // cache: 'reload' bypasses the HTTP cache so a new SW never
+      // re-caches stale copies of the app shell
+      Promise.all(ASSETS.map(u =>
+        fetch(new Request(u, { cache: 'reload' }))
+          .then(resp => { if (resp.ok) return cache.put(u, resp); })
+          .catch(() => {})
+      ))
+    ).then(() => self.skipWaiting())
   );
 });
 
@@ -37,9 +45,24 @@ self.addEventListener('activate', e => {
 
 self.addEventListener('fetch', e => {
   const url = new URL(e.request.url);
-  const isLocal = url.origin === self.location.origin || url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
+  const sameOrigin = url.origin === self.location.origin;
+  const isFont  = url.hostname === 'fonts.googleapis.com' || url.hostname === 'fonts.gstatic.com';
+  const isImage = sameOrigin && url.pathname.includes('/images/');
 
-  if (isLocal) {
+  if (sameOrigin && !isImage) {
+    // Network-first for the app shell (HTML/JS/CSS/JSON) so updates
+    // show up on the next open; cache is the offline fallback.
+    e.respondWith(
+      fetch(e.request).then(resp => {
+        if (resp.ok) {
+          const clone = resp.clone();
+          caches.open(CACHE).then(c => c.put(e.request, clone));
+        }
+        return resp;
+      }).catch(() => caches.match(e.request))
+    );
+  } else if (isImage || isFont) {
+    // Cache-first for images and fonts — they change rarely and are heavy
     e.respondWith(
       caches.match(e.request).then(cached => {
         if (cached) return cached;

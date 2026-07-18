@@ -340,9 +340,19 @@ function setupInstallPrompt() {
 
 // ── SERVICE WORKER ────────────────────────────────────────────────────────
 function registerSW() {
-  if ('serviceWorker' in navigator) {
-    navigator.serviceWorker.register('./sw.js').catch(() => {});
-  }
+  if (!('serviceWorker' in navigator)) return;
+
+  navigator.serviceWorker.register('./sw.js')
+    .then(reg => reg.update().catch(() => {}))
+    .catch(() => {});
+
+  // When a new service worker takes control, reload once so the
+  // fresh version shows immediately (skip the very first install).
+  let hadController = !!navigator.serviceWorker.controller;
+  navigator.serviceWorker.addEventListener('controllerchange', () => {
+    if (!hadController) { hadController = true; return; }
+    window.location.reload();
+  });
 }
 
 function cap(s) { return s.charAt(0).toUpperCase() + s.slice(1); }

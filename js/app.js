@@ -211,6 +211,20 @@ function pickNextWorkout() {
 
 function setupGymButton() {
   document.getElementById('gymBtn')?.addEventListener('click', showGymSheet);
+
+  // Home / Outdoors tiles — behavior coming next
+  document.getElementById('homeBtn')?.addEventListener('click', () =>
+    showSoonToast('🏠 Home workouts are coming soon!'));
+  document.getElementById('outdoorBtn')?.addEventListener('click', () =>
+    showSoonToast('🌳 Outdoor workouts are coming soon!'));
+
+  // Collapsible workout library
+  document.getElementById('browseToggle')?.addEventListener('click', () => {
+    const list = document.getElementById('workoutList');
+    const btn  = document.getElementById('browseToggle');
+    const open = list.classList.toggle('hidden');
+    btn.textContent = open ? 'Browse All Workouts ▾' : 'Hide All Workouts ▴';
+  });
   document.getElementById('sheetClose')?.addEventListener('click', hideGymSheet);
   document.getElementById('sheetBackdrop')?.addEventListener('click', hideGymSheet);
 
@@ -226,7 +240,11 @@ function setupGymButton() {
 
   document.getElementById('sheetAltBtn')?.addEventListener('click', () => {
     hideGymSheet();
-    document.getElementById('workoutList')?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    const list = document.getElementById('workoutList');
+    list?.classList.remove('hidden');
+    const btn = document.getElementById('browseToggle');
+    if (btn) btn.textContent = 'Hide All Workouts ▴';
+    list?.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 }
 
@@ -259,6 +277,17 @@ function hideGymSheet() {
     document.getElementById('sheetBackdrop').classList.add('hidden');
     document.body.style.overflow = '';
   }, 350);
+}
+
+// ── COMING SOON TOAST ────────────────────────────────────────────────────
+let soonTimeout = null;
+function showSoonToast(msg) {
+  const toast = document.getElementById('soonToast');
+  if (!toast) return;
+  toast.textContent = msg;
+  toast.classList.remove('hidden');
+  clearTimeout(soonTimeout);
+  soonTimeout = setTimeout(() => toast.classList.add('hidden'), 2500);
 }
 
 // ── WATER TOAST ──────────────────────────────────────────────────────────

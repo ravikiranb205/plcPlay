@@ -33,19 +33,35 @@
     <div class="home-sub" id="homeGreeting">Pick a workout and let's go.</div>
   </div>
 
-  <div class="gym-btn-wrap">
-    <button class="gym-btn" id="gymBtn">
-      <span class="gym-btn-icon">🏋️</span>
-      <span class="gym-btn-text">
-        <span class="gym-btn-label">I'm at the Gym</span>
-        <span class="gym-btn-sub">Generate today's workout for me</span>
+  <div class="tile-stack">
+    <button class="loc-tile tile-gym" id="gymBtn">
+      <span class="tile-icon">🏋️</span>
+      <span class="tile-text">
+        <span class="tile-title">I'm at the Gym</span>
+        <span class="tile-sub">Machines & free weights</span>
       </span>
-      <span class="gym-btn-arrow">›</span>
+      <span class="tile-arrow">›</span>
+    </button>
+    <button class="loc-tile tile-home" id="homeBtn">
+      <span class="tile-icon">🏠</span>
+      <span class="tile-text">
+        <span class="tile-title">I'm at Home</span>
+        <span class="tile-sub">Bodyweight & minimal gear</span>
+      </span>
+      <span class="tile-arrow">›</span>
+    </button>
+    <button class="loc-tile tile-outdoor" id="outdoorBtn">
+      <span class="tile-icon">🌳</span>
+      <span class="tile-text">
+        <span class="tile-title">I'm Outdoors</span>
+        <span class="tile-sub">Run, park & fresh air</span>
+      </span>
+      <span class="tile-arrow">›</span>
     </button>
   </div>
 
-  <div class="section-heading">All Workouts</div>
-  <div class="workout-list" id="workoutList"></div>
+  <button class="browse-toggle" id="browseToggle">Browse All Workouts ▾</button>
+  <div class="workout-list hidden" id="workoutList"></div>
   <div style="height:16px"></div>
 </div>
 
@@ -139,6 +155,11 @@
     </div>
   </div>
 </div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- COMING SOON TOAST                                   -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="soon-toast hidden" id="soonToast"></div>
 
 <!-- ═══════════════════════════════════════════════════ -->
 <!-- WATER REMINDER TOAST                                -->

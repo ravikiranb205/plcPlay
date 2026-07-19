@@ -75,7 +75,8 @@
           "tip": "Same movement from the knees. Keep hips forward in one line from knees to head \u2014 don't hinge.",
           "emoji": "\ud83d\udcaa"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/push-up/"
+        "referenceUrl": "https://weighttraining.guide/exercises/push-up/",
+        "image": "./images/home/pushup.jpg"
       },
       {
         "id": 2,
@@ -120,7 +121,8 @@
           "sets": "3 sets \u00d7 12 reps \u00b7 45s rest",
           "tip": "Squat down until you lightly touch a chair, then stand. Builds confidence in depth without losing balance.",
           "emoji": "\ud83e\uddb5"
-        }
+        },
+        "image": "./images/home/bw-squat.jpg"
       },
       {
         "id": 3,
@@ -165,7 +167,8 @@
           "sets": "3 sets \u00d7 8 each leg \u00b7 45s rest",
           "tip": "Feet stay planted in a lunge stance; just drop and drive up. Hold a wall for balance.",
           "emoji": "\ud83d\udeb6"
-        }
+        },
+        "image": "./images/home/reverse-lunge.jpg"
       },
       {
         "id": 4,
@@ -209,7 +212,8 @@
           "sets": "3 sets \u00d7 12 reps \u00b7 45s rest",
           "tip": "Hands on a counter or sturdy chair. Easier angle, still hits shoulders and chest.",
           "emoji": "\ud83d\udd3a"
-        }
+        },
+        "image": "./images/home/pike-pushup.jpg"
       },
       {
         "id": 5,
@@ -254,7 +258,8 @@
           "tip": "One foot on the floor, other leg extended. Harder \u2014 keep hips level.",
           "emoji": "\ud83c\udf09"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/glute-bridge/"
+        "referenceUrl": "https://weighttraining.guide/exercises/glute-bridge/",
+        "image": "./images/home/glute-bridge.jpg"
       },
       {
         "id": 6,
@@ -299,7 +304,8 @@
           "tip": "Same brace from the knees. Build up hold time before moving to full plank.",
           "emoji": "\ud83e\uddf1"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/"
+        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/",
+        "image": "./images/home/plank.jpg"
       }
     ]
   },
@@ -367,7 +373,8 @@
           "sets": "2 \u00d7 10 reps \u00b7 20s rest",
           "tip": "Same spinal wave sitting on a chair, hands on knees.",
           "emoji": "\ud83d\udc31"
-        }
+        },
+        "image": "./images/home/cat-cow.jpg"
       },
       {
         "id": 2,
@@ -406,7 +413,8 @@
           "sets": "2 \u00d7 30s each side \u00b7 20s rest",
           "tip": "Just hold the deep lunge with the back knee down. Sink hips forward and down.",
           "emoji": "\ud83c\udf0d"
-        }
+        },
+        "image": "./images/home/worlds-greatest.jpg"
       },
       {
         "id": 3,
@@ -444,7 +452,8 @@
           "sets": "2 \u00d7 45s hold \u00b7 20s rest",
           "tip": "Soles of feet together, knees dropping outward. Gently press knees down with elbows.",
           "emoji": "\ud83d\udd04"
-        }
+        },
+        "image": "./images/home/9090-hip.jpg"
       },
       {
         "id": 4,
@@ -481,7 +490,8 @@
           "sets": "2 \u00d7 8 each side \u00b7 20s rest",
           "tip": "Lying on your side, knees stacked at 90\u00b0. Open the top arm like a book to the other side.",
           "emoji": "\ud83c\udf00"
-        }
+        },
+        "image": "./images/home/ill-thoracic.jpg"
       },
       {
         "id": 5,
@@ -520,7 +530,8 @@
           "sets": "2 \u00d7 30s \u00b7 30s rest",
           "tip": "Hold onto a door frame or heavy table for balance and depth.",
           "emoji": "\ud83c\udfcb\ufe0f"
-        }
+        },
+        "image": "./images/home/bw-squat.jpg"
       },
       {
         "id": 6,
@@ -557,7 +568,8 @@
           "sets": "2 \u00d7 30s hold \u00b7 20s rest",
           "tip": "Feet hip-width, fold forward and hang heavy. Bend knees as much as needed.",
           "emoji": "\ud83e\uddb5"
-        }
+        },
+        "image": "./images/home/hamstring-scoop.jpg"
       }
     ]
   },
@@ -627,7 +639,8 @@
           "sets": "2 \u00d7 3 rounds \u00b7 30s rest",
           "tip": "Skip the plank/floor section: reach up, fold, half lift, fold, rise. Great when wrists complain.",
           "emoji": "\ud83c\udf05"
-        }
+        },
+        "image": "./images/home/ill-sun.jpg"
       },
       {
         "id": 2,
@@ -666,7 +679,8 @@
           "sets": "2 \u00d7 20s each side \u00b7 20s rest",
           "tip": "Shorten the stance and bend the knee less. Same shape, less load.",
           "emoji": "\u2694\ufe0f"
-        }
+        },
+        "image": "./images/home/ill-warrior2.jpg"
       },
       {
         "id": 3,
@@ -705,7 +719,8 @@
           "sets": "2 \u00d7 20s each side \u00b7 20s rest",
           "tip": "Rest the bottom hand on a chair seat instead of your shin.",
           "emoji": "\ud83d\udcd0"
-        }
+        },
+        "image": "./images/home/ill-triangle.jpg"
       },
       {
         "id": 4,
@@ -744,7 +759,8 @@
           "sets": "2 \u00d7 30s \u00b7 20s rest",
           "tip": "Knees stay down, chest melts toward the floor, arms extended. Gentler shoulder stretch.",
           "emoji": "\ud83d\udc15"
-        }
+        },
+        "image": "./images/home/ill-downdog.jpg"
       },
       {
         "id": 5,
@@ -781,7 +797,8 @@
           "sets": "2 \u00d7 45s each side \u00b7 20s rest",
           "tip": "On your back, ankle over the opposite knee, pull the bottom thigh toward you. Same stretch, easier on knees.",
           "emoji": "\ud83d\udd4a\ufe0f"
-        }
+        },
+        "image": "./images/home/ill-pigeon.jpg"
       },
       {
         "id": 6,
@@ -819,7 +836,8 @@
           "sets": "2 \u00d7 30s \u00b7 30s rest",
           "tip": "Back flat against a wall, thighs parallel to floor. Same burn, more support.",
           "emoji": "\ud83e\ude91"
-        }
+        },
+        "image": "./images/home/ill-chair.jpg"
       }
     ]
   },
@@ -895,7 +913,8 @@
           "tip": "Knees at 90\u00b0, tap one heel to the floor at a time. Keep the lower back glued down.",
           "emoji": "\ud83e\udeb2"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/dead-bug/"
+        "referenceUrl": "https://weighttraining.guide/exercises/dead-bug/",
+        "image": "./images/home/dead-bug.jpg"
       },
       {
         "id": 2,
@@ -940,7 +959,8 @@
           "tip": "Same position from the knees. Progress hold time each week.",
           "emoji": "\ud83e\uddf1"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/"
+        "referenceUrl": "https://weighttraining.guide/exercises/front-plank/",
+        "image": "./images/home/plank.jpg"
       },
       {
         "id": 3,
@@ -983,7 +1003,8 @@
           "sets": "3 \u00d7 20s each side \u00b7 30s rest",
           "tip": "Bottom knee bent on the floor for support. Keep hips lifted and stacked.",
           "emoji": "\ud83d\udccf"
-        }
+        },
+        "image": "./images/home/side-plank.jpg"
       },
       {
         "id": 4,
@@ -1026,7 +1047,8 @@
           "sets": "3 \u00d7 12 each side \u00b7 30s rest",
           "tip": "Standing, raise a knee to the opposite elbow. Easier on the neck and lower back.",
           "emoji": "\ud83d\udeb4"
-        }
+        },
+        "image": "./images/home/bicycle-crunch.jpg"
       },
       {
         "id": 5,
@@ -1070,7 +1092,8 @@
           "tip": "Same movement with knees bent at 90\u00b0. Shorter lever, easier on the back.",
           "emoji": "\ud83e\uddb5"
         },
-        "referenceUrl": "https://weighttraining.guide/exercises/lying-leg-raise/"
+        "referenceUrl": "https://weighttraining.guide/exercises/lying-leg-raise/",
+        "image": "./images/home/leg-raises.jpg"
       },
       {
         "id": 6,
@@ -1114,7 +1137,8 @@
           "sets": "3 \u00d7 10 each arm \u00b7 30s rest",
           "tip": "Extend only the arms first, keeping both knees down. Add legs later.",
           "emoji": "\ud83d\udc26"
-        }
+        },
+        "image": "./images/home/ill-birddog.jpg"
       }
     ]
   },
@@ -1192,7 +1216,8 @@
           "sets": "3 \u00d7 30s \u00b7 30s rest",
           "tip": "Step side to side with the arm swing instead of jumping. Low impact, same rhythm.",
           "emoji": "\u2b50"
-        }
+        },
+        "image": "./images/home/ill-jacks.jpg"
       },
       {
         "id": 2,
@@ -1236,7 +1261,8 @@
           "sets": "3 \u00d7 30s \u00b7 45s rest",
           "tip": "Step back and step in instead of jumping, stand tall instead of jumping up.",
           "emoji": "\ud83d\udca5"
-        }
+        },
+        "image": "./images/home/ill-burpee.jpg"
       },
       {
         "id": 3,
@@ -1281,7 +1307,8 @@
           "sets": "3 \u00d7 30s \u00b7 30s rest",
           "tip": "Same movement at half speed with a 1-second pause per knee drive.",
           "emoji": "\u26f0\ufe0f"
-        }
+        },
+        "image": "./images/home/mountain-climbers.jpg"
       },
       {
         "id": 4,
@@ -1326,7 +1353,8 @@
           "sets": "3 \u00d7 30s \u00b7 30s rest",
           "tip": "March the knees up instead of running. Keep the arm drive.",
           "emoji": "\ud83c\udfc3"
-        }
+        },
+        "image": "./images/home/ill-highknees.jpg"
       },
       {
         "id": 5,
@@ -1371,7 +1399,8 @@
           "sets": "3 \u00d7 30s \u00b7 45s rest",
           "tip": "Regular squats done quickly with no jump. Keep depth honest.",
           "emoji": "\ud83d\udc38"
-        }
+        },
+        "image": "./images/home/squat-jumps.jpg"
       },
       {
         "id": 6,
@@ -1416,7 +1445,8 @@
           "sets": "3 \u00d7 30s \u00b7 30s rest",
           "tip": "Step side to side, reaching down toward the lead foot. No hop.",
           "emoji": "\u26f8\ufe0f"
-        }
+        },
+        "image": "./images/home/skater-hops.jpg"
       }
     ]
   }

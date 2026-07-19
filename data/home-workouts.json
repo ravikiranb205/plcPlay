@@ -374,7 +374,7 @@
           "tip": "Same spinal wave sitting on a chair, hands on knees.",
           "emoji": "\ud83d\udc31"
         },
-        "image": "./images/gifs/cat-cow.gif"
+        "image": "./images/gifs/real-catcow.gif"
       },
       {
         "id": 2,
@@ -491,7 +491,7 @@
           "tip": "Lying on your side, knees stacked at 90\u00b0. Open the top arm like a book to the other side.",
           "emoji": "\ud83c\udf00"
         },
-        "image": "./images/gifs/thoracic-anim.gif"
+        "image": "./images/gifs/real-thoracic.gif"
       },
       {
         "id": 5,
@@ -640,7 +640,7 @@
           "tip": "Skip the plank/floor section: reach up, fold, half lift, fold, rise. Great when wrists complain.",
           "emoji": "\ud83c\udf05"
         },
-        "image": "./images/gifs/sun-anim.gif"
+        "image": "./images/gifs/real-sun.gif"
       },
       {
         "id": 2,
@@ -680,7 +680,7 @@
           "tip": "Shorten the stance and bend the knee less. Same shape, less load.",
           "emoji": "\u2694\ufe0f"
         },
-        "image": "./images/home/ill-warrior2.jpg"
+        "image": "./images/gifs/real-warrior2.gif"
       },
       {
         "id": 3,
@@ -720,7 +720,7 @@
           "tip": "Rest the bottom hand on a chair seat instead of your shin.",
           "emoji": "\ud83d\udcd0"
         },
-        "image": "./images/home/ill-triangle.jpg"
+        "image": "./images/gifs/real-triangle.gif"
       },
       {
         "id": 4,
@@ -760,7 +760,7 @@
           "tip": "Knees stay down, chest melts toward the floor, arms extended. Gentler shoulder stretch.",
           "emoji": "\ud83d\udc15"
         },
-        "image": "./images/home/ill-downdog.jpg"
+        "image": "./images/gifs/real-downdog.gif"
       },
       {
         "id": 5,
@@ -798,7 +798,7 @@
           "tip": "On your back, ankle over the opposite knee, pull the bottom thigh toward you. Same stretch, easier on knees.",
           "emoji": "\ud83d\udd4a\ufe0f"
         },
-        "image": "./images/home/ill-pigeon.jpg"
+        "image": "./images/gifs/real-pigeon.gif"
       },
       {
         "id": 6,
@@ -837,7 +837,7 @@
           "tip": "Back flat against a wall, thighs parallel to floor. Same burn, more support.",
           "emoji": "\ud83e\ude91"
         },
-        "image": "./images/home/ill-chair.jpg"
+        "image": "./images/gifs/real-chair.gif"
       }
     ]
   },
@@ -1138,7 +1138,7 @@
           "tip": "Extend only the arms first, keeping both knees down. Add legs later.",
           "emoji": "\ud83d\udc26"
         },
-        "image": "./images/gifs/birddog-anim.gif"
+        "image": "./images/gifs/real-birddog.gif"
       }
     ]
   },
@@ -1217,7 +1217,7 @@
           "tip": "Step side to side with the arm swing instead of jumping. Low impact, same rhythm.",
           "emoji": "\u2b50"
         },
-        "image": "./images/gifs/jacks-anim.gif"
+        "image": "./images/gifs/real-jacks.gif"
       },
       {
         "id": 2,
@@ -1262,7 +1262,7 @@
           "tip": "Step back and step in instead of jumping, stand tall instead of jumping up.",
           "emoji": "\ud83d\udca5"
         },
-        "image": "./images/gifs/burpee-anim.gif"
+        "image": "./images/gifs/real-burpee.gif"
       },
       {
         "id": 3,
@@ -1308,7 +1308,7 @@
           "tip": "Same movement at half speed with a 1-second pause per knee drive.",
           "emoji": "\u26f0\ufe0f"
         },
-        "image": "./images/gifs/mountain-climbers.gif"
+        "image": "./images/gifs/real-mtnclimb.gif"
       },
       {
         "id": 4,
@@ -1354,7 +1354,7 @@
           "tip": "March the knees up instead of running. Keep the arm drive.",
           "emoji": "\ud83c\udfc3"
         },
-        "image": "./images/gifs/highknees-anim.gif"
+        "image": "./images/gifs/real-highknees.gif"
       },
       {
         "id": 5,
@@ -1400,7 +1400,7 @@
           "tip": "Regular squats done quickly with no jump. Keep depth honest.",
           "emoji": "\ud83d\udc38"
         },
-        "image": "./images/gifs/squat-jumps.gif"
+        "image": "./images/gifs/real-squatjump.gif"
       },
       {
         "id": 6,

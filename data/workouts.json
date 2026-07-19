@@ -86,7 +86,7 @@
           "emoji": "\ud83c\udfcb\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bent-over-row/"
         },
-        "image": "./images/day3-ex2.jpg",
+        "image": "./images/gifs/lat-pulldown.gif",
         "altImage": "./images/day3-ex3-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/cable-lat-pulldown/"
       },
@@ -141,7 +141,7 @@
           "emoji": "\ud83d\udcaa",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bench-press/"
         },
-        "image": "./images/day3-ex1-alt.jpg",
+        "image": "./images/gifs/chest-press.gif",
         "altImage": "./images/day5-ex2-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/machine-chest-press/"
       },
@@ -190,7 +190,7 @@
           "emoji": "\ud83d\udd17",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bent-over-row/"
         },
-        "image": "./images/day3-ex3.jpg",
+        "image": "./images/gifs/cable-row.gif",
         "altImage": "./images/day3-ex2-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/seated-cable-row/"
       },
@@ -239,7 +239,7 @@
           "emoji": "\ud83e\uddbe",
           "referenceUrl": "https://weighttraining.guide/exercises/seated-dumbbell-shoulder-press/"
         },
-        "image": "./images/day3-ex4-alt.jpg",
+        "image": "./images/gifs/shoulder-press-machine.gif",
         "altImage": "./images/day3-ex4.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/machine-shoulder-press/"
       },
@@ -280,7 +280,7 @@
           "emoji": "\ud83d\udcaa",
           "referenceUrl": "https://weighttraining.guide/exercises/barbell-curl/"
         },
-        "image": "./images/day3-ex6.jpg",
+        "image": "./images/gifs/db-curl.gif",
         "altImage": "./images/day3-ex6-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-curl/"
       },
@@ -320,7 +320,7 @@
           "emoji": "\u2b07\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/seated-dumbbell-overhead-triceps-extension/"
         },
-        "image": "./images/day3-ex7.jpg",
+        "image": "./images/gifs/pushdown.gif",
         "altImage": "./images/day3-ex7-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/triceps-pushdown/"
       }
@@ -414,7 +414,7 @@
           "emoji": "\ud83d\udcd0",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bench-press/"
         },
-        "image": "./images/day3-ex1.jpg",
+        "image": "./images/gifs/incline-db-press.gif",
         "altImage": "./images/day3-ex1-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/incline-dumbbell-bench-press/"
       },
@@ -470,7 +470,7 @@
           "emoji": "\ud83c\udfcb\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bent-over-row/"
         },
-        "image": "./images/day3-ex2.jpg",
+        "image": "./images/gifs/wide-lat-pulldown.gif",
         "altImage": "./images/day3-ex2-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/wide-grip-lat-pulldown/"
       },
@@ -519,7 +519,7 @@
           "emoji": "\ud83d\udd17",
           "referenceUrl": "https://weighttraining.guide/exercises/seated-cable-row/"
         },
-        "image": "./images/day3-ex3.jpg",
+        "image": "./images/gifs/cable-row.gif",
         "altImage": "./images/day3-ex3-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/seated-cable-row/"
       },
@@ -568,7 +568,7 @@
           "emoji": "\ud83e\uddbe",
           "referenceUrl": "https://weighttraining.guide/exercises/seated-dumbbell-shoulder-press/"
         },
-        "image": "./images/day3-ex4.jpg",
+        "image": "./images/gifs/arnold-press.gif",
         "altImage": "./images/day3-ex4-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/arnold-press/"
       },
@@ -615,7 +615,7 @@
           "emoji": "\u2194\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/cable-lateral-raise/"
         },
-        "image": "./images/day3-ex5.jpg",
+        "image": "./images/gifs/lateral-raise.gif",
         "altImage": "./images/day3-ex5-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-lateral-raise/"
       },
@@ -663,7 +663,7 @@
           "emoji": "\ud83d\udcaa",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-curl/"
         },
-        "image": "./images/day3-ex6.jpg",
+        "image": "./images/gifs/hammer-curl.gif",
         "altImage": "./images/day3-ex6-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-hammer-curl/"
       },
@@ -709,7 +709,7 @@
           "emoji": "\u2b07\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-kickback/"
         },
-        "image": "./images/day3-ex7.jpg",
+        "image": "./images/gifs/rope-pushdown.gif",
         "altImage": "./images/day3-ex7-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/triceps-rope-pushdown/"
       },
@@ -751,7 +751,7 @@
           "emoji": "\ud83c\udfaf",
           "referenceUrl": "https://weighttraining.guide/exercises/band-pull-apart/"
         },
-        "image": "./images/day3-ex8.jpg",
+        "image": "./images/gifs/face-pull.gif",
         "altImage": "./images/day3-ex8-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/face-pull/"
       }
@@ -845,7 +845,7 @@
           "emoji": "\ud83c\udfcb\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-goblet-squat/"
         },
-        "image": "./images/day4-ex1.jpg",
+        "image": "./images/gifs/leg-press.gif",
         "altImage": "./images/day4-ex1-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/leg-press/"
       },
@@ -891,7 +891,7 @@
           "emoji": "\ud83d\udd01",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-romanian-deadlift/"
         },
-        "image": "./images/day4-ex2.jpg",
+        "image": "./images/gifs/leg-curl.gif",
         "altImage": "./images/day4-ex2-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/lying-leg-curl/"
       },
@@ -935,7 +935,7 @@
           "emoji": "\u2b06\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-lunge/"
         },
-        "image": "./images/day4-ex3.jpg",
+        "image": "./images/gifs/leg-extension.gif",
         "altImage": "./images/day4-ex3-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/leg-extension/"
       },
@@ -983,7 +983,7 @@
           "emoji": "\ud83c\udfd7\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-romanian-deadlift/"
         },
-        "image": "./images/day4-ex4.jpg",
+        "image": "./images/gifs/rdl.gif",
         "altImage": "./images/day4-ex4-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/barbell-romanian-deadlift/"
       },
@@ -1029,7 +1029,7 @@
           "emoji": "\ud83e\uddb6",
           "referenceUrl": "https://weighttraining.guide/exercises/machine-seated-calf-raise/"
         },
-        "image": "./images/day4-ex5.jpg",
+        "image": "./images/gifs/calf-raise.gif",
         "altImage": "./images/day4-ex5-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/machine-standing-calf-raise/"
       },
@@ -1070,7 +1070,7 @@
           "emoji": "\ud83e\uddf1",
           "referenceUrl": "https://weighttraining.guide/exercises/dead-bug/"
         },
-        "image": "./images/day4-ex6.jpg",
+        "image": "./images/gifs/plank.gif",
         "altImage": "./images/day4-ex6-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/front-plank/"
       }
@@ -1166,7 +1166,7 @@
           "emoji": "\ud83d\udcd0",
           "referenceUrl": "https://weighttraining.guide/exercises/machine-chest-press/"
         },
-        "image": "./images/day3-ex1.jpg",
+        "image": "./images/gifs/incline-db-press.gif",
         "altImage": "./images/day5-ex1-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/incline-dumbbell-bench-press/"
       },
@@ -1214,7 +1214,7 @@
           "emoji": "\ud83d\udcaa",
           "referenceUrl": "https://weighttraining.guide/exercises/machine-chest-press/"
         },
-        "image": "./images/day3-ex1-alt.jpg",
+        "image": "./images/gifs/db-bench.gif",
         "altImage": "./images/day5-ex2-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-bench-press/"
       },
@@ -1263,7 +1263,7 @@
           "emoji": "\ud83d\udd04",
           "referenceUrl": "https://weighttraining.guide/exercises/arnold-press/"
         },
-        "image": "./images/day3-ex4-alt.jpg",
+        "image": "./images/gifs/seated-db-press.gif",
         "altImage": "./images/day3-ex4.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/seated-dumbbell-shoulder-press/"
       },
@@ -1309,7 +1309,7 @@
           "emoji": "\u2194\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/cable-lateral-raise/"
         },
-        "image": "./images/day3-ex5-alt.jpg",
+        "image": "./images/gifs/lateral-raise.gif",
         "altImage": "./images/day5-ex4-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/dumbbell-lateral-raise/"
       },
@@ -1355,7 +1355,7 @@
           "emoji": "\u2b07\ufe0f",
           "referenceUrl": "https://weighttraining.guide/exercises/triceps-pushdown/"
         },
-        "image": "./images/day3-ex7.jpg",
+        "image": "./images/gifs/rope-pushdown.gif",
         "altImage": "./images/day5-ex5-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/triceps-rope-pushdown/"
       },
@@ -1399,7 +1399,7 @@
           "emoji": "\ud83d\udd3c",
           "referenceUrl": "https://weighttraining.guide/exercises/lying-dumbbell-triceps-extension/"
         },
-        "image": "./images/day3-ex7-alt.jpg",
+        "image": "./images/gifs/oh-triceps-ext.gif",
         "altImage": "./images/day5-ex6-alt.jpg",
         "referenceUrl": "https://weighttraining.guide/exercises/seated-dumbbell-overhead-triceps-extension/"
       }

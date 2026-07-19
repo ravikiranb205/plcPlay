@@ -76,7 +76,7 @@
           "emoji": "\ud83d\udcaa"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/push-up/",
-        "image": "./images/home/pushup.jpg"
+        "image": "./images/gifs/pushup.gif"
       },
       {
         "id": 2,
@@ -122,7 +122,7 @@
           "tip": "Squat down until you lightly touch a chair, then stand. Builds confidence in depth without losing balance.",
           "emoji": "\ud83e\uddb5"
         },
-        "image": "./images/home/bw-squat.jpg"
+        "image": "./images/gifs/bw-squat.gif"
       },
       {
         "id": 3,
@@ -168,7 +168,7 @@
           "tip": "Feet stay planted in a lunge stance; just drop and drive up. Hold a wall for balance.",
           "emoji": "\ud83d\udeb6"
         },
-        "image": "./images/home/reverse-lunge.jpg"
+        "image": "./images/gifs/reverse-lunge.gif"
       },
       {
         "id": 4,
@@ -213,7 +213,7 @@
           "tip": "Hands on a counter or sturdy chair. Easier angle, still hits shoulders and chest.",
           "emoji": "\ud83d\udd3a"
         },
-        "image": "./images/home/pike-pushup.jpg"
+        "image": "./images/gifs/pike-pushup.gif"
       },
       {
         "id": 5,
@@ -259,7 +259,7 @@
           "emoji": "\ud83c\udf09"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/glute-bridge/",
-        "image": "./images/home/glute-bridge.jpg"
+        "image": "./images/gifs/glute-bridge.gif"
       },
       {
         "id": 6,
@@ -305,7 +305,7 @@
           "emoji": "\ud83e\uddf1"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/front-plank/",
-        "image": "./images/home/plank.jpg"
+        "image": "./images/gifs/plank.gif"
       }
     ]
   },
@@ -374,7 +374,7 @@
           "tip": "Same spinal wave sitting on a chair, hands on knees.",
           "emoji": "\ud83d\udc31"
         },
-        "image": "./images/home/cat-cow.jpg"
+        "image": "./images/gifs/cat-cow.gif"
       },
       {
         "id": 2,
@@ -414,7 +414,7 @@
           "tip": "Just hold the deep lunge with the back knee down. Sink hips forward and down.",
           "emoji": "\ud83c\udf0d"
         },
-        "image": "./images/home/worlds-greatest.jpg"
+        "image": "./images/gifs/worlds-greatest.gif"
       },
       {
         "id": 3,
@@ -453,7 +453,7 @@
           "tip": "Soles of feet together, knees dropping outward. Gently press knees down with elbows.",
           "emoji": "\ud83d\udd04"
         },
-        "image": "./images/home/9090-hip.jpg"
+        "image": "./images/gifs/9090-hip.gif"
       },
       {
         "id": 4,
@@ -491,7 +491,7 @@
           "tip": "Lying on your side, knees stacked at 90\u00b0. Open the top arm like a book to the other side.",
           "emoji": "\ud83c\udf00"
         },
-        "image": "./images/home/ill-thoracic.jpg"
+        "image": "./images/gifs/thoracic-anim.gif"
       },
       {
         "id": 5,
@@ -531,7 +531,7 @@
           "tip": "Hold onto a door frame or heavy table for balance and depth.",
           "emoji": "\ud83c\udfcb\ufe0f"
         },
-        "image": "./images/home/bw-squat.jpg"
+        "image": "./images/gifs/bw-squat.gif"
       },
       {
         "id": 6,
@@ -569,7 +569,7 @@
           "tip": "Feet hip-width, fold forward and hang heavy. Bend knees as much as needed.",
           "emoji": "\ud83e\uddb5"
         },
-        "image": "./images/home/hamstring-scoop.jpg"
+        "image": "./images/gifs/hamstring-scoop.gif"
       }
     ]
   },
@@ -640,7 +640,7 @@
           "tip": "Skip the plank/floor section: reach up, fold, half lift, fold, rise. Great when wrists complain.",
           "emoji": "\ud83c\udf05"
         },
-        "image": "./images/home/ill-sun.jpg"
+        "image": "./images/gifs/sun-anim.gif"
       },
       {
         "id": 2,
@@ -914,7 +914,7 @@
           "emoji": "\ud83e\udeb2"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/dead-bug/",
-        "image": "./images/home/dead-bug.jpg"
+        "image": "./images/gifs/dead-bug.gif"
       },
       {
         "id": 2,
@@ -960,7 +960,7 @@
           "emoji": "\ud83e\uddf1"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/front-plank/",
-        "image": "./images/home/plank.jpg"
+        "image": "./images/gifs/plank.gif"
       },
       {
         "id": 3,
@@ -1004,7 +1004,7 @@
           "tip": "Bottom knee bent on the floor for support. Keep hips lifted and stacked.",
           "emoji": "\ud83d\udccf"
         },
-        "image": "./images/home/side-plank.jpg"
+        "image": "./images/gifs/side-plank.gif"
       },
       {
         "id": 4,
@@ -1048,7 +1048,7 @@
           "tip": "Standing, raise a knee to the opposite elbow. Easier on the neck and lower back.",
           "emoji": "\ud83d\udeb4"
         },
-        "image": "./images/home/bicycle-crunch.jpg"
+        "image": "./images/gifs/bicycle-crunch.gif"
       },
       {
         "id": 5,
@@ -1093,7 +1093,7 @@
           "emoji": "\ud83e\uddb5"
         },
         "referenceUrl": "https://weighttraining.guide/exercises/lying-leg-raise/",
-        "image": "./images/home/leg-raises.jpg"
+        "image": "./images/gifs/leg-raises.gif"
       },
       {
         "id": 6,
@@ -1138,7 +1138,7 @@
           "tip": "Extend only the arms first, keeping both knees down. Add legs later.",
           "emoji": "\ud83d\udc26"
         },
-        "image": "./images/home/ill-birddog.jpg"
+        "image": "./images/gifs/birddog-anim.gif"
       }
     ]
   },
@@ -1217,7 +1217,7 @@
           "tip": "Step side to side with the arm swing instead of jumping. Low impact, same rhythm.",
           "emoji": "\u2b50"
         },
-        "image": "./images/home/ill-jacks.jpg"
+        "image": "./images/gifs/jacks-anim.gif"
       },
       {
         "id": 2,
@@ -1262,7 +1262,7 @@
           "tip": "Step back and step in instead of jumping, stand tall instead of jumping up.",
           "emoji": "\ud83d\udca5"
         },
-        "image": "./images/home/ill-burpee.jpg"
+        "image": "./images/gifs/burpee-anim.gif"
       },
       {
         "id": 3,
@@ -1308,7 +1308,7 @@
           "tip": "Same movement at half speed with a 1-second pause per knee drive.",
           "emoji": "\u26f0\ufe0f"
         },
-        "image": "./images/home/mountain-climbers.jpg"
+        "image": "./images/gifs/mountain-climbers.gif"
       },
       {
         "id": 4,
@@ -1354,7 +1354,7 @@
           "tip": "March the knees up instead of running. Keep the arm drive.",
           "emoji": "\ud83c\udfc3"
         },
-        "image": "./images/home/ill-highknees.jpg"
+        "image": "./images/gifs/highknees-anim.gif"
       },
       {
         "id": 5,
@@ -1400,7 +1400,7 @@
           "tip": "Regular squats done quickly with no jump. Keep depth honest.",
           "emoji": "\ud83d\udc38"
         },
-        "image": "./images/home/squat-jumps.jpg"
+        "image": "./images/gifs/squat-jumps.gif"
       },
       {
         "id": 6,
@@ -1446,7 +1446,7 @@
           "tip": "Step side to side, reaching down toward the lead foot. No hop.",
           "emoji": "\u26f8\ufe0f"
         },
-        "image": "./images/home/skater-hops.jpg"
+        "image": "./images/gifs/skater-hops.gif"
       }
     ]
   }

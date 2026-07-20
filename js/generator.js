@@ -250,6 +250,7 @@ function pickType(allWorkouts, history) {
     const raw = entry.workoutType || typeMap[entry.workoutId] || 'full_body';
     // Home sessions: strength counts as a full-body day for recovery;
     // mobility/yoga/core/HIIT don't affect the gym rotation
+    if (raw.startsWith('outdoor_')) return;
     if (raw.startsWith('home_') && raw !== 'home_strength') return;
     const type = normalizeType(raw === 'home_strength' ? 'full_body' : raw);
     if (lastTypeIdx[type] === Infinity) lastTypeIdx[type] = idx;

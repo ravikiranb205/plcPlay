@@ -8,9 +8,11 @@ const LAST_KEY = 'fitwin_last_workout';
 
 let workouts = [];
 let homeWorkouts = [];
+let outdoorWorkouts = [];
 let deferredInstallPrompt = null;
 let pickedWorkout = null;
 let pickedHomeId = null;
+let pickedOutdoorId = null;
 
 // ── INIT ────────────────────────────────────────────────────────────────
 async function init() {
@@ -18,6 +20,7 @@ async function init() {
     const resp = await fetch('./data/workouts.json');
     workouts = await resp.json();
     try { homeWorkouts = await (await fetch('./data/home-workouts.json')).json(); } catch { homeWorkouts = []; }
+    try { outdoorWorkouts = await (await fetch('./data/outdoor-workouts.json')).json(); } catch { outdoorWorkouts = []; }
   } catch {
     document.getElementById('workoutList').innerHTML =
       '<div class="history-empty">Could not load workouts. Please check your connection.</div>';
@@ -219,8 +222,7 @@ function setupGymButton() {
   document.getElementById('sheetTimeBack')?.addEventListener('click', showTimeStep);
 
   setupHomeSheet();
-  document.getElementById('outdoorBtn')?.addEventListener('click', () =>
-    showSoonToast('🌳 Outdoor workouts are coming soon!'));
+  setupOutdoorSheet();
 
   // Collapsible workout library
   document.getElementById('browseToggle')?.addEventListener('click', () => {
@@ -233,6 +235,7 @@ function setupGymButton() {
   document.getElementById('sheetBackdrop')?.addEventListener('click', () => {
     if (!document.getElementById('gymSheet').classList.contains('hidden')) hideGymSheet();
     if (!document.getElementById('homeSheet').classList.contains('hidden')) hideHomeSheet();
+    if (!document.getElementById('outdoorSheet').classList.contains('hidden')) hideOutdoorSheet();
   });
 
   document.getElementById('sheetGoBtn')?.addEventListener('click', () => {
@@ -376,6 +379,70 @@ function fitHomeWorkout(base, minutes) {
     stats: { exercises: numbered.length, minutes: `~${estMinutes}`, totalSets },
     exercises: numbered
   };
+}
+
+// ── I'M OUTDOORS — SESSION PICKER ────────────────────────────────────────
+function setupOutdoorSheet() {
+  document.getElementById('outdoorBtn')?.addEventListener('click', showOutdoorSheet);
+  document.getElementById('outdoorSheetClose')?.addEventListener('click', hideOutdoorSheet);
+  document.getElementById('outdoorVarBack')?.addEventListener('click', showOutdoorVarStep);
+
+  document.getElementById('outdoorVarList')?.addEventListener('click', e => {
+    const opt = e.target.closest('[data-varid]');
+    if (!opt) return;
+    pickedOutdoorId = opt.dataset.varid;
+    document.getElementById('outdoorSheetTitle').textContent = 'How Much Time?';
+    document.getElementById('outdoorVarStep').classList.add('hidden');
+    document.getElementById('outdoorTimeStep').classList.remove('hidden');
+  });
+
+  document.querySelectorAll('.otime-opt').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const base = outdoorWorkouts.find(w => w.id === pickedOutdoorId);
+      if (!base) return;
+      const workout = fitHomeWorkout(base, parseInt(btn.dataset.mins));
+      hideOutdoorSheet();
+      localStorage.setItem(LAST_KEY, workout.id);
+      startWaterReminder(15);
+      renderWorkout(workout);
+      showView('workout');
+    });
+  });
+}
+
+function showOutdoorSheet() {
+  if (!outdoorWorkouts.length) { showSoonToast('🌳 Outdoor sessions failed to load.'); return; }
+  const list = document.getElementById('outdoorVarList');
+  list.innerHTML = outdoorWorkouts.map(w => `
+<button class="var-opt" data-varid="${w.id}">
+  <div class="var-info">
+    <div class="var-title">${w.title}</div>
+    <div class="var-sub">${w.subtitle}</div>
+  </div>
+  <span class="var-arrow">›</span>
+</button>`).join('');
+
+  showOutdoorVarStep();
+  document.getElementById('outdoorSheet').classList.remove('hidden', 'sliding-out');
+  document.getElementById('sheetBackdrop').classList.remove('hidden');
+  document.body.style.overflow = 'hidden';
+}
+
+function showOutdoorVarStep() {
+  document.getElementById('outdoorSheetTitle').textContent = 'Outdoor Session';
+  document.getElementById('outdoorVarStep').classList.remove('hidden');
+  document.getElementById('outdoorTimeStep').classList.add('hidden');
+}
+
+function hideOutdoorSheet() {
+  const sheet = document.getElementById('outdoorSheet');
+  sheet.classList.add('sliding-out');
+  setTimeout(() => {
+    sheet.classList.add('hidden');
+    sheet.classList.remove('sliding-out');
+    document.getElementById('sheetBackdrop').classList.add('hidden');
+    document.body.style.overflow = '';
+  }, 350);
 }
 
 // ── COMING SOON TOAST ────────────────────────────────────────────────────

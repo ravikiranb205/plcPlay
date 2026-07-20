@@ -761,7 +761,18 @@ body {
 .sheet-alt-btn:hover { border-color: var(--muted); color: var(--text); }
 
 #sheetTimeStep.hidden, #sheetPickStep.hidden,
-#homeVarStep.hidden, #homeTimeStep.hidden { display: none; }
+#homeVarStep.hidden, #homeTimeStep.hidden,
+#outdoorVarStep.hidden, #outdoorTimeStep.hidden { display: none; }
+
+.outdoor-sheet {
+  background:
+    linear-gradient(180deg, rgba(14,14,14,0.9) 0%, rgba(14,14,14,0.82) 100%),
+    url('../images/tile-outdoor.jpg') center/cover no-repeat #181818;
+  border-top-color: #4090d0;
+}
+.outdoor-sheet .sheet-title { color: #4090d0; }
+.outdoor-sheet .var-arrow { color: #4090d0; }
+.outdoor-sheet .var-opt:active { border-color: #4090d0; }
 
 .home-sheet {
   background:

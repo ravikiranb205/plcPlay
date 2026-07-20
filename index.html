@@ -29,7 +29,7 @@
 <div class="view" id="viewHome">
   <div class="home-header">
     <div class="home-gym-label" id="homeGymLabel">⚡ Powerhouse Gym · South Lyon</div>
-    <div class="home-title">FitWin <span class="app-version">v16</span></div>
+    <div class="home-title">FitWin <span class="app-version">v17</span></div>
     <div class="home-sub" id="homeGreeting">Pick a workout and let's go.</div>
   </div>
 
@@ -203,6 +203,48 @@
     </div>
     <div class="sheet-actions">
       <button class="sheet-alt-btn" id="homeVarBack">← Change Type</button>
+    </div>
+  </div>
+  <div style="height: env(safe-area-inset-bottom, 8px)"></div>
+</div>
+
+<!-- ═══════════════════════════════════════════════════ -->
+<!-- OUTDOOR WORKOUT SHEET                               -->
+<!-- ═══════════════════════════════════════════════════ -->
+<div class="gym-sheet outdoor-sheet hidden" id="outdoorSheet">
+  <div class="sheet-handle"></div>
+  <div class="sheet-header">
+    <div class="sheet-title" id="outdoorSheetTitle">Outdoor Session</div>
+    <button class="sheet-close" id="outdoorSheetClose">✕</button>
+  </div>
+
+  <div id="outdoorVarStep">
+    <div class="sheet-reason">Fresh air time. What are you in the mood for?</div>
+    <div class="var-list" id="outdoorVarList"></div>
+  </div>
+
+  <div id="outdoorTimeStep" class="hidden">
+    <div class="sheet-reason">How long do you have? The session will be built to fit.</div>
+    <div class="time-grid">
+      <button class="otime-opt time-opt" data-mins="20">
+        <span class="time-num">20</span><span class="time-unit">min</span>
+        <span class="time-desc">Quick hit</span>
+      </button>
+      <button class="otime-opt time-opt" data-mins="30">
+        <span class="time-num">30</span><span class="time-unit">min</span>
+        <span class="time-desc">Express</span>
+      </button>
+      <button class="otime-opt time-opt" data-mins="45">
+        <span class="time-num">45</span><span class="time-unit">min</span>
+        <span class="time-desc">Solid session</span>
+      </button>
+      <button class="otime-opt time-opt" data-mins="75">
+        <span class="time-num">60+</span><span class="time-unit">min</span>
+        <span class="time-desc">Full session</span>
+      </button>
+    </div>
+    <div class="sheet-actions">
+      <button class="sheet-alt-btn" id="outdoorVarBack">← Change Activity</button>
     </div>
   </div>
   <div style="height: env(safe-area-inset-bottom, 8px)"></div>

@@ -1,0 +1,1121 @@
+[
+  {
+    "id": "outdoor_walk",
+    "type": "outdoor_walk",
+    "noWeightLog": true,
+    "title": "Power Walk",
+    "subtitle": "Steady Cardio \u00b7 Low Impact",
+    "gym": "\ud83c\udf33 Outdoor Session",
+    "badges": [
+      {
+        "text": "Outdoors",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> A structured walk that actually trains you. Posture tall, arms driving, pace with purpose. Great on joints, great for the head.",
+    "stats": {
+      "exercises": 5,
+      "minutes": "~40",
+      "totalSets": 9
+    },
+    "warmup": [
+      "10 ankle circles each direction, each foot",
+      "10 leg swings front-to-back each leg (hold a tree or pole)",
+      "10 leg swings side-to-side each leg",
+      "10 hip circles each direction",
+      "10 arm circles each direction"
+    ],
+    "cooldown": [
+      "Calf stretch on a curb \u00b7 30s each leg",
+      "Standing hamstring stretch \u00b7 30s each leg",
+      "Standing quad stretch \u00b7 30s each leg",
+      "Hip flexor lunge stretch \u00b7 30s each side"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Walking is underrated.</strong> Do this 3-4x a week and watch everything improve.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Easy Warm-Up Walk",
+        "emoji": "\ud83d\udeb6",
+        "muscles": [
+          "Calves",
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Form:</strong> Stand tall \u2014 imagine a string pulling the top of your head up. Eyes ahead, shoulders relaxed and back. Roll heel-to-toe with each step.",
+        "sets": [
+          {
+            "label": "Block 1",
+            "reps": "5 min",
+            "weight": "Easy pace",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Slow Stroll",
+          "sets": "5 min \u00b7 flat ground",
+          "tip": "Any comfortable pace counts. Just get moving and let the body warm up.",
+          "emoji": "\ud83d\udeb6"
+        },
+        "image": "./images/scene-walk.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Brisk Walk",
+        "emoji": "\ud83d\udca8",
+        "muscles": [
+          "Calves",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Pace check:</strong> You should be able to talk, but not sing. Bend elbows to 90\u00b0 and drive the arms \u2014 the legs follow the arms.",
+        "sets": [
+          {
+            "label": "Block 1",
+            "reps": "8 min",
+            "weight": "Brisk",
+            "rest": 60
+          },
+          {
+            "label": "Block 2",
+            "reps": "8 min",
+            "weight": "Brisk",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Moderate Walk",
+          "sets": "2 \u00d7 6 min",
+          "tip": "Drop the pace slightly but keep the arm drive and tall posture.",
+          "emoji": "\ud83d\udca8"
+        },
+        "image": "./images/scene-walk.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Power Intervals",
+        "emoji": "\u26a1",
+        "muscles": [
+          "Glutes",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core",
+          "Arms"
+        ],
+        "tip": "<strong>Go faster by moving your feet faster</strong> \u2014 quicker cadence, not longer strides. Overstriding brakes you and stresses the shins.",
+        "sets": [
+          {
+            "label": "Interval 1",
+            "reps": "2 min fast + 1 min easy",
+            "weight": "Fast",
+            "rest": 0
+          },
+          {
+            "label": "Interval 2",
+            "reps": "2 min fast + 1 min easy",
+            "weight": "Fast",
+            "rest": 0
+          },
+          {
+            "label": "Interval 3",
+            "reps": "2 min fast + 1 min easy",
+            "weight": "Fast",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Steady Brisk Walk",
+          "sets": "9 min continuous",
+          "tip": "Skip the surges and hold one strong steady pace instead.",
+          "emoji": "\u26a1"
+        },
+        "image": "./images/scene-walk.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Hill or Incline Walk",
+        "emoji": "\u26f0\ufe0f",
+        "muscles": [
+          "Glutes",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Glutes",
+          "Calves"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings"
+        ],
+        "tip": "<strong>On the way up:</strong> Lean forward from the ankles (not the waist), shorten your steps, push through the heels. Downhill: soft knees, small steps.",
+        "sets": [
+          {
+            "label": "Climb 1",
+            "reps": "3 min",
+            "weight": "Uphill",
+            "rest": 60
+          },
+          {
+            "label": "Climb 2",
+            "reps": "3 min",
+            "weight": "Uphill",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Stair Walking",
+          "sets": "2 \u00d7 3 min on stairs",
+          "tip": "No hill around? Any staircase works \u2014 same rules: short steps, push through heels.",
+          "emoji": "\u26f0\ufe0f"
+        },
+        "image": "./images/scene-walk.jpg"
+      },
+      {
+        "id": 5,
+        "name": "Cool-Down Stroll",
+        "emoji": "\ud83c\udf05",
+        "muscles": [
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Gradually slow down</strong> over the full 5 minutes. Shake out the arms, take deep breaths through the nose, and enjoy the view.",
+        "sets": [
+          {
+            "label": "Block 1",
+            "reps": "5 min",
+            "weight": "Easy",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Short Stroll",
+          "sets": "3 min minimum",
+          "tip": "Even a short taper beats stopping cold \u2014 it helps the heart rate come down smoothly.",
+          "emoji": "\ud83c\udf05"
+        },
+        "image": "./images/scene-walk.jpg"
+      }
+    ]
+  },
+  {
+    "id": "outdoor_run",
+    "type": "outdoor_run",
+    "noWeightLog": true,
+    "title": "Easy Run",
+    "subtitle": "Endurance \u00b7 Run/Walk Friendly",
+    "gym": "\ud83c\udf33 Outdoor Session",
+    "badges": [
+      {
+        "text": "Outdoors",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Today's focus:</strong> Relaxed endurance running. If you can't hold a conversation, you're going too fast \u2014 easy pace builds the engine.",
+    "stats": {
+      "exercises": 4,
+      "minutes": "~40",
+      "totalSets": 8
+    },
+    "warmup": [
+      "10 leg swings front-to-back each leg",
+      "10 leg swings side-to-side each leg",
+      "20 ankle hops in place (light and springy)",
+      "10 walking lunges",
+      "30s easy butt kicks + 30s easy high knees",
+      "3 min brisk walk building into the jog"
+    ],
+    "cooldown": [
+      "Standing quad stretch \u00b7 30s each leg",
+      "Calf stretch on a curb \u00b7 30s each leg",
+      "Standing hamstring fold \u00b7 30s",
+      "Hip flexor lunge stretch \u00b7 30s each side",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Easy miles build the engine.</strong> Save the racing for race day.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Warm-Up Jog",
+        "emoji": "\ud83d\udc22",
+        "muscles": [
+          "Quads",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Slower than feels natural.</strong> This primes tendons and heart rate. Short, quiet steps \u2014 imagine running on eggshells.",
+        "sets": [
+          {
+            "label": "Jog",
+            "reps": "5 min",
+            "weight": "Very easy",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Run/Walk Start",
+          "sets": "5 min \u00b7 1 min jog / 1 min walk",
+          "tip": "Alternate jogging and walking to ease in gently.",
+          "emoji": "\ud83d\udc22"
+        },
+        "image": "./images/gifs/real-jog.gif"
+      },
+      {
+        "id": 2,
+        "name": "Steady Run",
+        "emoji": "\ud83c\udfc3",
+        "muscles": [
+          "Quads",
+          "Hamstrings"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core",
+          "Calves"
+        ],
+        "tip": "<strong>Form:</strong> Land with your foot under your hips, not out in front. Quick light steps (~170+ per minute). Relax hands \u2014 imagine holding chips you don't want to crush.",
+        "sets": [
+          {
+            "label": "Run 1",
+            "reps": "10 min",
+            "weight": "Conversational",
+            "rest": 90
+          },
+          {
+            "label": "Run 2",
+            "reps": "10 min",
+            "weight": "Conversational",
+            "rest": 90
+          }
+        ],
+        "restSecs": 90,
+        "alt": {
+          "name": "Run/Walk Intervals",
+          "sets": "2 \u00d7 10 min \u00b7 2 min run / 1 min walk",
+          "tip": "Same total time, gentler on the body. The walk breaks are strategy, not failure.",
+          "emoji": "\ud83c\udfc3"
+        },
+        "image": "./images/gifs/real-jog.gif"
+      },
+      {
+        "id": 3,
+        "name": "Strides",
+        "emoji": "\ud83d\udca8",
+        "muscles": [
+          "Hamstrings",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Smooth accelerations,</strong> not sprints: build to about 85% over 20 seconds, tall posture, fast relaxed turnover, then walk it off.",
+        "sets": [
+          {
+            "label": "Stride 1",
+            "reps": "20s",
+            "weight": "Build to fast",
+            "rest": 60
+          },
+          {
+            "label": "Stride 2",
+            "reps": "20s",
+            "weight": "Build to fast",
+            "rest": 60
+          },
+          {
+            "label": "Stride 3",
+            "reps": "20s",
+            "weight": "Build to fast",
+            "rest": 60
+          },
+          {
+            "label": "Stride 4",
+            "reps": "20s",
+            "weight": "Build to fast",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Fast Butt Kicks",
+          "sets": "4 \u00d7 20s",
+          "tip": "Quick heels to glutes on the spot \u2014 trains the same fast turnover.",
+          "emoji": "\ud83d\udca8"
+        },
+        "image": "./images/gifs/real-buttkicks.gif"
+      },
+      {
+        "id": 4,
+        "name": "Cool-Down",
+        "emoji": "\ud83c\udf05",
+        "muscles": [
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Jog easy for 2-3 minutes, then walk.</strong> Heart rate should drift down before you stop and stretch.",
+        "sets": [
+          {
+            "label": "Taper",
+            "reps": "5 min",
+            "weight": "Jog \u2192 walk",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Walk Only",
+          "sets": "5 min easy walk",
+          "tip": "Skip the jog and just walk it out.",
+          "emoji": "\ud83c\udf05"
+        },
+        "image": "./images/scene-run.jpg"
+      }
+    ]
+  },
+  {
+    "id": "outdoor_bike",
+    "type": "outdoor_bike",
+    "noWeightLog": true,
+    "title": "Bike Ride",
+    "subtitle": "Cardio \u00b7 Legs \u00b7 Low Impact",
+    "gym": "\ud83c\udf33 Outdoor Session",
+    "badges": [
+      {
+        "text": "Outdoors",
+        "type": "info"
+      }
+    ],
+    "notice": "<strong>Before you roll:</strong> Helmet on, tires firm, brakes bite. <strong>Then:</strong> light grip, soft elbows, and spin circles \u2014 don't stomp squares.",
+    "stats": {
+      "exercises": 4,
+      "minutes": "~45",
+      "totalSets": 8
+    },
+    "warmup": [
+      "10 slow bodyweight squats to open the hips",
+      "10 leg swings each leg",
+      "10 shoulder rolls + neck side-to-side",
+      "Bike check: tire pressure, brakes, helmet strap",
+      "5 min easy spinning in a light gear"
+    ],
+    "cooldown": [
+      "Standing quad stretch \u00b7 30s each leg",
+      "Hip flexor lunge stretch \u00b7 30s each side (cycling shortens them)",
+      "Doorway chest opener \u00b7 30s (undo the hunch)",
+      "Standing hamstring fold \u00b7 30s"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Free speed, free therapy.</strong> Log the miles and enjoy the wind.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Easy Spin",
+        "emoji": "\ud83d\udeb4",
+        "muscles": [
+          "Quads",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Light gear, fast feet:</strong> aim for a smooth 80-90 pedal revolutions per minute. If your hips rock side to side, the gear is too big.",
+        "sets": [
+          {
+            "label": "Spin",
+            "reps": "5 min",
+            "weight": "Light gear",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Flat Cruise",
+          "sets": "5 min \u00b7 any comfortable gear",
+          "tip": "Just ride comfortably while your legs wake up.",
+          "emoji": "\ud83d\udeb4"
+        },
+        "image": "./images/scene-bike.jpg"
+      },
+      {
+        "id": 2,
+        "name": "Tempo Ride",
+        "emoji": "\ud83d\udd25",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Legs",
+          "Heart"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Comfortably hard:</strong> breathing is deep but controlled, legs feel worked but not burning. Elbows soft, upper body still \u2014 all the motion below the waist.",
+        "sets": [
+          {
+            "label": "Tempo 1",
+            "reps": "10 min",
+            "weight": "Moderate-hard",
+            "rest": 120
+          },
+          {
+            "label": "Tempo 2",
+            "reps": "10 min",
+            "weight": "Moderate-hard",
+            "rest": 120
+          }
+        ],
+        "restSecs": 120,
+        "alt": {
+          "name": "Steady Cruise",
+          "sets": "2 \u00d7 10 min moderate",
+          "tip": "Back the effort down to 'all-day pace' and enjoy the ride.",
+          "emoji": "\ud83d\udd25"
+        },
+        "image": "./images/scene-bike.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Hill Efforts",
+        "emoji": "\u26f0\ufe0f",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Calves",
+          "Core"
+        ],
+        "tip": "<strong>Stay seated,</strong> hands relaxed on the bars, core braced, and grind a steady rhythm. Shift BEFORE the hill, not on it.",
+        "sets": [
+          {
+            "label": "Hill 1",
+            "reps": "2 min",
+            "weight": "Big gear / climb",
+            "rest": 120
+          },
+          {
+            "label": "Hill 2",
+            "reps": "2 min",
+            "weight": "Big gear / climb",
+            "rest": 120
+          },
+          {
+            "label": "Hill 3",
+            "reps": "2 min",
+            "weight": "Big gear / climb",
+            "rest": 120
+          }
+        ],
+        "restSecs": 120,
+        "alt": {
+          "name": "Headwind Push",
+          "sets": "3 \u00d7 2 min into the wind",
+          "tip": "No hills? A headwind stretch in a bigger gear works exactly the same muscles.",
+          "emoji": "\u26f0\ufe0f"
+        },
+        "image": "./images/scene-bike.jpg"
+      },
+      {
+        "id": 4,
+        "name": "Cool-Down Spin",
+        "emoji": "\ud83c\udf05",
+        "muscles": [
+          "Quads"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Small gear, easy circles</strong> for the last 5 minutes. Legs should feel loose, not loaded, when you get off.",
+        "sets": [
+          {
+            "label": "Spin",
+            "reps": "5 min",
+            "weight": "Very light",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Coast & Roll",
+          "sets": "3-5 min easy",
+          "tip": "Soft pedal home. You earned it.",
+          "emoji": "\ud83c\udf05"
+        },
+        "image": "./images/scene-bike.jpg"
+      }
+    ]
+  },
+  {
+    "id": "outdoor_sprints",
+    "type": "outdoor_sprints",
+    "noWeightLog": true,
+    "title": "Sprint Day",
+    "subtitle": "Speed \u00b7 Power \u00b7 HIIT",
+    "gym": "\ud83c\udf33 Outdoor Session",
+    "badges": [
+      {
+        "text": "High Intensity",
+        "type": "alert"
+      }
+    ],
+    "notice": "<strong>Sprinting demands a real warm-up</strong> \u2014 do every warm-up item below, no skipping. Stop the session if your form breaks down; speed with sloppy form is how hamstrings get pulled.",
+    "stats": {
+      "exercises": 4,
+      "minutes": "~35",
+      "totalSets": 11
+    },
+    "warmup": [
+      "5 min easy jog",
+      "10 leg swings each leg, both directions",
+      "20 meters of high knees, then 20m butt kicks",
+      "20 meters of skipping (yes, actual skipping)",
+      "10 walking lunges with a torso twist",
+      "2 build-up runs to ~70% effort"
+    ],
+    "cooldown": [
+      "5 min easy walk",
+      "Standing hamstring fold \u00b7 40s",
+      "Standing quad stretch \u00b7 30s each leg",
+      "Calf stretch \u00b7 30s each leg",
+      "Deep breathing \u00b7 1 min"
+    ],
+    "closing": "<strong style='color:#c0c040;'>Speed is a skill.</strong> Quality reps, full recoveries \u2014 never race the rest timer today.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Build-Up Strides",
+        "emoji": "\ud83d\udcc8",
+        "muscles": [
+          "Hamstrings",
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [
+          "Core"
+        ],
+        "tip": "<strong>Accelerate gradually</strong> across 60-80 meters: jog \u2192 fast \u2192 quick. Peak around 80%, tall chest, eyes up. Walk back = your rest.",
+        "sets": [
+          {
+            "label": "Stride 1",
+            "reps": "~60m",
+            "weight": "Build to 80%",
+            "rest": 60
+          },
+          {
+            "label": "Stride 2",
+            "reps": "~60m",
+            "weight": "Build to 80%",
+            "rest": 60
+          },
+          {
+            "label": "Stride 3",
+            "reps": "~60m",
+            "weight": "Build to 80%",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Fast High Knees",
+          "sets": "3 \u00d7 15s",
+          "tip": "Sprint mechanics on the spot \u2014 drive the knees, pump the arms.",
+          "emoji": "\ud83d\udcc8"
+        },
+        "image": "./images/gifs/real-highknees.gif"
+      },
+      {
+        "id": 2,
+        "name": "Sprints",
+        "emoji": "\u26a1",
+        "muscles": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Hamstrings",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Quads",
+          "Calves",
+          "Core"
+        ],
+        "tip": "<strong>90% effort, never straining:</strong> drive the arms hip-to-lip, run tall, quick powerful steps. Walk back slowly \u2014 full recovery makes fast reps.",
+        "sets": [
+          {
+            "label": "Sprint 1",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          },
+          {
+            "label": "Sprint 2",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          },
+          {
+            "label": "Sprint 3",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          },
+          {
+            "label": "Sprint 4",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          },
+          {
+            "label": "Sprint 5",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          },
+          {
+            "label": "Sprint 6",
+            "reps": "50-80m",
+            "weight": "90%",
+            "rest": 90
+          }
+        ],
+        "restSecs": 90,
+        "alt": {
+          "name": "Hill Sprints",
+          "sets": "6 \u00d7 10s uphill",
+          "tip": "Safer on the hamstrings \u2014 the hill limits overstriding while building the same power.",
+          "emoji": "\u26a1"
+        },
+        "image": "./images/scene-sprint.jpg"
+      },
+      {
+        "id": 3,
+        "name": "Walking Lunge Finisher",
+        "emoji": "\ud83d\udeb6",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Core"
+        ],
+        "tip": "<strong>Long controlled steps,</strong> back knee kisses the grass, front heel drives you up. Torso stays tall the whole way.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "20 steps",
+            "weight": "BW",
+            "rest": 60
+          },
+          {
+            "label": "Set 2",
+            "reps": "20 steps",
+            "weight": "BW",
+            "rest": 60
+          }
+        ],
+        "restSecs": 60,
+        "alt": {
+          "name": "Bodyweight Squats",
+          "sets": "2 \u00d7 15",
+          "tip": "Legs already cooked? Controlled squats finish the job with less balance demand.",
+          "emoji": "\ud83d\udeb6"
+        },
+        "image": "./images/gifs/walking-lunge.gif"
+      },
+      {
+        "id": 4,
+        "name": "Cool-Down Jog",
+        "emoji": "\ud83c\udf05",
+        "muscles": [
+          "Calves"
+        ],
+        "primaryMuscles": [
+          "Legs"
+        ],
+        "secondaryMuscles": [],
+        "tip": "<strong>Very easy jog then walk.</strong> Sprinting leaves the nervous system buzzing \u2014 give it a gentle landing.",
+        "sets": [
+          {
+            "label": "Taper",
+            "reps": "5 min",
+            "weight": "Jog \u2192 walk",
+            "rest": 0
+          }
+        ],
+        "restSecs": 0,
+        "alt": {
+          "name": "Walk Only",
+          "sets": "5 min",
+          "tip": "Walk it out and shake the legs loose.",
+          "emoji": "\ud83c\udf05"
+        },
+        "image": "./images/scene-sprint.jpg"
+      }
+    ]
+  },
+  {
+    "id": "outdoor_circuit",
+    "type": "outdoor_circuit",
+    "noWeightLog": true,
+    "title": "Park Bench Circuit",
+    "subtitle": "Full Body \u00b7 Bench & Bodyweight",
+    "gym": "\ud83c\udf33 Outdoor Session",
+    "badges": [
+      {
+        "text": "Outdoors",
+        "type": "alert"
+      }
+    ],
+    "notice": "<strong>All you need is a park bench.</strong> Move with control, rest short, and enjoy training with a view. Wipe the bench, mind the splinters.",
+    "stats": {
+      "exercises": 6,
+      "minutes": "~35",
+      "totalSets": 18
+    },
+    "warmup": [
+      "2 min brisk walk to the park",
+      "10 arm circles each direction",
+      "10 leg swings each leg",
+      "10 slow air squats",
+      "10 hip openers (knee circles out)"
+    ],
+    "cooldown": [
+      "Doorway-style chest stretch on a tree \u00b7 30s",
+      "Standing quad stretch \u00b7 30s each leg",
+      "Calf stretch on the bench edge \u00b7 30s each",
+      "Standing hamstring fold \u00b7 30s"
+    ],
+    "closing": "<strong style='color:#c0c040;'>The park is a gym.</strong> Same muscles, better air.",
+    "exercises": [
+      {
+        "id": 1,
+        "name": "Bench Step-Ups",
+        "emoji": "\ud83e\ude9c",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Calves"
+        ],
+        "tip": "<strong>Whole foot on the bench,</strong> drive through that heel, stand fully tall on top. Control the way down \u2014 don't drop. Alternate legs.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Low Step-Ups",
+          "sets": "3 \u00d7 12 each on a curb",
+          "tip": "Use a curb or low step \u2014 same pattern, less height.",
+          "emoji": "\ud83e\ude9c"
+        },
+        "image": "./images/gifs/step-up.gif"
+      },
+      {
+        "id": 2,
+        "name": "Incline Push-Ups",
+        "emoji": "\ud83d\udcaa",
+        "muscles": [
+          "Chest",
+          "Triceps"
+        ],
+        "primaryMuscles": [
+          "Pectoralis Major"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Core"
+        ],
+        "tip": "<strong>Hands on the bench back or seat,</strong> body in one straight line. Chest to the bench, elbows ~45\u00b0. The lower the hands, the harder it gets.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "12",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "12",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10-12",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Wall Push-Ups",
+          "sets": "3 \u00d7 15",
+          "tip": "Hands on a wall or tree at chest height \u2014 gentler angle, same movement.",
+          "emoji": "\ud83d\udcaa"
+        },
+        "image": "./images/gifs/incline-pushup.gif"
+      },
+      {
+        "id": 3,
+        "name": "Bench Dips",
+        "emoji": "\ud83d\udd3b",
+        "muscles": [
+          "Triceps",
+          "Shoulders"
+        ],
+        "primaryMuscles": [
+          "Triceps Brachii"
+        ],
+        "secondaryMuscles": [
+          "Anterior Delt",
+          "Chest"
+        ],
+        "tip": "<strong>Hands at the bench edge,</strong> fingers forward, hips close to the bench. Lower until elbows hit ~90\u00b0, press back up. Bend knees to make it easier.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "10",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "8-10",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Bent-Knee Dips",
+          "sets": "3 \u00d7 12",
+          "tip": "Walk the feet in and bend the knees \u2014 takes weight off the arms.",
+          "emoji": "\ud83d\udd3b"
+        },
+        "image": "./images/gifs/bench-dips.gif"
+      },
+      {
+        "id": 4,
+        "name": "Walking Lunges",
+        "emoji": "\ud83d\udeb6",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Core"
+        ],
+        "tip": "<strong>Step long, drop the back knee</strong> toward the grass, then drive through the front heel into the next step. Hands on hips or swinging naturally.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "10 each leg",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Static Lunges",
+          "sets": "3 \u00d7 8 each leg",
+          "tip": "Stay in place \u2014 down and up in a split stance, holding the bench for balance.",
+          "emoji": "\ud83d\udeb6"
+        },
+        "image": "./images/gifs/walking-lunge.gif"
+      },
+      {
+        "id": 5,
+        "name": "Bench Squats",
+        "emoji": "\ud83e\uddb5",
+        "muscles": [
+          "Quads",
+          "Glutes"
+        ],
+        "primaryMuscles": [
+          "Quadriceps",
+          "Glutes"
+        ],
+        "secondaryMuscles": [
+          "Hamstrings",
+          "Core"
+        ],
+        "tip": "<strong>Squat until you lightly touch the bench seat,</strong> pause a beat, stand without rocking forward. It's a depth-gauge, not a chair.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "15",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 2",
+            "reps": "15",
+            "weight": "BW",
+            "rest": 45
+          },
+          {
+            "label": "Set 3",
+            "reps": "12-15",
+            "weight": "BW",
+            "rest": 45
+          }
+        ],
+        "restSecs": 45,
+        "alt": {
+          "name": "Squat Jumps",
+          "sets": "3 \u00d7 8",
+          "tip": "Feeling springy? Explode up from each squat, land soft.",
+          "emoji": "\ud83e\uddb5"
+        },
+        "image": "./images/gifs/bw-squat.gif"
+      },
+      {
+        "id": 6,
+        "name": "Plank",
+        "emoji": "\ud83e\uddf1",
+        "muscles": [
+          "Core"
+        ],
+        "primaryMuscles": [
+          "Rectus Abdominis",
+          "Transverse Abdominis"
+        ],
+        "secondaryMuscles": [
+          "Obliques",
+          "Shoulders"
+        ],
+        "tip": "<strong>Forearms on the bench</strong> (easier) or the grass (harder). One straight line, glutes tight, breathe steady.",
+        "sets": [
+          {
+            "label": "Set 1",
+            "reps": "40s",
+            "weight": "Hold",
+            "rest": 30
+          },
+          {
+            "label": "Set 2",
+            "reps": "40s",
+            "weight": "Hold",
+            "rest": 30
+          },
+          {
+            "label": "Set 3",
+            "reps": "30-40s",
+            "weight": "Hold",
+            "rest": 30
+          }
+        ],
+        "restSecs": 30,
+        "alt": {
+          "name": "Incline Plank",
+          "sets": "3 \u00d7 45s on bench",
+          "tip": "Forearms on the bench seat \u2014 same brace, friendlier angle.",
+          "emoji": "\ud83e\uddf1"
+        },
+        "image": "./images/gifs/plank.gif"
+      }
+    ]
+  }
+]

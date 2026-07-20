@@ -80,7 +80,8 @@ export function wireWorkoutEvents() {
     checkCompletion(true);
 
     if (cb.checked) {
-      showWeightModal(exId, setIdx, () => fireTimer(exId, rest));
+      if (currentWorkout.noWeightLog) fireTimer(exId, rest);
+      else showWeightModal(exId, setIdx, () => fireTimer(exId, rest));
     }
   });
 

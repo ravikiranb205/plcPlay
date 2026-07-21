@@ -259,6 +259,53 @@ function resetWorkout() {
   if (firstId != null) document.getElementById(`body${firstId}`)?.classList.add('open');
 }
 
+// ── WARM-UP / COOL-DOWN DEMO IMAGES ─────────────────────────────────────
+// Match prep item text to a demo gif. First hit wins, so keep specific
+// patterns above general ones.
+const PREP_GIFS = [
+  [/treadmill|brisk walk|light jog|jog/i,          './images/gifs/real-jog.gif'],
+  [/jump rope|rope jump/i,                          './images/gifs/prep-jumprope.gif'],
+  [/arm circle/i,                                   './images/gifs/prep-armcircles.gif'],
+  [/shoulder roll/i,                                './images/gifs/prep-shouldercircles.gif'],
+  [/pull-apart|reverse flye/i,                      './images/gifs/prep-bandpull.gif'],
+  [/lat pulldown/i,                                 './images/gifs/lat-pulldown.gif'],
+  [/push-up/i,                                      './images/gifs/pushup.gif'],
+  [/squat/i,                                        './images/gifs/bw-squat.gif'],
+  [/glute bridge/i,                                 './images/gifs/glute-bridge.gif'],
+  [/light curls/i,                                  './images/gifs/db-curl.gif'],
+  [/pushdown|band extension/i,                      './images/gifs/pushdown.gif'],
+  [/lateral raise/i,                                './images/gifs/lateral-raise.gif'],
+  [/chest flye|light press/i,                       './images/gifs/chest-press.gif'],
+  [/walking lunge|lunges with|walking lunges/i,     './images/gifs/walking-lunge.gif'],
+  [/high knees/i,                                   './images/gifs/real-highknees.gif'],
+  [/butt kick/i,                                    './images/gifs/real-buttkicks.gif'],
+  [/cat-cow/i,                                      './images/gifs/real-catcow.gif'],
+  [/cross-body shoulder/i,                          './images/gifs/prep-shoulderstretch.gif'],
+  [/behind-back shoulder/i,                         './images/gifs/prep-behindhead.gif'],
+  [/doorway chest|chest opener|chest stretch/i,     './images/gifs/prep-cheststretch.gif'],
+  [/tricep overhead|overhead stretch|tricep.*stretch/i, './images/gifs/prep-tricepstretch.gif'],
+  [/seated hamstring/i,                             './images/gifs/prep-seatedham.gif'],
+  [/hamstring (fold|stretch|scoop)/i,               './images/gifs/hamstring-scoop.gif'],
+  [/lat stretch/i,                                  './images/gifs/prep-latstretch.gif'],
+  [/bicep.*stretch/i,                               './images/gifs/prep-bicepstretch.gif'],
+  [/quad stretch/i,                                 './images/gifs/prep-quadstretch.gif'],
+  [/pigeon/i,                                       './images/gifs/real-pigeon.gif'],
+  [/upper back stretch|hug yourself/i,              './images/gifs/prep-upperback.gif'],
+  [/calf stretch/i,                                 './images/gifs/prep-calfstretch.gif'],
+  [/hip flexor/i,                                   './images/gifs/prep-hipflexor.gif'],
+  [/child'?s pose/i,                                './images/gifs/real-pigeon.gif'],
+];
+
+function prepRow(text) {
+  const hit = PREP_GIFS.find(([re]) => re.test(text));
+  const img = hit ? hit[1] : '';
+  return `
+<div class="prep-item">
+  ${img ? `<img class="prep-img" src="${img}" alt="" loading="lazy">` : '<div class="prep-dot"></div>'}
+  <div class="prep-text">${text}</div>
+</div>`;
+}
+
 // ── HTML BUILDERS ────────────────────────────────────────────────────────
 function buildWorkoutHTML(w) {
   return `
@@ -311,7 +358,7 @@ function buildWorkoutHTML(w) {
 
 <div class="section-label">Warm-Up · 5 min</div>
 <div class="warmup-card">
-  ${w.warmup.map(item => `<div class="warmup-item">${item}</div>`).join('')}
+  ${w.warmup.map(item => prepRow(item)).join('')}
 </div>
 
 <div class="section-label">Workout · ${w.exercises.length} Exercises</div>
@@ -319,7 +366,7 @@ ${w.exercises.map(ex => buildExerciseCard(ex)).join('')}
 
 <div class="section-label">Cool Down</div>
 <div class="cooldown-card">
-  ${w.cooldown.map(item => `<div class="cooldown-item">${item}</div>`).join('')}
+  ${w.cooldown.map(item => prepRow(item)).join('')}
 </div>
 
 ${w.closing ? `<div class="closing-card">${w.closing}</div>` : ''}

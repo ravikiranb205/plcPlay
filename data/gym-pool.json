@@ -1137,5 +1137,176 @@
       "emoji": "\ud83c\udfcb\ufe0f"
     },
     "image": "./images/gifs/pool-hanging-raise.gif"
+  },
+  {
+    "name": "Barbell Bench Press",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Chest",
+      "Triceps"
+    ],
+    "primaryMuscles": [
+      "Chest"
+    ],
+    "secondaryMuscles": [
+      "Shoulders",
+      "Triceps"
+    ],
+    "tip": "<strong>Form:</strong> Lie back on a flat bench. Using a medium width grip (a grip that creates a 90-degree angle in the middle of the movement between the forearms and the upper arms), lift the bar from the rack and hold it straight over you with your arms locked.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Dumbbell Bench Press",
+      "sets": "3 \u00d7 10 \u00b7 75s rest",
+      "tip": "Dumbbells allow a more natural pressing path.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-bench.gif"
+  },
+  {
+    "name": "Barbell Shoulder Press",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Shoulders",
+      "Triceps"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [
+      "Chest",
+      "Triceps"
+    ],
+    "tip": "<strong>Form:</strong> Sit on a bench with back support in a squat rack. Position a barbell at a height that is just above your head.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Seated Dumbbell Shoulder Press",
+      "sets": "3 \u00d7 10 \u00b7 75s rest",
+      "tip": "Seated dumbbells if the bar path feels awkward.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-bb-shoulder.gif"
+  },
+  {
+    "name": "Cable Lateral Raise",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Shoulders"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [
+      "Middle Back",
+      "Traps"
+    ],
+    "tip": "<strong>Form:</strong> Stand in the middle of two low pulleys that are opposite to each other and place a flat bench right behind you (in perpendicular fashion to you; the narrow edge of the bench should be the one behind you). Select the weight to be used on each pulley.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Side Lateral Raise",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Dumbbell version standing.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-cable-lateral.gif"
+  },
+  {
+    "name": "Reverse-Grip Pushdown",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Triceps"
+    ],
+    "primaryMuscles": [
+      "Triceps"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Start by setting a bar attachment (straight or e-z) on a high pulley machine. Facing the bar attachment, grab it with the palms facing up (supinated grip) at shoulder width.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Tricep Pushdown (Cable)",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Standard overhand grip version.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-rev-pushdown.gif"
   }
 ]

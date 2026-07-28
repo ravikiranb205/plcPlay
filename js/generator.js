@@ -321,13 +321,20 @@ function selectExercises(pool, type, history) {
     return { ...picked, _fresh: r === undefined ? Infinity : r };
   });
 
-  // Least-recently-done first; shuffle first so never-done ties come out
-  // in a different order every time
-  const ordered = shuffle(unique).sort((a, b) => {
-    const fa = a._fresh === Infinity ? 1e9 : a._fresh;
-    const fb = b._fresh === Infinity ? 1e9 : b._fresh;
-    return fb - fa;
-  });
+  // Hard rule: don't repeat what the last session of THIS split used.
+  // Among the rest, prefer least-recently-done with random jitter so
+  // sibling splits sharing a pool don't settle into fixed halves.
+  const lastSameSplit = history.find(h =>
+    h.exercises && normalizeType(h.workoutType || '') === type);
+  const avoid = new Set((lastSameSplit?.exercises || []).map(recencyKey));
+
+  const CAP = 8, JITTER = 4;
+  const scored = unique
+    .map(e => ({ ...e, _score: Math.min(e._fresh, CAP) + Math.random() * JITTER }))
+    .sort((a, b) => b._score - a._score);
+  const preferred = scored.filter(e => !avoid.has(recencyKey(e.name)));
+  const avoided   = scored.filter(e => avoid.has(recencyKey(e.name)));
+  const ordered = [...preferred, ...avoided];
 
   let selected;
 

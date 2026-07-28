@@ -1,0 +1,1141 @@
+[
+  {
+    "name": "Barbell Squat",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ],
+    "primaryMuscles": [
+      "Quadriceps"
+    ],
+    "secondaryMuscles": [
+      "Calves",
+      "Glutes",
+      "Hamstrings",
+      "Lower Back"
+    ],
+    "tip": "<strong>Form:</strong> This exercise is best performed inside a squat rack for safety purposes. To begin, first set the bar on a rack to just below shoulder level.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Goblet Squat",
+      "sets": "3 \u00d7 10 \u00b7 60s rest",
+      "tip": "Hold one dumbbell at your chest and squat \u2014 friendlier on the back while you learn depth.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-bb-squat.gif"
+  },
+  {
+    "name": "Bulgarian Split Squat",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ],
+    "primaryMuscles": [
+      "Quadriceps"
+    ],
+    "secondaryMuscles": [
+      "Glutes",
+      "Hamstrings"
+    ],
+    "tip": "<strong>Form:</strong> Position yourself into a staggered stance with the rear foot elevated and front foot forward. Hold a dumbbell in each hand, letting them hang at the sides.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Static Split Squat",
+      "sets": "3 \u00d7 8 each leg \u00b7 60s rest",
+      "tip": "Both feet on the floor in a split stance \u2014 same pattern without the balance demand.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-bulgarian.gif"
+  },
+  {
+    "name": "Dumbbell Lunges",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ],
+    "primaryMuscles": [
+      "Quadriceps"
+    ],
+    "secondaryMuscles": [
+      "Calves",
+      "Glutes",
+      "Hamstrings"
+    ],
+    "tip": "<strong>Form:</strong> Stand with your torso upright holding two dumbbells in your hands by your sides. This will be your starting position.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Dumbbells",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Bodyweight Lunges",
+      "sets": "3 \u00d7 10 each leg \u00b7 60s rest",
+      "tip": "Drop the dumbbells and master the pattern first.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-db-lunge.gif"
+  },
+  {
+    "name": "Barbell Hip Thrust",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Glutes",
+      "Hamstrings"
+    ],
+    "primaryMuscles": [
+      "Glutes"
+    ],
+    "secondaryMuscles": [
+      "Calves",
+      "Hamstrings"
+    ],
+    "tip": "<strong>Form:</strong> Begin seated on the ground with a bench directly behind you. Have a loaded barbell over your legs.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Glute Bridge",
+      "sets": "3 \u00d7 15 \u00b7 45s rest",
+      "tip": "Same hip drive from the floor, no bench or bar needed.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-hip-thrust.gif"
+  },
+  {
+    "name": "Seated Leg Curl",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Hamstrings"
+    ],
+    "primaryMuscles": [
+      "Hamstrings"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Adjust the machine lever to fit your height and sit on the machine with your back against the back support pad. Place the back of lower leg on top of padded lever (just a few inches under the calves) and secure the lap pad against your thighs, just above the knees.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Lying Leg Curl",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Same hamstring curl lying face down.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-seated-curl.gif"
+  },
+  {
+    "name": "Goblet Squat",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Quads",
+      "Glutes"
+    ],
+    "primaryMuscles": [
+      "Quadriceps"
+    ],
+    "secondaryMuscles": [
+      "Calves",
+      "Glutes",
+      "Hamstrings",
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> Stand holding a light kettlebell by the horns close to your chest. This will be your starting position.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Bodyweight Squat",
+      "sets": "3 \u00d7 15 \u00b7 45s rest",
+      "tip": "No weight \u2014 perfect your depth and posture.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-goblet.gif"
+  },
+  {
+    "name": "Seated Calf Raise",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Calves"
+    ],
+    "primaryMuscles": [
+      "Calves"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Place a block about 12 inches in front of a flat bench. Sit on the bench and place the ball of your feet on the block.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Standing Calf Raise",
+      "sets": "3 \u00d7 15 \u00b7 30s rest",
+      "tip": "Standing version hits the upper calf more.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-seated-calf.gif"
+  },
+  {
+    "name": "Cable Crossover",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Chest"
+    ],
+    "primaryMuscles": [
+      "Chest"
+    ],
+    "secondaryMuscles": [
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> To get yourself into the starting position, place the pulleys on a high position (above your head), select the resistance to be used and hold the pulleys in each hand. Step forward in front of an imaginary straight line between both pulleys while pulling your arms together in fro",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Dumbbell Flyes",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Same squeeze lying on a bench with dumbbells.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-crossover.gif"
+  },
+  {
+    "name": "Dumbbell Flyes",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Chest"
+    ],
+    "primaryMuscles": [
+      "Chest"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Lie down on a flat bench with a dumbbell on each hand resting on top of your thighs. The palms of your hand will be facing each other.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Pec Deck Fly",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Machine version locks the path \u2014 great for a controlled squeeze.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-db-flyes.gif"
+  },
+  {
+    "name": "Pec Deck Fly",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Chest"
+    ],
+    "primaryMuscles": [
+      "Chest"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Sit on the machine with your back flat on the pad. Take hold of the handles.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Machine",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Dumbbell Flyes",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Free-weight version on a flat bench.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-pec-deck.gif"
+  },
+  {
+    "name": "Barbell Row",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Back",
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Middle Back"
+    ],
+    "secondaryMuscles": [
+      "Biceps",
+      "Lats",
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> Holding a barbell with a pronated grip (palms facing down), bend your knees slightly and bring your torso forward, by bending at the waist, while keeping the back straight until it is almost parallel to the floor. Tip: Make sure that you keep the head up.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "One-Arm Dumbbell Row",
+      "sets": "3 \u00d7 10 each arm \u00b7 60s rest",
+      "tip": "Brace on a bench and row one side at a time.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-bb-row.gif"
+  },
+  {
+    "name": "One-Arm Dumbbell Row",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Back",
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Middle Back"
+    ],
+    "secondaryMuscles": [
+      "Biceps",
+      "Lats",
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> Choose a flat bench and place a dumbbell on each side of it. Place the right leg on top of the end of the bench, bend your torso forward from the waist until your upper body is parallel to the floor, and place your right hand on the other end of the bench for support.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Dumbbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Seated Cable Row",
+      "sets": "3 \u00d7 12 \u00b7 60s rest",
+      "tip": "Cable version with chest supported posture.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-1arm-row.gif"
+  },
+  {
+    "name": "Straight-Arm Pulldown",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Back"
+    ],
+    "primaryMuscles": [
+      "Lats"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> You will start by grabbing the wide bar from the top pulley of a pulldown machine and using a wider than shoulder-width pronated (palms down) grip. Step backwards two feet or so.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Lat Pulldown",
+      "sets": "3 \u00d7 12 \u00b7 60s rest",
+      "tip": "Classic pulldown if the straight-arm feels awkward.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-straightarm.gif"
+  },
+  {
+    "name": "Pull-Ups",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Back",
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Lats"
+    ],
+    "secondaryMuscles": [
+      "Biceps",
+      "Middle Back"
+    ],
+    "tip": "<strong>Form:</strong> Grab the pull-up bar with the palms facing forward using the prescribed grip. Note on grips: For a wide grip, your hands need to be spaced out at a distance wider than your shoulder width.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Lat Pulldown",
+      "sets": "3 \u00d7 10 \u00b7 60s rest",
+      "tip": "Same movement with adjustable load \u2014 build up to pull-ups.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-pullups.gif"
+  },
+  {
+    "name": "V-Bar Pulldown",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Back",
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Lats"
+    ],
+    "secondaryMuscles": [
+      "Biceps",
+      "Middle Back",
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> Sit down on a pull-down machine with a V-Bar attached to the top pulley. Adjust the knee pad of the machine to fit your height.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Cable",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Cable",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Cable",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Lat Pulldown",
+      "sets": "3 \u00d7 12 \u00b7 60s rest",
+      "tip": "Wide-grip version emphasizes the outer lats.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-vbar.gif"
+  },
+  {
+    "name": "Front Dumbbell Raise",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Shoulders"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Pick a couple of dumbbells and stand with a straight torso and the dumbbells on front of your thighs at arms length with the palms of the hand facing your thighs. This will be your starting position.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Plate Front Raise",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Hold a single plate with both hands instead.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-front-raise.gif"
+  },
+  {
+    "name": "Upright Row",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Shoulders",
+      "Upper Back"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [
+      "Traps"
+    ],
+    "tip": "<strong>Form:</strong> Grasp a barbell with an overhand grip that is slightly less than shoulder width. The bar should be resting on the top of your thighs with your arms extended and a slight bend in your elbows.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "Barbell",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Dumbbell Upright Row",
+      "sets": "3 \u00d7 12 \u00b7 60s rest",
+      "tip": "Dumbbells let the wrists find a comfortable path.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-upright-row.gif"
+  },
+  {
+    "name": "Reverse Flyes",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Rear Delts",
+      "Upper Back"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> To begin, lie down on an incline bench with the chest and stomach pressing against the incline. Have the dumbbells in each hand with the palms facing each other (neutral grip).",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Face Pull",
+      "sets": "3 \u00d7 15 \u00b7 45s rest",
+      "tip": "Cable version \u2014 pull rope to your face, elbows high.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-reverse-flyes.gif"
+  },
+  {
+    "name": "Rear Delt Raise",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Rear Delts",
+      "Upper Back"
+    ],
+    "primaryMuscles": [
+      "Shoulders"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Place a couple of dumbbells looking forward in front of a flat bench. Sit on the end of the bench with your legs together and the dumbbells behind your calves.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Reverse Flyes",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Standing bent-over version of the same move.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-rear-delt.gif"
+  },
+  {
+    "name": "Concentration Curl",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Biceps"
+    ],
+    "secondaryMuscles": [
+      "Forearms"
+    ],
+    "tip": "<strong>Form:</strong> Sit down on a flat bench with one dumbbell in front of you between your legs. Your legs should be spread with your knees bent and feet on the floor.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbell",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbell",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbell",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Dumbbell Curl",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Standing curls if no bench is free.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-conc-curl.gif"
+  },
+  {
+    "name": "Preacher Curl",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Biceps"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> To perform this movement you will need a preacher bench and an E-Z bar. Grab the E-Z curl bar at the close inner handle (either have someone hand you the bar which is preferable or grab the bar from the front bar rest provided by most preacher benches).",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Barbell",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Barbell",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Barbell",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Incline Dumbbell Curl",
+      "sets": "3 \u00d7 10 \u00b7 45s rest",
+      "tip": "Incline bench stretches the biceps the same way.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-preacher.gif"
+  },
+  {
+    "name": "Incline Dumbbell Curl",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Biceps"
+    ],
+    "primaryMuscles": [
+      "Biceps"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Sit back on an incline bench with a dumbbell in each hand held at arms length. Keep your elbows close to your torso and rotate the palms of your hands until they are facing forward.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Dumbbells",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Dumbbell Curl",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Standing version \u2014 keep the elbows pinned.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-incline-curl.gif"
+  },
+  {
+    "name": "Skullcrusher",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Triceps"
+    ],
+    "primaryMuscles": [
+      "Triceps"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Lie on a flat bench with either an e-z bar (my preference) or a straight bar placed on the floor behind your head and your feet on the floor. Grab the bar behind you, using a medium overhand (pronated) grip, and raise the bar in front of you at arms length.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "EZ-Bar",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "EZ-Bar",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "EZ-Bar",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Overhead DB Triceps Extension",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Seated overhead version, one dumbbell, both hands.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-skullcrusher.gif"
+  },
+  {
+    "name": "Triceps Dips",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Triceps",
+      "Chest"
+    ],
+    "primaryMuscles": [
+      "Triceps"
+    ],
+    "secondaryMuscles": [
+      "Chest",
+      "Shoulders"
+    ],
+    "tip": "<strong>Form:</strong> To get into the starting position, hold your body at arm's length with your arms nearly locked above the bars. Now, inhale and slowly lower yourself downward.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      },
+      {
+        "label": "Set 2",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      },
+      {
+        "label": "Set 3",
+        "reps": "8-12",
+        "weight": "BW",
+        "rest": 75
+      }
+    ],
+    "restSecs": 75,
+    "alt": {
+      "name": "Bench Dips",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Feet on the floor, hands on a bench \u2014 easier angle.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-dips.gif"
+  },
+  {
+    "name": "Overhead Rope Extension",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Triceps"
+    ],
+    "primaryMuscles": [
+      "Triceps"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Attach a rope to the bottom pulley of the pulley machine. Grasping the rope with both hands, extend your arms with your hands directly above your head using a neutral grip (palms facing each other).",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 2",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      },
+      {
+        "label": "Set 3",
+        "reps": "10-12",
+        "weight": "Cable",
+        "rest": 45
+      }
+    ],
+    "restSecs": 45,
+    "alt": {
+      "name": "Skullcrusher",
+      "sets": "3 \u00d7 12 \u00b7 45s rest",
+      "tip": "Lying EZ-bar version on a bench.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-oh-rope.gif"
+  },
+  {
+    "name": "Russian Twist",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Core"
+    ],
+    "primaryMuscles": [
+      "Abdominals"
+    ],
+    "secondaryMuscles": [
+      "Lower Back"
+    ],
+    "tip": "<strong>Form:</strong> Lie down on the floor placing your feet either under something that will not move or by having a partner hold them. Your legs should be bent at the knees.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      },
+      {
+        "label": "Set 2",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      },
+      {
+        "label": "Set 3",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      }
+    ],
+    "restSecs": 30,
+    "alt": {
+      "name": "Plank",
+      "sets": "3 \u00d7 40s \u00b7 30s rest",
+      "tip": "Anti-rotation instead of rotation \u2014 still core gold.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-russian.gif"
+  },
+  {
+    "name": "Hanging Leg Raise",
+    "emoji": "\ud83c\udfcb\ufe0f",
+    "muscles": [
+      "Core"
+    ],
+    "primaryMuscles": [
+      "Abdominals"
+    ],
+    "secondaryMuscles": [],
+    "tip": "<strong>Form:</strong> Hang from a chin-up bar with both arms extended at arms length in top of you using either a wide grip or a medium grip. The legs should be straight down with the pelvis rolled slightly backwards.",
+    "sets": [
+      {
+        "label": "Set 1",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      },
+      {
+        "label": "Set 2",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      },
+      {
+        "label": "Set 3",
+        "reps": "12-15",
+        "weight": "BW",
+        "rest": 30
+      }
+    ],
+    "restSecs": 30,
+    "alt": {
+      "name": "Leg Raises",
+      "sets": "3 \u00d7 12 \u00b7 30s rest",
+      "tip": "Lying version on a bench or the floor.",
+      "emoji": "\ud83c\udfcb\ufe0f"
+    },
+    "image": "./images/gifs/pool-hanging-raise.gif"
+  }
+]

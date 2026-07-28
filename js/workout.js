@@ -239,6 +239,7 @@ function checkCompletion(allowSave) {
       workoutId:    currentWorkout.id,
       workoutTitle: currentWorkout.title,
       workoutType:  currentWorkout.type,
+      exercises:    currentWorkout.exercises.map(e => e.name),
       date:         new Date().toISOString(),
       setsDone
     });

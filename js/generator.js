@@ -225,6 +225,15 @@ function categorize(ex) {
   return [...cats];
 }
 
+// Normalized key for matching exercise names across sessions/variants
+function recencyKey(name) {
+  return name.toLowerCase()
+    .replace(/\(.*?\)/g, '')
+    .replace(/\btriceps?\b/g, 'tricep')
+    .replace(/\b(rope|bar|cable)\b/g, '')
+    .replace(/\s+/g, ' ').trim();
+}
+
 function shuffle(arr) {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {
@@ -282,19 +291,22 @@ function selectExercises(pool, type, history) {
       : ex._cats.some(c => template.categories.includes(c))
   );
 
-  const lastWorkoutExNames = new Set();
-  if (history.length > 0) {
-    const lastId = history[0].workoutId;
-    pool.filter(ex => ex._src === lastId).forEach(ex => lastWorkoutExNames.add(ex.name));
-  }
+  // How many sessions ago was each exercise last performed? Uses the
+  // exercises list saved with each completed session; falls back to the
+  // predefined workout's roster for old history entries.
+  const nameRecency = {};
+  history.forEach((h, idx) => {
+    let names = h.exercises;
+    if (!names) names = pool.filter(ex => ex._src === h.workoutId).map(ex => ex.name);
+    (names || []).forEach(n => {
+      const k = recencyKey(n);
+      if (nameRecency[k] === undefined) nameRecency[k] = idx;
+    });
+  });
 
   // Collapse near-identical variants (e.g. rope/bar/cable pushdowns) so a
   // split isn't three flavors of the same movement
-  const dedupeKey = name => name.toLowerCase()
-    .replace(/\(.*?\)/g, '')
-    .replace(/\btriceps?\b/g, 'tricep')
-    .replace(/\b(rope|bar|cable)\b/g, '')
-    .replace(/\s+/g, ' ').trim();
+  const dedupeKey = recencyKey;
 
   const byName = {};
   candidates.forEach(ex => {
@@ -305,17 +317,23 @@ function selectExercises(pool, type, history) {
 
   const unique = Object.values(byName).map(variants => {
     const picked = variants[Math.floor(Math.random() * variants.length)];
-    return { ...picked, _wasRecent: lastWorkoutExNames.has(picked.name) };
+    const r = nameRecency[recencyKey(picked.name)];
+    return { ...picked, _fresh: r === undefined ? Infinity : r };
   });
 
-  const fresh = unique.filter(ex => !ex._wasRecent);
-  const recent = unique.filter(ex => ex._wasRecent);
+  // Least-recently-done first; shuffle first so never-done ties come out
+  // in a different order every time
+  const ordered = shuffle(unique).sort((a, b) => {
+    const fa = a._fresh === Infinity ? 1e9 : a._fresh;
+    const fb = b._fresh === Infinity ? 1e9 : b._fresh;
+    return fb - fa;
+  });
 
   let selected;
 
   if (type === 'full_body') {
     // Round-robin legs / pull / push so the session hits everything
-    const all = shuffle([...fresh, ...recent]);
+    const all = ordered;
     const legs   = all.filter(e => e._cats.includes('legs'));
     const pulls  = all.filter(e => !e._cats.includes('legs') && e._cats.includes('pull'));
     const pushes = all.filter(e => !e._cats.includes('legs') && !e._cats.includes('pull'));
@@ -328,7 +346,7 @@ function selectExercises(pool, type, history) {
     }
     selected = picks.slice(0, template.target);
   } else if (type === 'upper') {
-    const all = shuffle([...fresh, ...recent]);
+    const all = ordered;
     const pushExs = all.filter(ex => ex._cats.includes('push') && !ex._cats.includes('pull'));
     const pullExs = all.filter(ex => ex._cats.includes('pull') && !ex._cats.includes('push'));
     const mixed = all.filter(ex => ex._cats.includes('pull') && ex._cats.includes('push'));
@@ -350,7 +368,7 @@ function selectExercises(pool, type, history) {
     }
     selected = interleaved;
   } else {
-    selected = [...shuffle(fresh), ...shuffle(recent)].slice(0, template.target);
+    selected = ordered.slice(0, template.target);
     // Compounds first, isolation last
     const isCompound = ex => /press|pulldown|row|deadlift|squat/i.test(ex.name);
     selected.sort((a, b) => (isCompound(b) ? 1 : 0) - (isCompound(a) ? 1 : 0));
@@ -423,6 +441,9 @@ export function generateWorkout(allWorkouts, history, opts = {}) {
     w.exercises.forEach(ex => {
       pool.push({ ...ex, _src: w.id, _cats: categorize(ex) });
     });
+  });
+  (opts.extraPool || []).forEach(ex => {
+    pool.push({ ...ex, _src: 'pool', _cats: categorize(ex) });
   });
 
   const type = pickType(allWorkouts, history);

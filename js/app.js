@@ -9,6 +9,7 @@ const LAST_KEY = 'fitwin_last_workout';
 let workouts = [];
 let homeWorkouts = [];
 let outdoorWorkouts = [];
+let gymPool = [];
 let deferredInstallPrompt = null;
 let pickedWorkout = null;
 let pickedHomeId = null;
@@ -21,6 +22,7 @@ async function init() {
     workouts = await resp.json();
     try { homeWorkouts = await (await fetch('./data/home-workouts.json')).json(); } catch { homeWorkouts = []; }
     try { outdoorWorkouts = await (await fetch('./data/outdoor-workouts.json')).json(); } catch { outdoorWorkouts = []; }
+    try { gymPool = await (await fetch('./data/gym-pool.json')).json(); } catch { gymPool = []; }
   } catch {
     document.getElementById('workoutList').innerHTML =
       '<div class="history-empty">Could not load workouts. Please check your connection.</div>';
@@ -272,7 +274,7 @@ function showTimeStep() {
 }
 
 function buildPickForTime(minutes) {
-  const { workout, reason } = generateWorkout(workouts, getHistory(), { minutes });
+  const { workout, reason } = generateWorkout(workouts, getHistory(), { minutes, extraPool: gymPool });
   pickedWorkout = workout;
 
   document.getElementById('sheetTitle').textContent = "Today's Smart Pick";

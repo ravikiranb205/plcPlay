@@ -112,7 +112,7 @@ export function renderRegistration() {
   <div class="reg-section">Personal Info</div>
   <input type="text" class="reg-input" placeholder="Your Name" id="regName" required>
   <div class="reg-row">
-    <input type="number" class="reg-input" placeholder="Age" id="regAge" required min="13" max="99">
+    <input type="number" class="reg-input" placeholder="Age" id="regAge" required min="13" max="99" inputmode="numeric">
     <select class="reg-input" id="regSex" required>
       <option value="">Sex</option>
       <option value="male">Male</option>
@@ -137,11 +137,11 @@ export function renderRegistration() {
   <div class="reg-section">Body Stats</div>
   <div class="reg-row">
     <div class="reg-unit-wrap">
-      <input type="number" class="reg-input" placeholder="Weight" id="regWeight" required min="30" max="300" step="0.1">
+      <input type="number" class="reg-input" placeholder="Weight" id="regWeight" required min="30" max="300" step="0.1" inputmode="decimal">
       <span class="reg-unit">kg</span>
     </div>
     <div class="reg-unit-wrap">
-      <input type="number" class="reg-input" placeholder="Height" id="regHeight" required min="100" max="250">
+      <input type="number" class="reg-input" placeholder="Height" id="regHeight" required min="100" max="250" inputmode="decimal">
       <span class="reg-unit">cm</span>
     </div>
   </div>

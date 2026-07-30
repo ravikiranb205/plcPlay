@@ -80,6 +80,10 @@ export function wireWorkoutEvents() {
     checkCompletion(true);
 
     if (cb.checked) {
+      const ex = currentWorkout.exercises.find(x => x.id === exId);
+      const allSetsDone = ex && ex.sets.every((_, i) => workoutState[exId].sets[i]);
+      if (allSetsDone && !workoutState[exId].done) completeExercise(exId);
+
       if (currentWorkout.noWeightLog) fireTimer(exId, rest);
       else showWeightModal(exId, setIdx, () => fireTimer(exId, rest));
     }
@@ -137,6 +141,26 @@ function closeWeightModal() {
   const onDone = pendingWeightCb?.onDone;
   pendingWeightCb = null;
   onDone?.();
+}
+
+// Last set checked → mark the exercise done, collapse it, open the next
+function completeExercise(id) {
+  workoutState[id].done = true;
+  saveState(currentWorkout.id, workoutState);
+
+  const card = document.getElementById(`card${id}`);
+  card?.classList.add('done');
+  document.getElementById(`body${id}`)?.classList.remove('open');
+
+  const next = currentWorkout.exercises.find(e => e.id > id && !workoutState[e.id]?.done)
+            || currentWorkout.exercises.find(e => e.id !== id && !workoutState[e.id]?.done);
+  if (next) {
+    document.getElementById(`body${next.id}`)?.classList.add('open');
+    setTimeout(() => {
+      document.getElementById(`card${next.id}`)?.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }, 250);
+  }
+  checkCompletion(true);
 }
 
 function fireTimer(exId, overrideRest) {

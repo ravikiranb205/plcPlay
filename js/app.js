@@ -1,5 +1,5 @@
 import { renderWorkout, wireWorkoutEvents, setBackCallback } from './workout.js';
-import { loadState, getHistory, getProfile } from './store.js';
+import { loadState, getHistory, getProfile, pushHistory, getPending, clearPending } from './store.js';
 import { generateWorkout, fitToTime } from './generator.js';
 import { renderRegistration, wireRegistrationEvents, renderProfile, getNutrientTargets } from './profile.js';
 import { startWaterReminder, stopWaterReminder, startMealNotifications, getMealSuggestions } from './nutrition.js';
@@ -29,6 +29,8 @@ async function init() {
     return;
   }
 
+  recoverLostSessions();
+
   wireWorkoutEvents();
   setBackCallback(() => {
     stopWaterReminder();
@@ -50,6 +52,61 @@ async function init() {
   setupInstallPrompt();
   setupWaterDismiss();
   registerSW();
+}
+
+// ── LOST SESSION RECOVERY ────────────────────────────────────────────────
+const TYPE_LABELS = {
+  push: 'Push Day', pull: 'Pull Day', lower: 'Leg Day',
+  chest_tris: 'Chest & Triceps', back_bis: 'Back & Biceps',
+  shoulders: 'Shoulder Day', arms: 'Arm Day',
+  upper: 'Upper Body', full_body: 'Full Body'
+};
+
+function recoverLostSessions() {
+  const hist = getHistory();
+
+  // 1. A session that was started, made real progress, but never finished
+  //    and is now hours old — count it as done.
+  const pend = getPending();
+  if (pend && pend.setsDone >= 3
+      && Date.now() - new Date(pend.startedAt).getTime() > 2 * 36e5
+      && !hist.some(h => h.workoutId === pend.workoutId)) {
+    pushHistory({
+      workoutId: pend.workoutId, workoutTitle: pend.workoutTitle,
+      workoutType: pend.workoutType, exercises: pend.exercises,
+      date: pend.startedAt, setsDone: pend.setsDone
+    });
+    clearPending();
+  }
+
+  // 2. One-time migration: generated-workout states with real progress that
+  //    predate the pending-session mechanism.
+  for (let i = 0; i < localStorage.length; i++) {
+    const key = localStorage.key(i);
+    if (!key || !key.startsWith('fitwin_state_gen_')) continue;
+    let state;
+    try { state = JSON.parse(localStorage.getItem(key)); } catch { continue; }
+    if (!state || state._completed) continue;
+
+    const setsDone = Object.values(state)
+      .filter(v => v && typeof v === 'object' && Array.isArray(v.sets))
+      .reduce((a, v) => a + v.sets.filter(Boolean).length, 0);
+    if (setsDone < 3) continue;
+
+    const id = key.replace('fitwin_state_', '');
+    const m = id.match(/^gen_([a-z_]+?)_(\d{4}-\d{2}-\d{2})(?:_\d+m)?$/);
+    if (!m || hist.some(h => h.workoutId === id)) continue;
+
+    pushHistory({
+      workoutId: id,
+      workoutTitle: TYPE_LABELS[m[1]] || 'Workout',
+      workoutType: m[1],
+      date: m[2] + 'T12:00:00',
+      setsDone
+    });
+    state._completed = true;
+    localStorage.setItem(key, JSON.stringify(state));
+  }
 }
 
 // ── REGISTRATION ─────────────────────────────────────────────────────────

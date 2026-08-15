@@ -1,5 +1,5 @@
 import { startTimer, stopTimer } from './timer.js';
-import { saveState, loadState, pushHistory, logWeight, getLastWeight } from './store.js';
+import { saveState, loadState, pushHistory, logWeight, getLastWeight, savePending, getPending, clearPending } from './store.js';
 
 let currentWorkout = null;
 let workoutState   = {};
@@ -11,6 +11,19 @@ export function setBackCallback(fn) { onBackCallback = fn; }
 export function renderWorkout(workout) {
   currentWorkout = workout;
   workoutState   = loadState(workout.id) || {};
+
+  // Remember this session so it can be recovered if never finished
+  if (!workoutState._completed) {
+    const prev = getPending();
+    savePending({
+      workoutId:    workout.id,
+      workoutTitle: workout.title,
+      workoutType:  workout.type,
+      exercises:    workout.exercises.map(e => e.name),
+      startedAt:    (prev?.workoutId === workout.id && prev.startedAt) || new Date().toISOString(),
+      setsDone:     prev?.workoutId === workout.id ? (prev.setsDone || 0) : 0
+    });
+  }
 
   const view = document.getElementById('viewWorkout');
   view.innerHTML = buildWorkoutHTML(workout);
@@ -60,6 +73,15 @@ export function wireWorkoutEvents() {
       return;
     }
 
+    if (e.target.closest('#finishBtn')) {
+      if (workoutState._completed) { onBackCallback?.(); return; }
+      if (confirm('Finish this workout and save it to your history?')) {
+        recordSession();
+        document.getElementById('completeBanner')?.classList.add('show');
+      }
+      return;
+    }
+
     if (e.target.closest('#resetBtn')) {
       if (confirm('Reset this workout? All progress will be cleared.')) resetWorkout();
     }
@@ -78,6 +100,12 @@ export function wireWorkoutEvents() {
     saveState(currentWorkout.id, workoutState);
     updateProgress();
     checkCompletion(true);
+
+    const pend = getPending();
+    if (pend?.workoutId === currentWorkout.id) {
+      pend.setsDone = document.querySelectorAll('#viewWorkout .set-check:checked').length;
+      savePending(pend);
+    }
 
     if (cb.checked) {
       const ex = currentWorkout.exercises.find(x => x.id === exId);
@@ -245,29 +273,38 @@ function updateProgress() {
 }
 
 // ── COMPLETION ───────────────────────────────────────────────────────────
+function exerciseComplete(ex) {
+  const st = workoutState[ex.id];
+  if (!st) return false;
+  if (st.done || st.unavail) return true;
+  return ex.sets.length > 0 && ex.sets.every((_, i) => st.sets?.[i]);
+}
+
 function checkCompletion(allowSave) {
   if (!currentWorkout) return;
-  const checks = [...document.querySelectorAll('#viewWorkout .set-check')];
-  const allChecked = checks.length > 0 && checks.every(c => c.checked);
-  const allDone = currentWorkout.exercises.every(ex => workoutState[ex.id]?.done);
-  const complete = allChecked || allDone;
+  const complete = currentWorkout.exercises.every(ex => exerciseComplete(ex));
 
   const banner = document.getElementById('completeBanner');
   if (banner) banner.classList.toggle('show', complete);
 
   if (complete && allowSave && !workoutState._completed) {
-    workoutState._completed = true;
-    saveState(currentWorkout.id, workoutState);
-    const setsDone = checks.filter(c => c.checked).length;
-    pushHistory({
-      workoutId:    currentWorkout.id,
-      workoutTitle: currentWorkout.title,
-      workoutType:  currentWorkout.type,
-      exercises:    currentWorkout.exercises.map(e => e.name),
-      date:         new Date().toISOString(),
-      setsDone
-    });
+    recordSession();
   }
+}
+
+function recordSession() {
+  workoutState._completed = true;
+  saveState(currentWorkout.id, workoutState);
+  const setsDone = document.querySelectorAll('#viewWorkout .set-check:checked').length;
+  pushHistory({
+    workoutId:    currentWorkout.id,
+    workoutTitle: currentWorkout.title,
+    workoutType:  currentWorkout.type,
+    exercises:    currentWorkout.exercises.map(e => e.name),
+    date:         new Date().toISOString(),
+    setsDone
+  });
+  clearPending();
 }
 
 // ── RESET ────────────────────────────────────────────────────────────────
@@ -402,6 +439,7 @@ ${w.closing ? `<div class="closing-card">${w.closing}</div>` : ''}
 </div>
 
 <div class="workout-actions">
+  <button class="finish-btn" id="finishBtn">✓ Finish & Save</button>
   <button class="reset-btn" id="resetBtn">↺ Reset Workout</button>
 </div>
 

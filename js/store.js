@@ -43,6 +43,21 @@ export function getWeightLogs() {
   catch { return []; }
 }
 
+const PENDING_KEY = 'fitwin_pending';
+
+export function savePending(entry) {
+  localStorage.setItem(PENDING_KEY, JSON.stringify(entry));
+}
+
+export function getPending() {
+  try { return JSON.parse(localStorage.getItem(PENDING_KEY)); }
+  catch { return null; }
+}
+
+export function clearPending() {
+  localStorage.removeItem(PENDING_KEY);
+}
+
 export function getLastWeight(exerciseName) {
   const logs = getWeightLogs();
   const last = logs.find(l => l.exerciseName === exerciseName);

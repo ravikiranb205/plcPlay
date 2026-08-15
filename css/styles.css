@@ -422,6 +422,13 @@ body {
 .workout-actions {
   display: flex; gap: 10px; margin: 20px 16px 0;
 }
+.finish-btn {
+  flex: 1.4; background: var(--green); border: none; color: #04180c;
+  font-size: 12px; font-weight: 700; letter-spacing: 1px;
+  text-transform: uppercase; padding: 10px; border-radius: 6px;
+  cursor: pointer; transition: opacity 0.2s;
+}
+.finish-btn:active { opacity: 0.85; }
 .reset-btn {
   flex: 1; background: none; border: 1px solid var(--border);
   color: var(--muted); font-size: 12px; font-weight: 600;
